@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
   alternates: {
-    canonical: 'https://dafawin.in',
+    canonical: 'https://dafawin.in/',
     languages: {
       'x-default': 'https://dafawin.in',
       'en-IN': 'https://dafawin.in',

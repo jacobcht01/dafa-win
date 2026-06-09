@@ -73,11 +73,6 @@ export function buildWebSiteSchema() {
     '@type': 'WebSite',
     name: SITE_NAME,
     url: SITE_URL,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: { '@type': 'EntryPoint', urlTemplate: `${SITE_URL}/?q={search_term_string}` },
-      'query-input': 'required name=search_term_string',
-    },
   };
 }
 
@@ -111,10 +106,30 @@ export function buildSportsEventSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'SportsEvent',
-    name: 'IPL 2025',
+    name: 'IPL 2026',
     sport: 'Cricket',
+    startDate: '2026-03-22',
+    endDate: '2026-05-31',
     location: { '@type': 'Country', name: 'India' },
-    description: 'Indian Premier League 2025 — live cricket betting odds at DafaBet India',
+    description: 'Indian Premier League 2026 — live cricket betting odds at DafaBet India',
+  };
+}
+
+export function buildArticleSchema(meta: PageMeta) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: meta.title,
+    description: meta.description ?? '',
+    author: {
+      '@type': 'Person',
+      name: meta.author,
+    },
+    publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    datePublished: meta.lastUpdated,
+    dateModified: meta.lastUpdated,
+    url: `${SITE_URL}${meta.url}`,
+    inLanguage: meta.lang === 'te' ? 'te-IN' : 'en-IN',
   };
 }
 
@@ -123,6 +138,7 @@ export function getSchemas(meta: PageMeta, faqs?: { question: string; answer: st
   schemas.push(buildBreadcrumb(meta.slug, meta.lang, meta.title));
 
   for (const s of meta.schema) {
+    if (s === 'Article') schemas.push(buildArticleSchema(meta));
     if (s === 'Review') schemas.push(buildReviewSchema(meta.lang));
     if (s === 'FAQPage' && faqs) schemas.push(buildFaqSchema(faqs));
     if (s === 'Organization') schemas.push(buildOrganizationSchema());

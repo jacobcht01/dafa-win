@@ -8,7 +8,7 @@ export default function LanguageSwitcher() {
 
   const isTE = pathname.startsWith('/te');
   const enPath = isTE ? pathname.replace(/^\/te/, '') || '/' : pathname;
-  const tePath = isTE ? pathname : `/te${pathname === '/' ? '' : pathname}`;
+  const tePath = isTE ? pathname : `/te${pathname === '/' ? '/' : pathname}`;
 
   return (
     <div className="flex items-center gap-1 text-sm">
