@@ -8,9 +8,11 @@ import RatingCard from '@/components/RatingCard';
 import ProsCons from '@/components/ProsCons';
 import BonusSection from '@/components/BonusSection';
 import JsonLd from '@/components/JsonLd';
+import RelatedPages from '@/components/RelatedPages';
 import { getPageContent, EN_SLUGS } from '@/lib/content';
 import { getSchemas } from '@/lib/structured-data';
 import { extractFaqs, PAGE_CONFIG } from '@/lib/page-config';
+import { getRelatedPages } from '@/lib/internal-links';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -31,13 +33,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: page.keywords,
     alternates: {
       canonical: `https://dafawin.in${page.url}`,
-      languages: { 'te-IN': `https://dafawin.in/te/${slug}/` },
+      languages: {
+        'x-default': `https://dafawin.in${page.url}`,
+        'en-IN': `https://dafawin.in${page.url}`,
+        'te-IN': `https://dafawin.in/te/${slug}/`,
+      },
     },
     openGraph: {
       title: page.title,
       description: page.description,
       url: `https://dafawin.in${page.url}`,
       type: 'article',
+      locale: 'en_IN',
+      images: [
+        {
+          url: '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: page.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: page.title,
+      description: page.description,
+      images: ['/og-image.png'],
     },
   };
 }
@@ -50,6 +71,7 @@ export default async function EnglishPage({ params }: Props) {
   const config = PAGE_CONFIG[slug] ?? {};
   const faqs = extractFaqs(page.body, 'en');
   const schemas = getSchemas(page, faqs.length > 0 ? faqs : undefined);
+  const relatedPages = getRelatedPages(slug, 'en');
 
   return (
     <>
@@ -113,6 +135,8 @@ export default async function EnglishPage({ params }: Props) {
                   />
                 </div>
               )}
+
+              <RelatedPages pages={relatedPages} lang="en" />
             </article>
 
             {/* Sidebar */}

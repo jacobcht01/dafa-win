@@ -12,6 +12,20 @@ export const metadata: Metadata = {
     siteName: 'DafaWin',
     type: 'website',
     locale: 'en_IN',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'DafaWin — DafaBet India Betting Guide 2025',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@DafaWin',
+    creator: '@DafaWin',
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -21,6 +35,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://dafawin.in',
     languages: {
+      'x-default': 'https://dafawin.in',
       'en-IN': 'https://dafawin.in',
       'te-IN': 'https://dafawin.in/te/',
     },

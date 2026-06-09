@@ -17,10 +17,32 @@ export const metadata: Metadata = {
   description: 'తెలుగులో దఫాబెట్ ఇండియా గైడ్. క్రికెట్, ఐపీఎల్ బెట్టింగ్ మరియు కాసినో రివ్యూ. 18+ | బాధ్యతాయుతంగా బెట్ చేయండి.',
   alternates: {
     canonical: 'https://dafawin.in/te/',
-    languages: { 'en-IN': 'https://dafawin.in/' },
+    languages: {
+      'x-default': 'https://dafawin.in/',
+      'en-IN': 'https://dafawin.in/',
+      'te-IN': 'https://dafawin.in/te/',
+    },
   },
   openGraph: {
+    title: 'దఫాబెట్ ఇండియా 2025 — తెలుగు బెట్టింగ్ గైడ్ | DafaWin',
+    description: 'తెలుగులో దఫాబెట్ ఇండియా గైడ్. క్రికెట్, ఐపీఎల్ బెట్టింగ్ మరియు కాసినో రివ్యూ.',
+    url: 'https://dafawin.in/te/',
+    type: 'website',
     locale: 'te_IN',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'DafaWin — దఫాబెట్ ఇండియా గైడ్ 2025',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'దఫాబెట్ ఇండియా 2025 — తెలుగు బెట్టింగ్ గైడ్',
+    description: 'తెలుగులో దఫాబెట్ ఇండియా గైడ్. క్రికెట్, ఐపీఎల్ బెట్టింగ్ మరియు కాసినో రివ్యూ.',
+    images: ['/og-image.png'],
   },
 };
 
