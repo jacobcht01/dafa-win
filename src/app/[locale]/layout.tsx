@@ -32,18 +32,12 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dafawin.in'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dafawin.in'
 
   return {
     metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: `/${locale}/`,
-      languages: {
-        en: '/en/',
-        te: '/te/',
-        'x-default': '/en/',
-      },
-    },
+    // Per-page canonical and hreflang are set by each page's generateMetadata.
+    // Layout provides the metadataBase so relative URLs resolve correctly.
   }
 }
 
@@ -62,11 +56,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       lang={locale}
       className={`dark ${inter.variable} ${notoSansTelugu.variable}`}
     >
-      <head>
-        <link rel="alternate" hrefLang="en" href="/en/" />
-        <link rel="alternate" hrefLang="te" href="/te/" />
-        <link rel="alternate" hrefLang="x-default" href="/en/" />
-      </head>
+      <head />
       <body
         className={`bg-brand-dark text-white min-h-screen ${
           locale === 'te' ? 'font-telugu' : 'font-sans'

@@ -1,4 +1,7 @@
 import type { Metadata } from 'next'
+import { JsonLd } from '@/components/JsonLd'
+import { articleSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
+import { pageAlternates, SITE_URL } from '@/lib/seo'
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
@@ -8,7 +11,12 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'casino' })
-  return { title: t('title'), description: t('description') }
+  const alts = pageAlternates(locale, '/online-casino/')
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: { canonical: alts.canonical, languages: alts.languages },
+  }
 }
 
 function CasinoContent() {
@@ -24,7 +32,7 @@ function CasinoContent() {
             <span className="gold-text">{t('hero_title')}</span>
           </h1>
           <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">{t('hero_subtitle')}</p>
-          <Link href="/registration" className="btn-primary text-lg px-8 py-4">
+          <Link href="/dafabet-registration" className="btn-primary text-lg px-8 py-4">
             {tCommon('join_now')}
           </Link>
         </div>

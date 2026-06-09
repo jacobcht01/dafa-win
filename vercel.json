@@ -1,0 +1,18 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/en/" },
+    { "source": "/dafabet-review/", "destination": "/en/dafabet-review/" },
+    { "source": "/cricket-betting/", "destination": "/en/cricket-betting/" },
+    { "source": "/ipl-betting/", "destination": "/en/ipl-betting/" },
+    { "source": "/sports-betting/", "destination": "/en/sports-betting/" },
+    { "source": "/online-casino/", "destination": "/en/online-casino/" },
+    { "source": "/dafabet-app-download/", "destination": "/en/dafabet-app-download/" },
+    { "source": "/dafabet-bonus/", "destination": "/en/dafabet-bonus/" },
+    { "source": "/dafabet-registration/", "destination": "/en/dafabet-registration/" },
+    { "source": "/dafabet-payment/", "destination": "/en/dafabet-payment/" },
+    { "source": "/responsible-gambling/", "destination": "/en/responsible-gambling/" },
+    { "source": "/football-betting/", "destination": "/en/football-betting/" },
+    { "source": "/kabaddi-betting/", "destination": "/en/kabaddi-betting/" },
+    { "source": "/faq/", "destination": "/en/faq/" }
+  ]
+}

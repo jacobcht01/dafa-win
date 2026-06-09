@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import { JsonLd } from '@/components/JsonLd'
+import { organizationSchema, websiteSchema, breadcrumbSchema } from '@/lib/schema'
+import { pageAlternates, SITE_URL } from '@/lib/seo'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -10,18 +13,30 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'home' })
+  const alts = pageAlternates(locale, '/')
   return {
     title: t('title'),
     description: t('description'),
+    alternates: {
+      canonical: alts.canonical,
+      languages: alts.languages,
+    },
   }
 }
 
-function HomePageContent() {
+function HomePageContent({ locale }: { locale: string }) {
   const t = useTranslations('home')
   const tCommon = useTranslations('common')
 
+  const schemaData = [
+    organizationSchema(),
+    websiteSchema(),
+    breadcrumbSchema([{ name: 'Home', url: SITE_URL + '/' }]),
+  ]
+
   return (
     <>
+      <JsonLd data={schemaData} />
       <section className="relative bg-dark-gradient overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold-900/20 via-transparent to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
@@ -33,10 +48,10 @@ function HomePageContent() {
               {t('hero_subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/registration" className="btn-primary text-lg px-8 py-4">
+              <Link href="/dafabet-registration" className="btn-primary text-lg px-8 py-4">
                 {t('cta_register')}
               </Link>
-              <Link href="/app-download" className="btn-secondary text-lg px-8 py-4">
+              <Link href="/dafabet-app-download" className="btn-secondary text-lg px-8 py-4">
                 {t('cta_download')}
               </Link>
             </div>
@@ -68,11 +83,11 @@ function HomePageContent() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
               { href: '/cricket-betting', label: 'Cricket', icon: '🏏' },
-              { href: '/football-betting', label: 'Football', icon: '⚽' },
-              { href: '/kabaddi-betting', label: 'Kabaddi', icon: '🤼' },
-              { href: '/casino', label: 'Casino', icon: '🎰' },
-              { href: '/bonuses', label: 'Bonuses', icon: '💰' },
-              { href: '/review', label: 'Review', icon: '⭐' },
+              { href: '/ipl-betting', label: 'IPL', icon: '🏆' },
+              { href: '/sports-betting', label: 'Sports', icon: '⚽' },
+              { href: '/online-casino', label: 'Casino', icon: '🎰' },
+              { href: '/dafabet-bonus', label: 'Bonuses', icon: '💰' },
+              { href: '/dafabet-review', label: 'Review', icon: '⭐' },
             ].map((item) => (
               <Link
                 key={item.href}
@@ -95,7 +110,7 @@ function HomePageContent() {
           <p className="text-gray-400 mb-8">
             Join thousands of Indian sports betting fans on DafaWin. Fast registration, instant deposits via UPI.
           </p>
-          <Link href="/registration" className="btn-primary text-lg px-10 py-4">
+          <Link href="/dafabet-registration" className="btn-primary text-lg px-10 py-4">
             {tCommon('join_now')}
           </Link>
         </div>
@@ -107,5 +122,5 @@ function HomePageContent() {
 export default async function HomePage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-  return <HomePageContent />
+  return <HomePageContent locale={locale} />
 }
