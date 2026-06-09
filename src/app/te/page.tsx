@@ -9,6 +9,7 @@ import RatingCard from '@/components/RatingCard';
 import ProsCons from '@/components/ProsCons';
 import JsonLd from '@/components/JsonLd';
 import MarkdownContent from '@/components/MarkdownContent';
+import WhatsAppFloater from '@/components/WhatsAppFloater';
 import { getPageContent } from '@/lib/content';
 import { getSchemas } from '@/lib/structured-data';
 
@@ -108,7 +109,7 @@ export default function TeluguHomePage() {
         <BonusSection lang="te" />
 
         {/* Content + Sidebar */}
-        <section className="py-12 sm:py-16">
+        <section className="py-12 sm:py-16 bg-navy-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
@@ -116,17 +117,17 @@ export default function TeluguHomePage() {
               </div>
               <aside className="space-y-6">
                 <RatingCard ratings={RATINGS} overall={8.5} lang="te" />
-                <div className="bg-dark-800 border border-gold-500/20 rounded-2xl p-6">
+                <div className="bg-navy-900 border border-navy-700 rounded-2xl p-6">
                   <h3 className="text-lg font-bold text-white mb-4 font-telugu">బోనస్ పొందండి</h3>
                   <a
                     href="https://www.dafabet.com/?utm_source=dafawin&utm_content=sidebar-te"
                     target="_blank"
                     rel="nofollow noopener noreferrer"
-                    className="block w-full text-center px-4 py-3 bg-gold-500 hover:bg-gold-400 text-dark-950 font-black rounded-xl transition-all hover:scale-105 mb-3 font-telugu"
+                    className="block w-full text-center px-4 py-3 bg-sport-red-500 hover:bg-sport-red-400 text-white font-black rounded-xl transition-all hover:scale-105 mb-3 font-telugu"
                   >
                     🎯 200% బోనస్ →
                   </a>
-                  <p className="text-gray-400 text-xs text-center font-telugu">18+ | T&C వర్తిస్తాయి</p>
+                  <p className="text-navy-400 text-xs text-center font-telugu">18+ | T&C వర్తిస్తాయి</p>
                 </div>
               </aside>
             </div>
@@ -141,6 +142,7 @@ export default function TeluguHomePage() {
         <FaqSection faqs={FAQS} lang="te" />
       </main>
       <Footer lang="te" />
+      <WhatsAppFloater lang="te" />
     </>
   );
 }
