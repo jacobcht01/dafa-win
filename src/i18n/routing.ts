@@ -15,5 +15,7 @@ export const routing = defineRouting({
     '/deposit-withdrawal': '/deposit-withdrawal',
     '/review': '/review',
     '/faq': '/faq',
+    '/ipl-betting': '/ipl-betting',
+    '/responsible-gambling': '/responsible-gambling',
   },
 })

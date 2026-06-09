@@ -12,6 +12,7 @@ type Props = {
 const navLinks = [
   { href: '/', key: 'home' },
   { href: '/cricket-betting', key: 'cricket' },
+  { href: '/ipl-betting', key: 'ipl' },
   { href: '/football-betting', key: 'football' },
   { href: '/kabaddi-betting', key: 'kabaddi' },
   { href: '/casino', key: 'casino' },
