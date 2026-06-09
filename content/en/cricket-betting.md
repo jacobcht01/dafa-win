@@ -4,7 +4,7 @@ description: "Expert guide to cricket betting in India. Compare the best cricket
 lang: "en"
 url: "/cricket-betting/"
 keywords: ["cricket betting india", "best cricket betting sites india", "cricket satta", "online cricket betting"]
-lastUpdated: "2025-06-09"
+lastUpdated: "2026-06-09"
 author: "Rahul Sharma, iGaming India Expert"
 schema: ["Article", "FAQPage"]
 ---

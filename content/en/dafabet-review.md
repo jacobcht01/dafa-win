@@ -4,7 +4,7 @@ description: "Our in-depth DafaBet India review covers safety, bonuses, cricket 
 lang: "en"
 url: "/dafabet-review/"
 keywords: ["dafabet review", "dafabet india review", "is dafabet safe", "dafabet review india 2025"]
-lastUpdated: "2025-06-09"
+lastUpdated: "2026-06-09"
 author: "Rahul Sharma, iGaming India Expert"
 schema: ["Review", "FAQPage"]
 ---

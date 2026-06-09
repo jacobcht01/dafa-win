@@ -4,8 +4,9 @@ description: "Resources and tools for responsible gambling in India. Set limits,
 lang: "en"
 url: "/responsible-gambling/"
 keywords: ["responsible gambling india", "gambling addiction help india", "betting limits india", "self exclusion betting"]
-lastUpdated: "2025-06-09"
+lastUpdated: "2026-06-09"
 author: "Rahul Sharma, iGaming India Expert"
+schema: ["Article", "FAQPage"]
 ---
 
 # Responsible Gambling India — Help, Tools & Resources

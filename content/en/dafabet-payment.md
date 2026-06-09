@@ -4,8 +4,9 @@ description: "Complete guide to depositing and withdrawing at DafaBet India. UPI
 lang: "en"
 url: "/dafabet-payment/"
 keywords: ["dafabet deposit", "dafabet withdrawal india", "dafabet UPI", "dafabet paytm deposit", "dafabet payment methods"]
-lastUpdated: "2025-06-09"
+lastUpdated: "2026-06-09"
 author: "Rahul Sharma, iGaming India Expert"
+schema: ["Article", "FAQPage"]
 ---
 
 # DafaBet Payment Methods India 2025 — Deposit & Withdrawal Guide

@@ -4,8 +4,9 @@ description: "Latest DafaBet bonus codes for India. Get the 200% welcome bonus u
 lang: "en"
 url: "/dafabet-bonus/"
 keywords: ["dafabet bonus code", "dafabet promo code", "dafabet welcome bonus", "dafabet sign up bonus", "dafabet free bet"]
-lastUpdated: "2025-06-09"
+lastUpdated: "2026-06-09"
 author: "Rahul Sharma, iGaming India Expert"
+schema: ["Article", "FAQPage"]
 ---
 
 # DafaBet Bonus Code India 2025 — Welcome Offer & Promo Codes

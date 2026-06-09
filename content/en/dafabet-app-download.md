@@ -4,7 +4,7 @@ description: "Download the DafaBet India app for Android (APK) or iOS. Step-by-s
 lang: "en"
 url: "/dafabet-app-download/"
 keywords: ["dafabet app download", "dafabet apk download", "dafabet app download android", "dafabet mobile app"]
-lastUpdated: "2025-06-09"
+lastUpdated: "2026-06-09"
 author: "Rahul Sharma, iGaming India Expert"
 schema: ["HowTo", "FAQPage"]
 ---

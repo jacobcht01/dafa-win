@@ -4,8 +4,9 @@ description: "Compare the best sports betting sites in India. Expert reviews of 
 lang: "en"
 url: "/sports-betting/"
 keywords: ["sports betting india", "online sports betting india", "best sports betting sites india", "sports betting apps india"]
-lastUpdated: "2025-06-09"
+lastUpdated: "2026-06-09"
 author: "Rahul Sharma, iGaming India Expert"
+schema: ["Article", "FAQPage"]
 ---
 
 # Sports Betting India 2025 — Best Sites for Cricket, Football & More

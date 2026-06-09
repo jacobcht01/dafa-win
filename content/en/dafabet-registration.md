@@ -4,7 +4,7 @@ description: "Complete guide to registering at DafaBet India. Create your accoun
 lang: "en"
 url: "/dafabet-registration/"
 keywords: ["dafabet register", "dafabet sign up", "dafabet create account", "dafabet registration india"]
-lastUpdated: "2025-06-09"
+lastUpdated: "2026-06-09"
 author: "Rahul Sharma, iGaming India Expert"
 schema: ["HowTo", "FAQPage"]
 ---

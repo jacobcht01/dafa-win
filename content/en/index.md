@@ -4,7 +4,7 @@ description: "Complete DafaBet India guide. Expert review of odds, bonuses, cric
 lang: "en"
 url: "/"
 keywords: ["dafabet india", "dafawin", "online betting india", "dafabet login", "best betting site india"]
-lastUpdated: "2025-06-09"
+lastUpdated: "2026-06-09"
 author: "Rahul Sharma, iGaming India Expert"
 schema: ["Organization", "WebSite", "BreadcrumbList"]
 ---

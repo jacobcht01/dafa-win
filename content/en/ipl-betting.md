@@ -4,8 +4,9 @@ description: "Best IPL betting sites for India. Compare top cricket betting apps
 lang: "en"
 url: "/ipl-betting/"
 keywords: ["IPL betting sites", "IPL betting", "IPL 2025 betting", "IPL betting odds India", "bet on IPL online"]
-lastUpdated: "2025-06-09"
+lastUpdated: "2026-06-09"
 author: "Rahul Sharma, iGaming India Expert"
+schema: ["Article", "FAQPage", "SportsEvent"]
 ---
 
 # IPL Betting Sites 2025 — Best Apps, Odds & Bonuses
