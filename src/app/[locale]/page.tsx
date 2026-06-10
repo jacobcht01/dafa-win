@@ -82,9 +82,9 @@ function HomePageContent({ locale }: { locale: string }) {
   ]
 
   const bonuses = [
-    { img: '/images/first-deposit-bonus.webp', title: 'First Deposit Bonus', desc: '100% up to ₹20,000 on your first deposit', badge: 'Welcome', badgeClass: 'gold-badge' },
-    { img: '/images/cashback-banner.webp', title: 'Cashback Offer', desc: 'Get 10% cashback on your losses every week', badge: 'Weekly', badgeClass: 'red-badge' },
-    { img: '/images/daily-free-spins.webp', title: 'Daily Free Spins', desc: 'Up to 20 free spins daily on selected slots', badge: 'Daily', badgeClass: 'red-badge' },
+    { img: '/images/first-deposit-bonus.webp', title: 'First Deposit Bonus', desc: '100% up to ₹20,000 on your first deposit', badge: '🏆 Welcome', badgeClass: 'gold-badge' },
+    { img: '/images/cashback-banner.webp', title: 'Weekly Cashback', desc: 'Get 10% cashback on your losses every week — auto credited', badge: '🔥 Hot Deal', badgeClass: 'red-badge' },
+    { img: '/images/daily-free-spins.webp', title: 'Daily Free Spins', desc: 'Up to 20 free spins daily on selected slots', badge: '⚡ Daily', badgeClass: 'red-badge' },
   ]
 
   const games = [
@@ -109,7 +109,7 @@ function HomePageContent({ locale }: { locale: string }) {
 
       {/* Hero Banner */}
       <section className="relative w-full overflow-hidden">
-        <div className="relative h-[380px] md:h-[480px] w-full">
+        <div className="relative h-[420px] md:h-[520px] w-full">
           <Image
             src="/images/desktop-hero.webp"
             alt="Dafabet India — Online Casino and Sports Betting"
@@ -117,22 +117,28 @@ function HomePageContent({ locale }: { locale: string }) {
             className="object-cover object-top"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/92 via-black/70 to-black/20" />
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
               <div className="max-w-xl">
-                <span className="gold-badge mb-3 inline-block text-xs font-bold">India&apos;s #1 Betting Site 2025</span>
-                <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="red-badge text-xs font-bold animate-pulse">🔴 LIVE</span>
+                  <span className="gold-badge text-xs font-bold">India&apos;s #1 Betting Site 2025</span>
+                </div>
+                <h1 className="text-3xl md:text-5xl font-bold text-white mb-3 leading-tight">
                   Dafabet India <span className="gold-text">Review</span>
                 </h1>
-                <p className="text-gray-300 text-lg mb-6">
+                <p className="text-gray-200 text-base md:text-lg mb-2">
                   ₹20,000 Welcome Bonus · 3,000+ Games · Cricket &amp; IPL Betting
                 </p>
+                <p className="text-brand-red font-semibold text-sm mb-5">
+                  ⏰ Offer expires soon — don&apos;t miss out!
+                </p>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Link href="/dafabet-registration" className="btn-primary text-base px-6 py-3">
+                  <Link href="/dafabet-registration" className="btn-primary text-base px-6 py-3.5 w-full sm:w-auto text-center">
                     Claim ₹20,000 Bonus →
                   </Link>
-                  <Link href="/dafabet-review" className="btn-secondary text-base px-6 py-3">
+                  <Link href="/dafabet-review" className="btn-secondary text-base px-6 py-3.5 w-full sm:w-auto text-center">
                     Read Full Review
                   </Link>
                 </div>
@@ -141,6 +147,18 @@ function HomePageContent({ locale }: { locale: string }) {
           </div>
         </div>
       </section>
+
+      {/* Red urgency bar */}
+      <div className="bg-red-gradient py-3 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-white font-semibold text-sm text-center sm:text-left">
+            🎁 New Player Cashback: Get <strong>10% back</strong> on your first week of losses — automatically credited!
+          </p>
+          <Link href="/dafabet-registration" className="flex-shrink-0 bg-white text-brand-red font-bold text-sm px-5 py-2 rounded-lg hover:bg-gray-100 transition-colors">
+            Claim Now
+          </Link>
+        </div>
+      </div>
 
       {/* Quick Verdict Box */}
       <section className="bg-brand-surface border-b border-brand-border py-8">
@@ -313,7 +331,10 @@ function HomePageContent({ locale }: { locale: string }) {
         <section className="review-section">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="section-title mb-4">Cricket &amp; Sports Betting</h2>
+              <div className="flex items-center gap-3 mb-3">
+                <h2 className="section-title">Cricket &amp; Sports Betting</h2>
+                <span className="red-badge text-xs">LIVE ODDS</span>
+              </div>
               <p className="text-gray-400 mb-4">
                 Dafabet is the top pick for Indian sports bettors — dedicated cricket, IPL, kabaddi, and football sections with best-in-market odds and live in-play betting.
               </p>
@@ -333,9 +354,9 @@ function HomePageContent({ locale }: { locale: string }) {
                   </div>
                 ))}
               </div>
-              <div className="flex gap-3">
-                <Link href="/cricket-betting" className="btn-secondary px-5 py-2 text-sm">Cricket →</Link>
-                <Link href="/ipl-betting" className="btn-secondary px-5 py-2 text-sm">IPL →</Link>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/cricket-betting" className="btn-secondary px-5 py-2.5 text-sm">Cricket →</Link>
+                <Link href="/ipl-betting" className="btn-red px-5 py-2.5 text-sm">🏆 IPL Betting →</Link>
               </div>
             </div>
             <div className="relative rounded-xl overflow-hidden shadow-card-hover">
@@ -354,13 +375,21 @@ function HomePageContent({ locale }: { locale: string }) {
         <section className="review-section">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8">
             <div>
-              <h2 className="section-title mb-4">Online Casino Games</h2>
+              <div className="flex items-center gap-3 mb-3">
+                <h2 className="section-title">Online Casino Games</h2>
+                <span className="red-badge text-xs">🔥 HOT</span>
+              </div>
               <p className="text-gray-400 mb-4">
                 3,000+ games from Playtech, Evolution, and Pragmatic Play. Enjoy slots, roulette, blackjack, baccarat, and live dealer tables with real-time streaming.
               </p>
-              <Link href="/online-casino" className="btn-primary inline-block">
-                Explore Casino →
-              </Link>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/online-casino" className="btn-primary inline-block">
+                  Explore Casino →
+                </Link>
+                <Link href="/dafabet-registration" className="btn-red inline-block">
+                  Play Now
+                </Link>
+              </div>
             </div>
             <div className="relative rounded-xl overflow-hidden shadow-card-hover">
               <Image
@@ -466,24 +495,30 @@ function HomePageContent({ locale }: { locale: string }) {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/75" />
-            <div className="relative px-8 md:px-12 py-12 text-center text-white">
-              <span className="red-badge mb-4 inline-block">Limited Time Offer</span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90" />
+            {/* Red accent strip at top */}
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-red-gradient" />
+            <div className="relative px-6 md:px-12 py-12 text-center text-white">
+              <span className="red-badge mb-4 inline-block text-sm px-4 py-1.5">⏰ Limited Time Offer — Ends Tonight!</span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-3">
                 Claim Your <span className="gold-text">₹20,000</span> Bonus Today
               </h2>
-              <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+              <p className="text-gray-300 text-base md:text-lg mb-8 max-w-2xl mx-auto">
                 Join 5 million+ players on Dafabet. Register now and get India&apos;s biggest betting welcome bonus.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/dafabet-registration" className="btn-primary text-lg px-8 py-4">
-                  Register &amp; Get Bonus
+                <Link href="/dafabet-registration" className="btn-primary text-lg px-8 py-4 w-full sm:w-auto">
+                  Register &amp; Get ₹20,000 Bonus
                 </Link>
-                <Link href="/dafabet-review" className="btn-secondary text-lg px-8 py-4">
+                <Link href="/dafabet-review" className="btn-secondary text-lg px-8 py-4 w-full sm:w-auto">
                   Read Full Review
                 </Link>
               </div>
-              <p className="text-gray-500 text-xs mt-6">18+ only · T&Cs apply · Please gamble responsibly</p>
+              <div className="flex items-center justify-center gap-4 mt-6">
+                <span className="text-brand-red font-semibold text-sm">🔒 Secure &amp; Licensed</span>
+                <span className="text-gray-500">·</span>
+                <span className="text-gray-400 text-xs">18+ only · T&Cs apply · Please gamble responsibly</span>
+              </div>
             </div>
           </div>
         </section>

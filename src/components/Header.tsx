@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
+import Image from 'next/image'
 import LanguageSwitcher from './LanguageSwitcher'
 
 type Props = {
@@ -25,11 +26,23 @@ export default function Header({ locale }: Props) {
 
   return (
     <header className="sticky top-0 z-50 bg-brand-surface border-b border-brand-border">
+      {/* Urgency strip */}
+      <div className="bg-brand-red text-white text-center text-xs py-1.5 px-4 font-medium">
+        ⚡ Limited Time: Claim ₹20,000 Welcome Bonus — Register Now &amp; Get Instant Bonus!
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <span className="text-xl font-bold gold-text">DafaWin</span>
+            <Image
+              src="/images/dafabet-gold-logo.png"
+              alt="DafaWin — Dafabet India"
+              width={140}
+              height={40}
+              className="h-9 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -86,7 +99,7 @@ export default function Header({ locale }: Props) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                   pathname === link.href
                     ? 'bg-brand-card text-brand-gold'
                     : 'text-gray-400 hover:text-white hover:bg-brand-card'
@@ -98,7 +111,7 @@ export default function Header({ locale }: Props) {
             ))}
             <Link
               href="/dafabet-registration"
-              className="block btn-primary text-center mt-3"
+              className="block btn-primary text-center mt-3 py-3"
               onClick={() => setMobileOpen(false)}
             >
               {t('registration')}
