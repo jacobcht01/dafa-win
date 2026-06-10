@@ -1,26 +1,35 @@
 'use client'
 
-import { useLocale } from 'next-intl'
-import { usePathname, useRouter } from '@/i18n/navigation'
-import { useTransition } from 'react'
+import { useEffect, useState } from 'react'
 
-export default function LanguageSwitcher() {
-  const locale = useLocale()
-  const router = useRouter()
-  const pathname = usePathname()
-  const [isPending, startTransition] = useTransition()
+type Props = {
+  locale: string
+}
 
-  const switchLocale = (nextLocale: string) => {
-    startTransition(() => {
-      router.replace(pathname, { locale: nextLocale })
-    })
+export default function LanguageSwitcher({ locale }: Props) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const switchTo = (nextLocale: string) => {
+    if (typeof window === 'undefined') return
+    const path = window.location.pathname
+    let newPath: string
+    if (nextLocale === 'en') {
+      newPath = path.startsWith('/te') ? path.slice(3) || '/' : path
+    } else {
+      newPath = path.startsWith('/te') ? path : `/${nextLocale}${path === '/' ? '' : path}`
+    }
+    window.location.href = newPath || '/'
   }
 
   return (
     <div className="flex items-center gap-1 bg-brand-surface border border-brand-border rounded-lg p-1">
       <button
-        onClick={() => switchLocale('en')}
-        disabled={isPending}
+        onClick={() => switchTo('en')}
+        disabled={!mounted}
         className={`px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 ${
           locale === 'en'
             ? 'bg-gold-gradient text-black'
@@ -31,8 +40,8 @@ export default function LanguageSwitcher() {
         EN
       </button>
       <button
-        onClick={() => switchLocale('te')}
-        disabled={isPending}
+        onClick={() => switchTo('te')}
+        disabled={!mounted}
         className={`px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 ${
           locale === 'te'
             ? 'bg-gold-gradient text-black'

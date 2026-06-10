@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
-import { Link, usePathname } from '@/i18n/navigation'
+import Link from 'next/link'
 import LanguageSwitcher from './LanguageSwitcher'
 
 type Props = {
@@ -21,15 +21,28 @@ const navLinks = [
 
 export default function Header({ locale }: Props) {
   const t = useTranslations('nav')
-  const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [pathname, setPathname] = useState('')
+
+  useEffect(() => {
+    setPathname(window.location.pathname)
+  }, [])
+
+  const localePath = locale === 'en' ? '' : `/${locale}`
+  const isActive = (href: string) => {
+    const full = `${localePath}${href === '/' ? '' : href}`
+    return pathname === full || pathname === `${full}/`
+  }
+
+  const buildHref = (href: string) =>
+    locale === 'en' ? href : `/${locale}${href === '/' ? '' : href}`
 
   return (
     <header className="sticky top-0 z-50 bg-brand-surface/95 backdrop-blur-sm border-b border-brand-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href={buildHref('/')} className="flex items-center gap-2">
             <span className="text-2xl font-bold gold-text">DafaWin</span>
           </Link>
 
@@ -38,9 +51,9 @@ export default function Header({ locale }: Props) {
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                href={buildHref(link.href)}
                 className={`text-sm font-medium transition-colors duration-150 ${
-                  pathname === link.href
+                  isActive(link.href)
                     ? 'text-gold-400'
                     : 'text-gray-400 hover:text-white'
                 }`}
@@ -52,9 +65,9 @@ export default function Header({ locale }: Props) {
 
           {/* Right side */}
           <div className="flex items-center gap-3">
-            <LanguageSwitcher />
+            <LanguageSwitcher locale={locale} />
             <Link
-              href="/dafabet-registration"
+              href={buildHref('/dafabet-registration')}
               className="hidden sm:inline-flex btn-primary text-sm px-4 py-2"
             >
               {t('registration')}
@@ -86,9 +99,9 @@ export default function Header({ locale }: Props) {
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                href={buildHref(link.href)}
                 className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  pathname === link.href
+                  isActive(link.href)
                     ? 'bg-brand-card text-gold-400'
                     : 'text-gray-400 hover:text-white hover:bg-brand-card'
                 }`}
@@ -98,7 +111,7 @@ export default function Header({ locale }: Props) {
               </Link>
             ))}
             <Link
-              href="/dafabet-registration"
+              href={buildHref('/dafabet-registration')}
               className="block btn-primary text-center mt-4"
               onClick={() => setMobileOpen(false)}
             >

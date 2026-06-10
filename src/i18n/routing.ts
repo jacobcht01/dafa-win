@@ -19,7 +19,5 @@ export const routing = defineRouting({
     '/football-betting': '/football-betting',
     '/kabaddi-betting': '/kabaddi-betting',
     '/faq': '/faq',
-    '/ipl-betting': '/ipl-betting',
-    '/responsible-gambling': '/responsible-gambling',
   },
 })
