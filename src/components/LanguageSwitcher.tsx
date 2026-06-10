@@ -23,8 +23,8 @@ export default function LanguageSwitcher() {
         disabled={isPending}
         className={`px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 ${
           locale === 'en'
-            ? 'bg-gold-gradient text-black'
-            : 'text-gray-400 hover:text-white'
+            ? 'bg-brand-green text-white'
+            : 'text-brand-muted hover:text-brand-text'
         }`}
         aria-label="Switch to English"
       >
@@ -35,8 +35,8 @@ export default function LanguageSwitcher() {
         disabled={isPending}
         className={`px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 ${
           locale === 'te'
-            ? 'bg-gold-gradient text-black'
-            : 'text-gray-400 hover:text-white'
+            ? 'bg-brand-green text-white'
+            : 'text-brand-muted hover:text-brand-text'
         }`}
         aria-label="తెలుగుకు మారండి"
       >

@@ -4,40 +4,72 @@
 
 @layer base {
   :root {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   body {
-    @apply bg-brand-dark text-white antialiased;
+    @apply bg-white text-brand-text antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold;
+    @apply font-semibold text-brand-text;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-black bg-gold-gradient hover:opacity-90 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2 focus:ring-offset-brand-dark;
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white bg-brand-green hover:bg-brand-green-dark transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-gold-400 border border-gold-500 hover:bg-gold-500/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2 focus:ring-offset-brand-dark;
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-brand-green border-2 border-brand-green hover:bg-brand-green-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white bg-brand-gold hover:bg-amber-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2;
   }
 
   .card {
-    @apply bg-brand-card border border-brand-border rounded-xl p-6;
+    @apply bg-white border border-brand-border rounded-xl p-6 shadow-card;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-card-hover hover:border-brand-green/30 transition-all duration-200;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-white;
+    @apply text-2xl md:text-3xl font-bold text-brand-text;
   }
 
   .section-subtitle {
-    @apply text-lg text-gray-400 mt-4 max-w-2xl;
+    @apply text-lg text-brand-muted mt-3;
+  }
+
+  .green-text {
+    @apply text-brand-green;
   }
 
   .gold-text {
-    @apply text-transparent bg-clip-text bg-gold-gradient;
+    @apply text-brand-gold;
+  }
+
+  .review-section {
+    @apply py-12 border-b border-brand-border;
+  }
+
+  .star-rating {
+    @apply inline-flex items-center gap-1 text-brand-gold text-xl font-bold;
+  }
+
+  .verdict-box {
+    @apply bg-brand-green-light border-l-4 border-brand-green rounded-r-xl p-6;
+  }
+
+  .pros-cons-item {
+    @apply flex items-start gap-2 text-sm text-brand-text-light py-1;
+  }
+
+  .tag {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-semibold bg-brand-green-light text-brand-green;
   }
 }

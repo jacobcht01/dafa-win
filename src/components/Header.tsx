@@ -10,12 +10,11 @@ type Props = {
 }
 
 const navLinks = [
-  { href: '/', key: 'home' },
+  { href: '/dafabet-review', key: 'review' },
   { href: '/cricket-betting', key: 'cricket' },
   { href: '/ipl-betting', key: 'ipl' },
   { href: '/online-casino', key: 'casino' },
   { href: '/dafabet-bonus', key: 'bonuses' },
-  { href: '/dafabet-review', key: 'review' },
   { href: '/faq', key: 'faq' },
 ] as const
 
@@ -25,24 +24,29 @@ export default function Header({ locale }: Props) {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-brand-surface/95 backdrop-blur-sm border-b border-brand-border">
+    <header className="sticky top-0 z-50 bg-white border-b border-brand-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold gold-text">DafaWin</span>
+          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+            <div className="w-8 h-8 bg-brand-green rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">D</span>
+            </div>
+            <span className="text-xl font-bold text-brand-text">
+              Dafa<span className="text-brand-green">Win</span>
+            </span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-150 ${
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 ${
                   pathname === link.href
-                    ? 'text-gold-400'
-                    : 'text-gray-400 hover:text-white'
+                    ? 'text-brand-green bg-brand-green-light'
+                    : 'text-brand-text-light hover:text-brand-green hover:bg-brand-green-light'
                 }`}
               >
                 {t(link.key)}
@@ -62,7 +66,7 @@ export default function Header({ locale }: Props) {
 
             {/* Mobile menu button */}
             <button
-              className="lg:hidden p-2 rounded-md text-gray-400 hover:text-white hover:bg-brand-card"
+              className="lg:hidden p-2 rounded-md text-brand-muted hover:text-brand-text hover:bg-brand-surface"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
@@ -81,16 +85,16 @@ export default function Header({ locale }: Props) {
 
       {/* Mobile Nav */}
       {mobileOpen && (
-        <nav className="lg:hidden border-t border-brand-border bg-brand-surface" aria-label="Mobile navigation">
-          <div className="px-4 py-4 space-y-2">
+        <nav className="lg:hidden border-t border-brand-border bg-white" aria-label="Mobile navigation">
+          <div className="px-4 py-3 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   pathname === link.href
-                    ? 'bg-brand-card text-gold-400'
-                    : 'text-gray-400 hover:text-white hover:bg-brand-card'
+                    ? 'bg-brand-green-light text-brand-green'
+                    : 'text-brand-text-light hover:text-brand-green hover:bg-brand-green-light'
                 }`}
                 onClick={() => setMobileOpen(false)}
               >
@@ -99,7 +103,7 @@ export default function Header({ locale }: Props) {
             ))}
             <Link
               href="/dafabet-registration"
-              className="block btn-primary text-center mt-4"
+              className="block btn-primary text-center mt-3"
               onClick={() => setMobileOpen(false)}
             >
               {t('registration')}
