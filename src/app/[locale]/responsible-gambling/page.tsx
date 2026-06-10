@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { JsonLd } from '@/components/JsonLd'
@@ -46,28 +47,40 @@ function ResponsibleGamblingContent({ locale }: { locale: string }) {
   return (
     <>
       <JsonLd data={schemaData} />
-      <section className="bg-dark-gradient py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-5xl mb-6">🛡️</div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+
+      {/* Hero with image */}
+      <section className="relative h-[320px] md:h-[380px] flex items-center overflow-hidden">
+        <Image
+          src="/images/responsible-gambling.webp"
+          alt="Responsible Gambling"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/75" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             <span className="gold-text">{t('hero_title')}</span>
           </h1>
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">{t('hero_subtitle')}</p>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">{t('hero_subtitle')}</p>
         </div>
       </section>
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        {/* Warning notice */}
         <div className="card border-red-500/30 mb-8 text-center">
           <p className="text-lg font-semibold text-white mb-2">
             {isTE
               ? '18+ మాత్రమే. జూదంలో ఆర్థిక నష్టం ఉంటుంది. బాధ్యతాయుతంగా బెట్ చేయండి.'
               : '18+ only. Gambling involves financial risk. Please bet responsibly.'}
           </p>
-          <p className="text-gold-400 font-bold text-lg">
+          <p className="text-brand-gold font-bold text-lg">
             Vandrevala Foundation: 1860-2662-345 (24/7, Free, Confidential)
           </p>
         </div>
 
+        {/* Tools grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {[
             { title: 'Deposit Limits', desc: 'Set daily, weekly, or monthly deposit limits to control your spending.', icon: '💳' },
@@ -83,29 +96,39 @@ function ResponsibleGamblingContent({ locale }: { locale: string }) {
           ))}
         </div>
 
-        <div className="card border-gold-500/30 mb-12">
+        {/* Helplines */}
+        <div className="card border-brand-gold/30 mb-12">
           <h2 className="text-2xl font-bold text-white mb-4">Get Help in India</h2>
           <ul className="space-y-3 text-gray-300">
             <li>
-              <strong className="text-gold-400">Vandrevala Foundation:</strong>{' '}
+              <strong className="text-brand-gold">Vandrevala Foundation:</strong>{' '}
               1860-2662-345 — 24/7 helpline, free, available in Telugu
             </li>
             <li>
-              <strong className="text-gold-400">iCall:</strong>{' '}
+              <strong className="text-brand-gold">iCall:</strong>{' '}
               9152987821 — Psycho-social support, available in Telugu
             </li>
           </ul>
         </div>
 
+        {/* Helpline verdict box */}
+        <div className="card border-brand-gold/40 bg-brand-surface mb-12 text-center py-6">
+          <h3 className="text-lg font-bold text-white mb-3">National Helplines</h3>
+          <p className="text-brand-gold font-semibold mb-1">iCall Helpline: 9152987821</p>
+          <p className="text-brand-gold font-semibold">Vandrevala Foundation: 1860-2662-345</p>
+          <p className="text-gray-500 text-xs mt-3">Free, confidential support available 24/7</p>
+        </div>
+
+        {/* FAQ */}
         <h2 className="section-title mb-8">FAQ</h2>
         <div className="space-y-4">
           {faqs.map((faq) => (
             <details key={faq.question} className="card">
-              <summary className="font-semibold text-white cursor-pointer list-none flex justify-between">
-                {faq.question}
-                <span className="text-gold-400">+</span>
+              <summary className="flex justify-between items-start cursor-pointer list-none py-1">
+                <span className="font-semibold text-white">{faq.question}</span>
+                <span className="text-brand-gold text-xl flex-shrink-0 ml-4">+</span>
               </summary>
-              <p className="text-gray-400 mt-3 text-sm">{faq.answer}</p>
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">{faq.answer}</p>
             </details>
           ))}
         </div>

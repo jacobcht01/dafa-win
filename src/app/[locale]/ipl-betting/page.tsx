@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
@@ -58,44 +59,141 @@ function IplBettingContent({ locale }: { locale: string }) {
     ]),
   ]
 
+  const iplTeams = [
+    { code: 'MI', name: 'Mumbai Indians' },
+    { code: 'CSK', name: 'Chennai Super Kings' },
+    { code: 'RCB', name: 'Royal Challengers' },
+    { code: 'KKR', name: 'Kolkata Knight Riders' },
+    { code: 'SRH', name: 'Sunrisers Hyderabad' },
+    { code: 'DC', name: 'Delhi Capitals' },
+    { code: 'PBKS', name: 'Punjab Kings' },
+    { code: 'RR', name: 'Rajasthan Royals' },
+  ]
+
+  const markets = [
+    { title: 'Match Winner', desc: 'Best IPL odds on match winner markets at DafaBet India.' },
+    { title: 'Top Batsman', desc: 'Pick the highest scorer across any IPL innings.' },
+    { title: 'Top Bowler', desc: 'Back the bowler who takes the most wickets.' },
+    { title: 'Total Runs', desc: 'Over/under on total runs in an IPL match.' },
+    { title: 'Player of the Match', desc: 'Predict the star performer before a ball is bowled.' },
+    { title: 'Live In-Play', desc: 'Real-time odds on every over during IPL matches.' },
+  ]
+
   return (
     <>
       <JsonLd data={schemaData} />
-      <section className="bg-dark-gradient py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-5xl mb-6">🏏</div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+
+      {/* Hero */}
+      <section className="relative h-[350px] md:h-[420px] overflow-hidden">
+        <Image
+          src="/images/sports-betting.webp"
+          alt="IPL betting at DafaBet India"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent" />
+        <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
+          <span className="red-badge mb-4">🏆 IPL 2025 — LIVE BETTING</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 max-w-xl">
             <span className="gold-text">{t('hero_title')}</span>
           </h1>
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">{t('hero_subtitle')}</p>
-          <Link href="/dafabet-registration" className="btn-primary text-lg px-8 py-4">
+          <p className="text-gray-300 text-lg mb-2 max-w-md">{t('hero_subtitle')}</p>
+          <p className="text-brand-red font-semibold text-sm mb-6">⚡ IPL season live now!</p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/dafabet-registration" className="btn-red">
+              Bet on IPL Now →
+            </Link>
+            <Link href="/ipl-betting" className="btn-secondary">
+              All IPL Markets
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* IPL Teams */}
+      <section className="bg-brand-surface py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title mb-6">All IPL Teams</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {iplTeams.map((team) => (
+              <div
+                key={team.code}
+                className="bg-brand-card border border-brand-border rounded-lg p-3 text-center"
+              >
+                <p className="text-brand-gold text-sm font-bold">{team.code}</p>
+                <p className="text-gray-400 text-xs mt-1">{team.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Markets */}
+      <section className="py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title mb-2">IPL Betting Markets</h2>
+          <p className="text-gray-400 mb-8">Comprehensive IPL markets available at DafaBet India.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {markets.map((m) => (
+              <div key={m.title} className="card-hover">
+                <h3 className="text-brand-gold font-bold mb-2">{m.title}</h3>
+                <p className="text-gray-400 text-sm">{m.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Expert tip */}
+      <section className="py-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="verdict-box border-l-4 border-brand-gold">
+            <p className="text-brand-gold font-bold mb-2 text-sm uppercase tracking-wide">Expert Tip</p>
+            <p className="text-white font-semibold">
+              CSK and MI have the best historical odds value on match day.
+            </p>
+            <p className="text-gray-400 text-sm mt-2">
+              Backing these franchises in their home fixtures consistently delivers above-average returns at DafaBet.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-brand-surface py-14">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title mb-8">IPL Betting FAQ</h2>
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <details key={faq.question} className="card group">
+                <summary className="font-semibold text-white cursor-pointer list-none flex justify-between">
+                  {faq.question}
+                  <span className="text-brand-gold ml-3">+</span>
+                </summary>
+                <p className="text-gray-400 mt-3 text-sm">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative h-[220px] overflow-hidden">
+        <Image
+          src="/images/promo-767-3.jpg"
+          alt="IPL betting bonus at DafaBet"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/75" />
+        <div className="relative h-full flex flex-col items-center justify-center px-4 text-center">
+          <h2 className="text-white text-2xl md:text-3xl font-bold mb-6">
+            Bet on Every IPL Match Today
+          </h2>
+          <Link href="/dafabet-registration" className="btn-primary">
             {tCommon('bet_now')}
           </Link>
-        </div>
-      </section>
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="section-title text-center mb-12">IPL Betting Markets</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {['Match Winner', 'Top Batsman', 'Total Runs', 'Top Bowler', 'Player of Match', 'Live In-Play'].map((market) => (
-            <div key={market} className="card hover:border-gold-500/50 transition-colors">
-              <h3 className="text-lg font-semibold text-gold-400 mb-2">{market}</h3>
-              <p className="text-gray-400 text-sm">Best IPL odds on all {market.toLowerCase()} markets at DafaBet India.</p>
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="section-title mb-8">IPL Betting FAQ</h2>
-        <div className="space-y-4">
-          {faqs.map((faq) => (
-            <details key={faq.question} className="card group">
-              <summary className="font-semibold text-white cursor-pointer list-none flex justify-between">
-                {faq.question}
-                <span className="text-gold-400">+</span>
-              </summary>
-              <p className="text-gray-400 mt-3 text-sm">{faq.answer}</p>
-            </details>
-          ))}
         </div>
       </section>
     </>

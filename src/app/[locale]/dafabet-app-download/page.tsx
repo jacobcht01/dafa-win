@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { JsonLd } from '@/components/JsonLd'
@@ -55,53 +56,80 @@ function AppDownloadContent({ locale }: { locale: string }) {
   return (
     <>
       <JsonLd data={schemaData} />
-      <section className="bg-dark-gradient py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-5xl mb-6">📱</div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+
+      {/* Hero with image */}
+      <section className="relative h-[350px] md:h-[420px] flex items-center overflow-hidden">
+        <Image
+          src="/images/app-download.webp"
+          alt="DafaBet App Download"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span className="red-badge mb-4 inline-block">FREE DOWNLOAD</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             <span className="gold-text">{t('hero_title')}</span>
           </h1>
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">{t('hero_subtitle')}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#android" className="btn-primary text-lg px-8 py-4">Android APK</a>
-            <a href="#ios" className="btn-secondary text-lg px-8 py-4">iOS App</a>
+          <p className="text-lg text-gray-300 mb-6 max-w-xl">{t('hero_subtitle')}</p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a href="#android" className="btn-primary text-lg px-8 py-4">Download Android APK</a>
+            <a href="#ios" className="btn-secondary text-lg px-8 py-4">iOS App Store</a>
           </div>
         </div>
       </section>
+
+      {/* Download sections */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div id="android" className="card border-gold-500/30">
+          <div id="android" className="card border-brand-gold/30">
             <h2 className="text-2xl font-bold text-white mb-4">Android Download</h2>
             <ol className="space-y-3 text-gray-300">
               {androidSteps.map((s, i) => (
                 <li key={i} className="flex gap-3">
-                  <span className="text-gold-400 font-bold">{i + 1}.</span> {s.text}
+                  <span className="text-brand-gold font-bold">{i + 1}.</span> {s.text}
                 </li>
               ))}
             </ol>
             <button className="btn-primary w-full mt-6">{tCommon('download_now')}</button>
           </div>
-          <div id="ios" className="card border-gold-500/30">
+          <div id="ios" className="card border-brand-gold/30">
             <h2 className="text-2xl font-bold text-white mb-4">iOS Download</h2>
             <ol className="space-y-3 text-gray-300">
-              <li className="flex gap-3"><span className="text-gold-400 font-bold">1.</span> Open the App Store on your iPhone or iPad</li>
-              <li className="flex gap-3"><span className="text-gold-400 font-bold">2.</span> Search for &quot;DafaBet&quot;</li>
-              <li className="flex gap-3"><span className="text-gold-400 font-bold">3.</span> Tap Get and install the app</li>
-              <li className="flex gap-3"><span className="text-gold-400 font-bold">4.</span> Login or register and start betting</li>
+              <li className="flex gap-3"><span className="text-brand-gold font-bold">1.</span> Open the App Store on your iPhone or iPad</li>
+              <li className="flex gap-3"><span className="text-brand-gold font-bold">2.</span> Search for &quot;DafaBet&quot;</li>
+              <li className="flex gap-3"><span className="text-brand-gold font-bold">3.</span> Tap Get and install the app</li>
+              <li className="flex gap-3"><span className="text-brand-gold font-bold">4.</span> Login or register and start betting</li>
             </ol>
             <button className="btn-primary w-full mt-6">{tCommon('download_now')}</button>
           </div>
         </div>
       </section>
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+      {/* QR Code placeholder */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <div className="card border-brand-gold/30 text-center py-8">
+          <h3 className="text-lg font-bold text-white mb-2">Scan to Download</h3>
+          <p className="text-gray-400 text-sm mb-4">Point your camera at the QR code to download the app instantly</p>
+          <div className="inline-flex items-center justify-center w-32 h-32 bg-brand-surface border-2 border-brand-gold rounded-xl mx-auto">
+            <span className="text-4xl">📱</span>
+          </div>
+          <p className="text-gray-500 text-xs mt-3">QR Code — DafaBet App</p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <h2 className="section-title mb-8">App Download FAQ</h2>
         <div className="space-y-4">
           {faqs.map((faq) => (
             <details key={faq.question} className="card">
-              <summary className="font-semibold text-white cursor-pointer list-none flex justify-between">
-                {faq.question}<span className="text-gold-400">+</span>
+              <summary className="flex justify-between items-start cursor-pointer list-none py-1">
+                <span className="font-semibold text-white">{faq.question}</span>
+                <span className="text-brand-gold text-xl flex-shrink-0 ml-4">+</span>
               </summary>
-              <p className="text-gray-400 mt-3 text-sm">{faq.answer}</p>
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">{faq.answer}</p>
             </details>
           ))}
         </div>

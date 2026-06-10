@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { JsonLd } from '@/components/JsonLd'
@@ -56,21 +57,34 @@ function RegistrationContent({ locale }: { locale: string }) {
   return (
     <>
       <JsonLd data={schemaData} />
-      <section className="bg-dark-gradient py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-5xl mb-6">📝</div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+
+      {/* Hero with image */}
+      <section className="relative h-[320px] md:h-[400px] flex items-center overflow-hidden">
+        <Image
+          src="/images/registration.webp"
+          alt="DafaBet Registration"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span className="gold-badge mb-4 inline-block">Free — Takes 2 Minutes</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             <span className="gold-text">{t('hero_title')}</span>
           </h1>
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">{t('hero_subtitle')}</p>
-          <p className="text-sm text-red-400 font-medium">18+ only. Gamble responsibly.</p>
+          <p className="text-lg text-gray-300 mb-6 max-w-xl">{t('hero_subtitle')}</p>
+          <a href="#steps" className="btn-primary text-lg px-8 py-4">Register Now — Free</a>
         </div>
       </section>
-      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+      {/* Steps */}
+      <section id="steps" className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="section-title mb-10 text-center">How to Register at DafaBet</h2>
         <div className="space-y-6">
           {STEPS.map((item) => (
-            <div key={item.step} className="card flex gap-6 items-start">
-              <div className="w-10 h-10 rounded-full bg-gold-gradient flex items-center justify-center text-black font-bold text-lg flex-shrink-0">
+            <div key={item.step} className="card flex gap-4 items-start">
+              <div className="bg-gold-gradient rounded-full w-8 h-8 flex items-center justify-center text-black font-bold flex-shrink-0">
                 {item.step}
               </div>
               <div>
@@ -81,17 +95,30 @@ function RegistrationContent({ locale }: { locale: string }) {
           ))}
         </div>
       </section>
+
+      {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="section-title mb-8">Registration FAQ</h2>
         <div className="space-y-4">
           {faqs.map((faq) => (
             <details key={faq.question} className="card">
-              <summary className="font-semibold text-white cursor-pointer list-none flex justify-between">
-                {faq.question}<span className="text-gold-400">+</span>
+              <summary className="flex justify-between items-start cursor-pointer list-none py-1">
+                <span className="font-semibold text-white">{faq.question}</span>
+                <span className="text-brand-gold text-xl flex-shrink-0 ml-4">+</span>
               </summary>
-              <p className="text-gray-400 mt-3 text-sm">{faq.answer}</p>
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">{faq.answer}</p>
             </details>
           ))}
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="bg-brand-surface rounded-xl p-8 text-center border border-brand-border">
+          <h2 className="text-2xl font-bold text-white mb-3">Ready to Start Betting?</h2>
+          <p className="text-gray-400 mb-6">Join millions of Indian players. Register in under 5 minutes.</p>
+          <a href="/dafabet-registration" className="btn-primary text-lg px-8 py-4">Create Free Account</a>
+          <p className="text-gray-500 text-xs mt-4">18+ only. Gamble responsibly.</p>
         </div>
       </section>
     </>
