@@ -1,175 +1,121 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
-import { getPageData, extractFaqs } from '@/lib/content'
-import { breadcrumb, faqPage } from '@/lib/structured-data'
-import JsonLd from '@/components/JsonLd'
-import MarkdownBody from '@/components/MarkdownBody'
-import FaqAccordion from '@/components/FaqAccordion'
+import { useTranslations } from 'next-intl'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { JsonLd } from '@/components/JsonLd'
+import { faqSchema, breadcrumbSchema } from '@/lib/schema'
+import { pageAlternates, SITE_URL } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  const page = getPageData(locale, 'responsible-gambling')
+  const t = await getTranslations({ locale, namespace: 'rg' })
+  const alts = pageAlternates(locale, '/responsible-gambling/')
   return {
-    title: page?.title ?? 'Responsible Gambling — DafaWin',
-    description: page?.description ?? '',
-    keywords: page?.keywords,
-    alternates: { canonical: `/${locale}/responsible-gambling/` },
+    title: t('title'),
+    description: t('description'),
+    alternates: {
+      canonical: alts.canonical,
+      languages: alts.languages,
+    },
   }
+}
+
+function ResponsibleGamblingContent({ locale }: { locale: string }) {
+  const t = useTranslations('rg')
+
+  const faqs = [
+    { question: 'How can I set deposit limits at DafaBet?', answer: 'Log in to your DafaBet account, go to Account Settings > Responsible Gambling, and set daily, weekly, or monthly deposit limits.' },
+    { question: 'Can I self-exclude from DafaBet?', answer: 'Yes. Contact DafaBet customer support to request a self-exclusion period of 6 months, 1 year, or permanently.' },
+    { question: 'Where can I get help for gambling addiction in India?', answer: 'Call the Vandrevala Foundation helpline: 1860-2662-345 (24/7, free, confidential). iCall also offers support at 9152987821.' },
+    { question: 'What is problem gambling?', answer: 'Problem gambling is when betting interferes with your finances, relationships, or mental health. Signs include chasing losses, hiding gambling from others, and inability to stop.' },
+    { question: 'How do I take a gambling break?', answer: 'Use the cool-off feature in your DafaBet account settings to take a break of 24 hours, 7 days, or 30 days.' },
+  ]
+
+  const isTE = locale === 'te'
+  const pageUrl = isTE ? `${SITE_URL}/te/responsible-gambling/` : `${SITE_URL}/responsible-gambling/`
+
+  const schemaData = [
+    faqSchema(faqs),
+    breadcrumbSchema([
+      { name: 'Home', url: SITE_URL + '/' },
+      { name: 'Responsible Gambling', url: pageUrl },
+    ]),
+  ]
+
+  return (
+    <>
+      <JsonLd data={schemaData} />
+      <section className="bg-dark-gradient py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-5xl mb-6">🛡️</div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <span className="gold-text">{t('hero_title')}</span>
+          </h1>
+          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">{t('hero_subtitle')}</p>
+        </div>
+      </section>
+
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="card border-red-500/30 mb-8 text-center">
+          <p className="text-lg font-semibold text-white mb-2">
+            {isTE
+              ? '18+ మాత్రమే. జూదంలో ఆర్థిక నష్టం ఉంటుంది. బాధ్యతాయుతంగా బెట్ చేయండి.'
+              : '18+ only. Gambling involves financial risk. Please bet responsibly.'}
+          </p>
+          <p className="text-gold-400 font-bold text-lg">
+            Vandrevala Foundation: 1860-2662-345 (24/7, Free, Confidential)
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          {[
+            { title: 'Deposit Limits', desc: 'Set daily, weekly, or monthly deposit limits to control your spending.', icon: '💳' },
+            { title: 'Self-Exclusion', desc: 'Request a self-exclusion period of 6 months, 1 year, or permanently.', icon: '🚫' },
+            { title: 'Cool-Off Period', desc: 'Take a break of 24 hours, 7 days, or 30 days from betting.', icon: '⏸️' },
+            { title: 'Reality Check', desc: 'Set reminders to track how long you have been playing.', icon: '⏰' },
+          ].map((tool) => (
+            <div key={tool.title} className="card">
+              <div className="text-3xl mb-3">{tool.icon}</div>
+              <h3 className="text-lg font-semibold text-white mb-2">{tool.title}</h3>
+              <p className="text-gray-400 text-sm">{tool.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="card border-gold-500/30 mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">Get Help in India</h2>
+          <ul className="space-y-3 text-gray-300">
+            <li>
+              <strong className="text-gold-400">Vandrevala Foundation:</strong>{' '}
+              1860-2662-345 — 24/7 helpline, free, available in Telugu
+            </li>
+            <li>
+              <strong className="text-gold-400">iCall:</strong>{' '}
+              9152987821 — Psycho-social support, available in Telugu
+            </li>
+          </ul>
+        </div>
+
+        <h2 className="section-title mb-8">FAQ</h2>
+        <div className="space-y-4">
+          {faqs.map((faq) => (
+            <details key={faq.question} className="card">
+              <summary className="font-semibold text-white cursor-pointer list-none flex justify-between">
+                {faq.question}
+                <span className="text-gold-400">+</span>
+              </summary>
+              <p className="text-gray-400 mt-3 text-sm">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    </>
+  )
 }
 
 export default async function ResponsibleGamblingPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-
-  const page = getPageData(locale, 'responsible-gambling')
-  const faqs = page ? extractFaqs(page.body) : []
-  const schemas = [
-    breadcrumb(locale, 'responsible-gambling', 'Responsible Gambling'),
-    ...(faqs.length ? [faqPage(faqs)] : []),
-  ]
-  const isTE = locale === 'te'
-
-  return (
-    <>
-      <JsonLd schemas={schemas} />
-
-      <section className="bg-dark-gradient py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-5xl mb-4">🛡️</div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            <span className="gold-text">
-              {isTE ? 'బాధ్యతాయుత జూదం — DafaWin' : 'Responsible Gambling — DafaWin'}
-            </span>
-          </h1>
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-            {isTE
-              ? 'సురక్షితంగా ఆడండి. మీ పరిమితులు నిర్ణయించుకోండి మరియు అవసరమైతే సహాయం తీసుకోండి.'
-              : 'Play safely. Set your limits, know the risks, and reach out if you need help.'}
-          </p>
-        </div>
-      </section>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Crisis Helpline Box */}
-        <div className="bg-red-900/30 border border-red-500/50 rounded-2xl p-6 mb-10">
-          <h2 className="text-xl font-bold text-red-300 mb-4">
-            {isTE ? '🆘 సహాయ హెల్ప్‌లైన్లు' : '🆘 Crisis Helplines'}
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div className="bg-red-900/20 rounded-xl p-4">
-              <p className="text-white font-semibold mb-1">Vandrevala Foundation</p>
-              <a
-                href="tel:18002662345"
-                className="text-red-300 font-bold text-lg hover:text-red-200 transition-colors"
-              >
-                1860-2662-345
-              </a>
-              <p className="text-gray-400 text-sm mt-1">
-                {isTE ? '24/7 ఉచిత సేవ — తెలుగు మరియు ఇంగ్లీష్' : '24/7 free service — Telugu & English'}
-              </p>
-            </div>
-            <div className="bg-red-900/20 rounded-xl p-4">
-              <p className="text-white font-semibold mb-1">iCall (TISS)</p>
-              <a
-                href="tel:9152987821"
-                className="text-red-300 font-bold text-lg hover:text-red-200 transition-colors"
-              >
-                9152987821
-              </a>
-              <p className="text-gray-400 text-sm mt-1">
-                {isTE ? 'మా–శని 8am–10pm, ఉచిత కౌన్సెలింగ్' : 'Mon–Sat 8am–10pm, free counselling'}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid lg:grid-cols-3 gap-8">
-          <article className="lg:col-span-2">
-            {page && <MarkdownBody content={page.body} />}
-          </article>
-          <aside className="space-y-6">
-            {/* Set Limits Card */}
-            <div className="card border-green-500/30">
-              <div className="text-3xl mb-3">📊</div>
-              <h3 className="font-bold text-white mb-3">
-                {isTE ? 'పరిమితులు నిర్ణయించండి' : 'Set Your Limits'}
-              </h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li className="flex gap-2">
-                  <span className="text-green-400 shrink-0">✓</span>
-                  {isTE ? 'రోజువారీ/వారపు డిపాజిట్ పరిమితి' : 'Daily / weekly deposit limit'}
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-green-400 shrink-0">✓</span>
-                  {isTE ? 'సెషన్ సమయ పరిమితి' : 'Session time limit'}
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-green-400 shrink-0">✓</span>
-                  {isTE ? 'నష్ట పరిమితి నిర్ణయం' : 'Loss limit threshold'}
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-green-400 shrink-0">✓</span>
-                  {isTE ? 'రియాలిటీ చెక్ రిమైండర్లు' : 'Reality check reminders'}
-                </li>
-              </ul>
-              <a
-                href="https://www.dafabet.com/en/responsible-gambling?utm_source=dafawin&utm_content=set-limits"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                className="btn-secondary w-full justify-center mt-4 text-sm"
-              >
-                {isTE ? 'పరిమితులు సెట్ చేయండి →' : 'Set Limits on DafaBet →'}
-              </a>
-            </div>
-
-            {/* Self-Exclusion Card */}
-            <div className="card border-orange-500/30">
-              <div className="text-3xl mb-3">🚫</div>
-              <h3 className="font-bold text-white mb-3">
-                {isTE ? 'స్వీయ-మినహాయింపు' : 'Self-Exclusion'}
-              </h3>
-              <p className="text-sm text-gray-400 mb-4">
-                {isTE
-                  ? 'నిర్ణీత కాలానికి (30 రోజులు నుండి శాశ్వతంగా) మీ ఖాతాను తాత్కాలికంగా లేదా శాశ్వతంగా నిలిపివేయండి.'
-                  : 'Temporarily or permanently suspend your account for a set period — 30 days to permanent exclusion.'}
-              </p>
-              <ul className="space-y-2 text-sm text-gray-400 mb-4">
-                <li className="flex gap-2">
-                  <span className="text-orange-400 shrink-0">→</span>
-                  {isTE ? '30 రోజుల తాత్కాలిక నిలుపుదల' : '30-day cooling-off period'}
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-orange-400 shrink-0">→</span>
-                  {isTE ? '3 నెలల / 6 నెలల మినహాయింపు' : '3-month / 6-month exclusion'}
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-orange-400 shrink-0">→</span>
-                  {isTE ? 'శాశ్వత ఖాతా మూసివేత' : 'Permanent account closure'}
-                </li>
-              </ul>
-              <a
-                href="https://www.dafabet.com/en/responsible-gambling?utm_source=dafawin&utm_content=self-exclusion"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                className="btn-secondary w-full justify-center text-sm"
-              >
-                {isTE ? 'స్వీయ-మినహాయింపు వినతి →' : 'Request Self-Exclusion →'}
-              </a>
-            </div>
-          </aside>
-        </div>
-
-        {faqs.length > 0 && (
-          <div className="mt-16 max-w-4xl">
-            <h2 className="text-2xl font-bold text-white mb-6">
-              {isTE ? 'తరచుగా అడిగే ప్రశ్నలు' : 'Frequently Asked Questions'}
-            </h2>
-            <FaqAccordion items={faqs} />
-          </div>
-        )}
-      </div>
-    </>
-  )
+  return <ResponsibleGamblingContent locale={locale} />
 }

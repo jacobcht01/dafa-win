@@ -13,11 +13,9 @@ const navLinks = [
   { href: '/', key: 'home' },
   { href: '/cricket-betting', key: 'cricket' },
   { href: '/ipl-betting', key: 'ipl' },
-  { href: '/football-betting', key: 'football' },
-  { href: '/kabaddi-betting', key: 'kabaddi' },
-  { href: '/casino', key: 'casino' },
-  { href: '/bonuses', key: 'bonuses' },
-  { href: '/review', key: 'review' },
+  { href: '/online-casino', key: 'casino' },
+  { href: '/dafabet-bonus', key: 'bonuses' },
+  { href: '/dafabet-review', key: 'review' },
   { href: '/faq', key: 'faq' },
 ] as const
 
@@ -56,7 +54,7 @@ export default function Header({ locale }: Props) {
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <Link
-              href="/registration"
+              href="/dafabet-registration"
               className="hidden sm:inline-flex btn-primary text-sm px-4 py-2"
             >
               {t('registration')}
@@ -100,7 +98,7 @@ export default function Header({ locale }: Props) {
               </Link>
             ))}
             <Link
-              href="/registration"
+              href="/dafabet-registration"
               className="block btn-primary text-center mt-4"
               onClick={() => setMobileOpen(false)}
             >

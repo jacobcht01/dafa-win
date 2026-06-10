@@ -1,9 +1,10 @@
-export default function JsonLd({ schemas }: { schemas: object[] }) {
+type JsonLdData = Record<string, unknown> | Record<string, unknown>[]
+
+export function JsonLd({ data }: { data: JsonLdData }) {
   return (
-    <>
-      {schemas.map((s, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
-      ))}
-    </>
-  );
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
 }
