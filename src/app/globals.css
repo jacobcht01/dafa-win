@@ -4,72 +4,71 @@
 
 @layer base {
   :root {
-    color-scheme: light;
+    color-scheme: dark;
   }
 
   body {
-    @apply bg-white text-brand-text antialiased;
+    @apply bg-brand-bg text-brand-text antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold text-brand-text;
+    @apply font-semibold text-white;
   }
 }
 
 @layer components {
+  /* Primary CTA — gold */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white bg-brand-green hover:bg-brand-green-dark transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold text-black bg-gold-gradient hover:opacity-90 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2 focus:ring-offset-brand-bg shadow-gold;
   }
 
+  /* Secondary — gold outline */
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-brand-green border-2 border-brand-green hover:bg-brand-green-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-brand-gold border border-brand-gold hover:bg-brand-gold/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2 focus:ring-offset-brand-bg;
   }
 
-  .btn-gold {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white bg-brand-gold hover:bg-amber-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2;
+  /* Red urgency button */
+  .btn-red {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold text-white bg-red-gradient hover:opacity-90 transition-opacity duration-200;
   }
 
   .card {
-    @apply bg-white border border-brand-border rounded-xl p-6 shadow-card;
+    @apply bg-brand-card border border-brand-border rounded-xl p-6 shadow-card;
   }
 
   .card-hover {
-    @apply card hover:shadow-card-hover hover:border-brand-green/30 transition-all duration-200;
+    @apply card hover:shadow-card-hover hover:border-brand-gold/30 transition-all duration-200;
   }
 
   .section-title {
-    @apply text-2xl md:text-3xl font-bold text-brand-text;
+    @apply text-2xl md:text-3xl font-bold text-white;
   }
 
   .section-subtitle {
     @apply text-lg text-brand-muted mt-3;
   }
 
-  .green-text {
-    @apply text-brand-green;
+  .gold-text {
+    @apply text-transparent bg-clip-text bg-gold-gradient;
   }
 
-  .gold-text {
-    @apply text-brand-gold;
+  .red-badge {
+    @apply inline-block px-3 py-1 rounded text-xs font-bold text-white bg-brand-red;
+  }
+
+  .gold-badge {
+    @apply inline-block px-3 py-1 rounded text-xs font-bold text-black bg-brand-gold;
+  }
+
+  .verdict-box {
+    @apply bg-brand-surface border border-brand-gold/30 rounded-xl p-6;
   }
 
   .review-section {
     @apply py-12 border-b border-brand-border;
   }
 
-  .star-rating {
-    @apply inline-flex items-center gap-1 text-brand-gold text-xl font-bold;
-  }
-
-  .verdict-box {
-    @apply bg-brand-green-light border-l-4 border-brand-green rounded-r-xl p-6;
-  }
-
-  .pros-cons-item {
-    @apply flex items-start gap-2 text-sm text-brand-text-light py-1;
-  }
-
-  .tag {
-    @apply inline-block px-3 py-1 rounded-full text-xs font-semibold bg-brand-green-light text-brand-green;
+  .stat-box {
+    @apply bg-brand-surface border border-brand-border rounded-lg p-4 text-center;
   }
 }

@@ -54,11 +54,11 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${notoSansTelugu.variable}`}
+      className={`dark ${inter.variable} ${notoSansTelugu.variable}`}
     >
       <head />
       <body
-        className={`bg-white text-brand-text min-h-screen ${
+        className={`bg-brand-bg text-white min-h-screen ${
           locale === 'te' ? 'font-telugu' : 'font-sans'
         }`}
       >

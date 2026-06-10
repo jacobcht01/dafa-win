@@ -15,15 +15,8 @@ export default function Footer({ locale }: Props) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 bg-brand-green rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">D</span>
-              </div>
-              <span className="text-xl font-bold text-brand-text">
-                Dafa<span className="text-brand-green">Win</span>
-              </span>
-            </div>
-            <p className="text-brand-muted text-sm leading-relaxed">
+            <span className="text-2xl font-bold gold-text">DafaWin</span>
+            <p className="text-gray-400 text-sm mt-3 leading-relaxed">
               India&apos;s trusted guide to Dafabet — honest reviews, bonuses, and betting tips for cricket, IPL, and more.
             </p>
             <div className="flex items-center gap-3 mt-4">
@@ -32,7 +25,7 @@ export default function Footer({ locale }: Props) {
             </div>
           </div>
           <div>
-            <h3 className="text-brand-text font-semibold mb-4 text-sm uppercase tracking-wider">Sports Betting</h3>
+            <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Sports Betting</h3>
             <ul className="space-y-2">
               {[
                 { href: '/cricket-betting', key: 'cricket' },
@@ -41,7 +34,7 @@ export default function Footer({ locale }: Props) {
                 { href: '/kabaddi-betting', key: 'kabaddi' },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href as '/'} className="text-brand-muted hover:text-brand-green text-sm transition-colors">
+                  <Link href={link.href as '/'} className="text-gray-400 hover:text-brand-gold text-sm transition-colors">
                     {tNav(link.key)}
                   </Link>
                 </li>
@@ -49,7 +42,7 @@ export default function Footer({ locale }: Props) {
             </ul>
           </div>
           <div>
-            <h3 className="text-brand-text font-semibold mb-4 text-sm uppercase tracking-wider">Information</h3>
+            <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Information</h3>
             <ul className="space-y-2">
               {[
                 { href: '/dafabet-bonus', key: 'bonuses' },
@@ -59,7 +52,7 @@ export default function Footer({ locale }: Props) {
                 { href: '/online-casino', key: 'casino' },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href as '/'} className="text-brand-muted hover:text-brand-green text-sm transition-colors">
+                  <Link href={link.href as '/'} className="text-gray-400 hover:text-brand-gold text-sm transition-colors">
                     {tNav(link.key)}
                   </Link>
                 </li>
@@ -67,14 +60,14 @@ export default function Footer({ locale }: Props) {
             </ul>
           </div>
           <div>
-            <h3 className="text-brand-text font-semibold mb-4 text-sm uppercase tracking-wider">Account</h3>
+            <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Account</h3>
             <ul className="space-y-2">
               {[
                 { href: '/dafabet-registration', key: 'registration' },
                 { href: '/dafabet-payment', key: 'deposit' },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href as '/'} className="text-brand-muted hover:text-brand-green text-sm transition-colors">
+                  <Link href={link.href as '/'} className="text-gray-400 hover:text-brand-gold text-sm transition-colors">
                     {tNav(link.key)}
                   </Link>
                 </li>
@@ -90,23 +83,17 @@ export default function Footer({ locale }: Props) {
 
         <div className="border-t border-brand-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-brand-muted text-xs text-center md:text-left max-w-2xl">
+            <p className="text-gray-500 text-xs text-center md:text-left max-w-2xl">
               {t('disclaimer')}
             </p>
             <div className="flex gap-4 flex-shrink-0">
-              <a href="#" className="text-brand-muted hover:text-brand-text text-xs transition-colors">
-                {t('terms')}
-              </a>
-              <a href="#" className="text-brand-muted hover:text-brand-text text-xs transition-colors">
-                {t('privacy')}
-              </a>
-              <a href="#" className="text-brand-muted hover:text-brand-text text-xs transition-colors">
-                {t('responsible')}
-              </a>
+              <a href="#" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">{t('terms')}</a>
+              <a href="#" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">{t('privacy')}</a>
+              <a href="#" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">{t('responsible')}</a>
             </div>
           </div>
-          <p className="text-brand-muted text-xs text-center mt-4">
-            © {new Date().getFullYear()} DafaWin. All rights reserved. This is an affiliate review site. Gambling is for 18+ only.
+          <p className="text-gray-600 text-xs text-center mt-4">
+            © {new Date().getFullYear()} DafaWin. All rights reserved. Gambling is for 18+ only.
           </p>
         </div>
       </div>
