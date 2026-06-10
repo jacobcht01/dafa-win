@@ -1,4 +1,7 @@
 import type { Metadata } from 'next'
+import { JsonLd } from '@/components/JsonLd'
+import { articleSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
+import { pageAlternates, SITE_URL } from '@/lib/seo'
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 
@@ -7,7 +10,12 @@ type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'deposit' })
-  return { title: t('title'), description: t('description') }
+  const alts = pageAlternates(locale, '/dafabet-payment/')
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: { canonical: alts.canonical, languages: alts.languages },
+  }
 }
 
 function DepositWithdrawalContent() {
