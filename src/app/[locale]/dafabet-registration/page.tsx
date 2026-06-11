@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const STEPS = [
-  { step: '1', name: 'Visit DafaBet India', title: 'Visit DafaWin', desc: 'Go to the DafaWin website or open the app.', text: 'Navigate to dafawin.in or open the DafaBet app on your mobile device.' },
+  { step: '1', name: 'Visit DafaBet India', title: 'Visit DafaWin', desc: 'Go to the DafaWin website or open the app.', text: 'Navigate to dafa-win.com or open the DafaBet app on your mobile device.' },
   { step: '2', name: 'Click Register', title: 'Click Register', desc: 'Click the "Register" or "Sign Up" button at the top of the page.', text: 'Click the "Register" or "Sign Up" button at the top of the DafaBet homepage.' },
   { step: '3', name: 'Enter Your Details', title: 'Enter Details', desc: 'Fill in your name, email, mobile number, and create a password.', text: 'Fill in your full name, email address, mobile number, and create a strong password.' },
   { step: '4', name: 'Verify Account', title: 'Verify Account', desc: 'Verify your email or mobile number via OTP.', text: 'Enter the OTP sent to your registered mobile number or email address.' },

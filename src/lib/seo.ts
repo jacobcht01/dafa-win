@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dafawin.in'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dafa-win.com'
 
 /**
  * Returns canonical URL and hreflang alternates for a given page.

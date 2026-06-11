@@ -33,7 +33,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dafawin.in'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dafa-win.com'
 
   return {
     metadataBase: new URL(baseUrl),

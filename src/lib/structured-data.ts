@@ -1,4 +1,4 @@
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dafawin.in';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dafa-win.com';
 const SITE_NAME = 'DafaWin';
 
 export function breadcrumb(locale: string, slug: string, label: string) {
