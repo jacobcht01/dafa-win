@@ -20,6 +20,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+function CheckIcon() {
+  return (
+    <svg className="w-5 h-5 text-brand-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+    </svg>
+  )
+}
+
 function ReviewContent({ locale }: { locale: string }) {
   const t = useTranslations('review')
   const tCommon = useTranslations('common')
@@ -176,6 +184,181 @@ function ReviewContent({ locale }: { locale: string }) {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Welcome Bonus Deep-Dive */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <h2 className="section-title text-center mb-8">Dafabet India Welcome Bonus — Detailed Review</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              New Indian players get a 100% deposit match bonus up to ₹20,000 on their first deposit. Minimum deposit is ₹500 via UPI. Wagering requirement is 8x the bonus amount within 30 days. This is one of the most generous welcome offers available in India.
+            </p>
+            <div className="bg-brand-surface border border-brand-border rounded-xl overflow-hidden">
+              <table className="w-full text-sm">
+                <thead className="bg-brand-card">
+                  <tr>
+                    <th className="text-brand-gold font-semibold text-left px-4 py-3">Term</th>
+                    <th className="text-brand-gold font-semibold text-left px-4 py-3">Detail</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-brand-border">
+                  {[
+                    { term: 'Max Bonus', detail: '₹20,000' },
+                    { term: 'Min Deposit', detail: '₹500' },
+                    { term: 'Wagering', detail: '8x bonus' },
+                    { term: 'Time Limit', detail: '30 days' },
+                    { term: 'Eligible', detail: 'New players only' },
+                  ].map((row) => (
+                    <tr key={row.term} className="hover:bg-brand-card/50 transition-colors">
+                      <td className="px-4 py-3 text-gray-400">{row.term}</td>
+                      <td className="px-4 py-3 text-white font-medium">{row.detail}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className="verdict-box">
+            <div className="flex items-center gap-1 mb-3">
+              {[1, 2, 3].map((i) => (
+                <span key={i} className="text-brand-gold text-2xl">★</span>
+              ))}
+              {[4, 5].map((i) => (
+                <span key={i} className="text-gray-600 text-2xl">★</span>
+              ))}
+            </div>
+            <p className="text-white font-bold text-lg mb-1">Bonus Rating: 3/5</p>
+            <p className="text-brand-gold font-semibold text-xl">Overall: Excellent</p>
+            <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+              Low 8x wagering and a high ₹20,000 cap make this one of the best-value welcome offers for Indian players in 2025.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Cricket & Sports Coverage */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <h2 className="section-title text-center mb-8">Cricket Betting at Dafabet India</h2>
+        <p className="text-gray-300 leading-relaxed mb-8 max-w-3xl mx-auto text-center">
+          Dafabet offers one of the deepest cricket betting libraries in Asia. Indian players get access to live IPL betting, international T20s, Test matches, the Asia Cup, and ICC events — all with competitive odds and same-game multi-bet options.
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          {[
+            { icon: '🏏', sport: 'Cricket', detail: '500+ markets, live in-play' },
+            { icon: '🏆', sport: 'IPL', detail: 'All 10 teams, ball-by-ball' },
+            { icon: '⚽', sport: 'Football', detail: 'EPL, ISL, UCL' },
+            { icon: '🤼', sport: 'Kabaddi', detail: 'Pro Kabaddi League' },
+          ].map((tile) => (
+            <div key={tile.sport} className="bg-brand-card border border-brand-border rounded-lg p-4 text-center">
+              <div className="text-3xl mb-2">{tile.icon}</div>
+              <h3 className="text-brand-gold font-semibold mb-1">{tile.sport}</h3>
+              <p className="text-gray-400 text-xs leading-snug">{tile.detail}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto text-center">
+          The live betting interface updates in under 2 seconds, making it ideal for in-play cricket wagers during IPL matches.
+        </p>
+      </section>
+
+      {/* Payment Methods */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <h2 className="section-title text-center mb-8">Deposits &amp; Withdrawals — India Specific</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 className="text-brand-gold font-bold text-lg mb-4">Deposits</h3>
+            <div className="space-y-3">
+              {[
+                { method: 'UPI', speed: 'Instant', range: '₹100–₹100,000' },
+                { method: 'Paytm', speed: 'Instant', range: '—' },
+                { method: 'PhonePe', speed: 'Instant', range: '—' },
+                { method: 'NetBanking', speed: '1–3 mins', range: '—' },
+              ].map((item) => (
+                <div key={item.method} className="card flex items-center justify-between gap-4 py-3">
+                  <span className="text-white font-medium">{item.method}</span>
+                  <div className="flex gap-4 text-sm">
+                    <span className="text-brand-gold">{item.speed}</span>
+                    {item.range !== '—' && <span className="text-gray-400">{item.range}</span>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-brand-gold font-bold text-lg mb-4">Withdrawals</h3>
+            <div className="space-y-3">
+              {[
+                { method: 'UPI', speed: '1–4 hours', min: '₹500 min' },
+                { method: 'Bank Transfer', speed: '1–3 days', min: '—' },
+                { method: 'Paytm', speed: '1–4 hours', min: '—' },
+              ].map((item) => (
+                <div key={item.method} className="card flex items-center justify-between gap-4 py-3">
+                  <span className="text-white font-medium">{item.method}</span>
+                  <div className="flex gap-4 text-sm">
+                    <span className="text-brand-gold">{item.speed}</span>
+                    {item.min !== '—' && <span className="text-gray-400">{item.min}</span>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <p className="text-brand-gold text-sm mt-4 font-medium">✓ No fees on deposits or withdrawals at Dafabet India</p>
+      </section>
+
+      {/* Mobile App Review */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <h2 className="section-title text-center mb-8">Dafabet Mobile App — Android &amp; iOS</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              The Dafabet Android APK is available as a direct download (not on Google Play Store due to India regulations). The iOS app is available on the App Store. Both apps are optimized for Indian networks including 4G and offer full betting and casino access.
+            </p>
+            <Link href="/dafabet-app-download" className="btn-secondary inline-block">
+              Download Dafabet App
+            </Link>
+          </div>
+          <div className="card">
+            <h3 className="text-brand-gold font-semibold mb-4">App Features</h3>
+            <ul className="space-y-3">
+              {[
+                'Fast loading on 4G/5G',
+                'Full live betting',
+                'UPI payment built-in',
+                'Push notifications for odds changes',
+                'Hindi/English interface',
+              ].map((feature) => (
+                <li key={feature} className="flex items-start gap-3 text-gray-300 text-sm">
+                  <CheckIcon />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Verdict */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <h2 className="section-title text-center mb-8">Is Dafabet Safe and Legit in India?</h2>
+        <div className="verdict-box border-l-4 border-brand-gold">
+          <p className="text-gray-300 leading-relaxed mb-6">
+            Yes — Dafabet is safe and legit for Indian players. Licensed under Curaçao eGaming (licence 1668/JAZ), operating since 2004, with 20+ years of uninterrupted service. Funds are held in segregated accounts.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { label: 'Overall', value: '9.2/10' },
+              { label: 'Cricket', value: '4.8/5' },
+              { label: 'Max Bonus', value: '₹20,000' },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-brand-card border border-brand-border rounded-lg p-4 text-center">
+                <p className="text-brand-gold font-bold text-2xl mb-1">{stat.value}</p>
+                <p className="text-gray-400 text-xs uppercase tracking-wider">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

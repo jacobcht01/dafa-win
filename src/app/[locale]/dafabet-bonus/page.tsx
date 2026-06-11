@@ -171,6 +171,144 @@ function BonusesContent() {
         </div>
       </section>
 
+      {/* Welcome Bonus Full Details */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+        <h2 className="section-title text-center mb-10">Dafabet India Welcome Bonus — Full Terms &amp; How to Claim</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Left: step-by-step */}
+          <div>
+            <p className="text-gray-300 mb-6">Follow these steps to claim your ₹20,000 welcome bonus at Dafabet India:</p>
+            <ol className="space-y-4">
+              {[
+                'Register your account — takes under 2 minutes',
+                'Make your first deposit — minimum ₹500 via UPI or Paytm',
+                'Bonus is credited automatically within 24 hours',
+                'Wager 8x the bonus amount within 30 days',
+                'Withdraw your winnings — no limit once wagering is complete',
+              ].map((step, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="bg-gold-gradient rounded-full w-7 h-7 flex items-center justify-center text-black font-bold text-xs flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <span className="text-gray-300 text-sm leading-relaxed pt-0.5">{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+          {/* Right: key facts */}
+          <div className="verdict-box">
+            <h3 className="text-white font-bold text-base mb-4">Key Bonus Terms</h3>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { label: 'Min Deposit', value: '₹500' },
+                { label: 'Wagering', value: '8x' },
+                { label: 'Time Limit', value: '30 days' },
+                { label: 'Max Bonus', value: '₹20,000' },
+                { label: 'Min Odds', value: '1.50' },
+                { label: 'Eligible', value: 'New players' },
+              ].map(({ label, value }) => (
+                <div key={label}>
+                  <p className="text-brand-gold font-bold text-sm">{value}</p>
+                  <p className="text-gray-500 text-xs">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* All Current Promotions Table */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+        <h2 className="section-title text-center mb-10">All Dafabet India Promotions 2025</h2>
+        <div className="bg-brand-surface border border-brand-border rounded-xl overflow-hidden">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-brand-card">
+                {['Promotion', 'Bonus Amount', 'Wagering', 'Who', 'Valid'].map((col) => (
+                  <th key={col} className="text-left text-brand-gold text-xs uppercase px-4 py-3 font-semibold">
+                    {col}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { promo: 'Welcome Bonus', amount: '100% up to ₹20,000', wagering: '8x', who: 'New players', valid: 'Ongoing' },
+                { promo: 'Weekly Cashback', amount: '10% on losses', wagering: 'None', who: 'All players', valid: 'Every Monday' },
+                { promo: 'Daily Free Spins', amount: 'Up to 20 spins', wagering: 'None', who: 'Registered', valid: 'Daily' },
+                { promo: 'Reload Bonus', amount: '50% up to ₹5,000', wagering: '5x', who: 'Existing', valid: 'Monthly' },
+                { promo: 'Referral Bonus', amount: '₹500 per referral', wagering: 'None', who: 'All', valid: 'Ongoing' },
+                { promo: 'VIP Loyalty', amount: 'Up to 0.5% cashback', wagering: 'None', who: 'VIP tier', valid: 'Ongoing' },
+              ].map((row, i) => (
+                <tr key={row.promo} className={i % 2 === 0 ? 'bg-transparent' : 'bg-brand-card/30'}>
+                  <td className="px-4 py-3 text-gray-300 font-medium">{row.promo}</td>
+                  <td className="px-4 py-3 text-gray-300">{row.amount}</td>
+                  <td className="px-4 py-3 text-gray-300">{row.wagering}</td>
+                  <td className="px-4 py-3 text-gray-300">{row.who}</td>
+                  <td className="px-4 py-3 text-gray-300">{row.valid}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-gray-500 text-xs mt-0 px-4 pb-4">Bonus terms subject to change. Always check Dafabet&apos;s promotions page for current offers.</p>
+        </div>
+      </section>
+
+      {/* Wagering Requirements Explained */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+        <h2 className="section-title text-center mb-10">How Dafabet Wagering Requirements Work</h2>
+        <div className="verdict-box border-l-4 border-brand-gold mb-8">
+          <p className="text-gray-300 text-sm leading-relaxed mb-3">
+            Wagering requirements (also called rollover) are the number of times you must bet the bonus amount before you can withdraw. Dafabet&apos;s 8x wagering is among the lowest in India.
+          </p>
+          <p className="text-brand-gold text-sm font-medium">
+            Example: You deposit ₹2,500 and receive ₹2,500 bonus. To withdraw, you must wager ₹2,500 × 8 = ₹20,000 total.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            'Cricket bets contribute 100% to wagering',
+            'Casino slots contribute 100%',
+            'Live casino contributes 10%',
+          ].map((tip) => (
+            <div key={tip} className="card flex items-start gap-3">
+              <span className="text-brand-gold text-lg font-bold flex-shrink-0">✓</span>
+              <span className="text-gray-300 text-sm leading-relaxed">{tip}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Bonus Strategy Guide */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+        <h2 className="section-title text-center mb-10">How to Maximise Your Dafabet Bonus</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            {
+              title: 'Deposit the Maximum 💰',
+              body: 'To get the full ₹20,000, deposit ₹20,000. Smaller deposits get proportionally smaller bonuses.',
+            },
+            {
+              title: 'Bet on Cricket 🏏',
+              body: 'Cricket bets count 100% toward wagering. Stick to low-risk markets like match winner to clear the bonus safely.',
+            },
+            {
+              title: 'Check Minimum Odds ⚡',
+              body: 'Only bets at odds of 1.50 or above count toward wagering. Avoid odds below 1.50.',
+            },
+            {
+              title: 'Plan Your Timeline 📅',
+              body: 'You have 30 days to complete wagering. Break it into daily targets — e.g., ₹667 per day for a ₹20,000 bonus.',
+            },
+          ].map(({ title, body }) => (
+            <div key={title} className="card-hover">
+              <h3 className="text-white font-bold text-base mb-2">{title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Promo Banner */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
         <div className="relative rounded-xl overflow-hidden h-56 md:h-64">
