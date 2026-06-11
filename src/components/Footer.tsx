@@ -89,7 +89,7 @@ export default function Footer({ locale }: Props) {
             <div className="flex gap-4 flex-shrink-0">
               <a href="#" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">{t('terms')}</a>
               <a href="#" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">{t('privacy')}</a>
-              <a href="#" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">{t('responsible')}</a>
+              <Link href="/responsible-gambling" className="text-gray-500 hover:text-gray-300 text-xs transition-colors">{t('responsible')}</Link>
             </div>
           </div>
           <p className="text-gray-600 text-xs text-center mt-4">

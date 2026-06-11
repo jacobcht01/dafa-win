@@ -19,6 +19,9 @@ const EN_ROUTES: Entry[] = [
   { path: '/dafabet-bonus/', priority: 0.85, changeFrequency: 'weekly' },
   { path: '/dafabet-registration/', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/dafabet-payment/', priority: 0.75, changeFrequency: 'monthly' },
+  { path: '/faq/', priority: 0.8, changeFrequency: 'weekly' },
+  { path: '/football-betting/', priority: 0.8, changeFrequency: 'weekly' },
+  { path: '/kabaddi-betting/', priority: 0.75, changeFrequency: 'weekly' },
   { path: '/responsible-gambling/', priority: 0.6, changeFrequency: 'monthly' },
 ]
 

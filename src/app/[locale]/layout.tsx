@@ -6,6 +6,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import BreadcrumbNav from '@/components/BreadcrumbNav'
 import '../globals.css'
 
 const inter = Inter({
@@ -64,6 +65,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       >
         <NextIntlClientProvider messages={messages}>
           <Header locale={locale} />
+          <BreadcrumbNav />
           <main>{children}</main>
           <Footer locale={locale} />
         </NextIntlClientProvider>
