@@ -26,11 +26,26 @@ function CricketBettingContent({ locale }: { locale: string }) {
 
   const pageUrl = locale === 'te' ? `${SITE_URL}/te/cricket-betting/` : `${SITE_URL}/cricket-betting/`
   const faqs = [
-    { question: 'What is the best site for cricket betting in India?', answer: 'DafaBet is our top pick for cricket betting in India, offering the best IPL odds, live betting, and UPI payments.' },
-    { question: 'Is cricket betting legal in India?', answer: 'Online cricket betting is in a legal grey area. DafaBet operates under an offshore licence and accepts Indian players.' },
-    { question: 'How do I bet on cricket online in India?', answer: 'Register at DafaBet, deposit via UPI, navigate to cricket, and select your market and stake.' },
-    { question: 'What cricket markets are available?', answer: 'DafaBet offers match winner, top batsman, top bowler, total runs, over/under, and many live in-play markets.' },
-    { question: 'Can I bet on IPL at DafaBet?', answer: 'Yes. DafaBet covers all IPL matches with comprehensive pre-match and live betting markets.' },
+    {
+      question: 'What is the best cricket betting site in India?',
+      answer: 'DafaBet is our #1 recommendation for cricket betting in India. It offers a 200% welcome bonus up to ₹20,000, instant UPI deposits, and the deepest cricket markets — 30+ per match including ball-by-ball live betting.',
+    },
+    {
+      question: 'Is cricket betting legal in India?',
+      answer: 'Cricket betting is in a legal grey area in India. There is no central law criminalising individual bets placed with offshore-licensed operators. Laws vary state by state — Goa, Sikkim, and Meghalaya have regulated some forms. DafaBet operates under an offshore international licence and accepts Indian players.',
+    },
+    {
+      question: 'How do I bet on cricket online?',
+      answer: 'Register at DafaBet (under 5 minutes), deposit via UPI (minimum ₹500), navigate to Cricket in the sportsbook, select your match, choose a market, enter your stake, and confirm your bet.',
+    },
+    {
+      question: 'What cricket markets are available?',
+      answer: 'DafaBet offers match winner, top batsman, top bowler, total runs, over/under, first wicket method, toss winner, player of the match, and live in-play markets. There are 30+ markets per match, with even more for IPL fixtures.',
+    },
+    {
+      question: 'Does dew affect betting odds?',
+      answer: 'Yes. At dew-heavy grounds, evening matches tilt 5–10% toward the chasing team once the outfield dampens — spinners lose grip and fielders lose footing. Wankhede (Mumbai), Eden Gardens (Kolkata), and Chinnaswamy (Bengaluru) are the Indian grounds where dew tilt is most pronounced and most reliable.',
+    },
   ]
 
   const schemaData = [
@@ -65,6 +80,36 @@ function CricketBettingContent({ locale }: { locale: string }) {
     { title: 'Place Your Bet', desc: 'Enter your stake, confirm your slip, and watch the action live.' },
   ]
 
+  const topSites = [
+    { rank: '🥇 #1', site: 'DafaBet', bonus: '200% up to ₹20,000', minDeposit: '₹500', markets: '30+ per match', live: true },
+    { rank: '#2', site: 'Betway', bonus: '100% up to ₹2,500', minDeposit: '₹1,000', markets: '25+ per match', live: true },
+    { rank: '#3', site: '10Cric', bonus: '150% up to ₹10,000', minDeposit: '₹1,000', markets: '20+ per match', live: true },
+    { rank: '#4', site: 'Parimatch', bonus: '100% up to ₹12,000', minDeposit: '₹300', markets: '15+ per match', live: true },
+  ]
+
+  const groundCards = [
+    {
+      name: 'Wankhede Stadium, Mumbai',
+      characteristic: 'Fast outfield, sea breeze, heavy evening dew. IPL totals frequently clear 190.',
+      lean: 'Back chasers in night matches. Death-over pace bowlers dominate top-bowler markets over spinners.',
+    },
+    {
+      name: 'MA Chidambaram (Chepauk), Chennai',
+      characteristic: 'Slow, low, sharp turn from ball one. The lowest-scoring IPL ground over five seasons.',
+      lean: 'Back under on total-runs markets. Wrist spinners dominate top-bowler props.',
+    },
+    {
+      name: 'M. Chinnaswamy, Bengaluru',
+      characteristic: 'Altitude (920m), short square boundaries, fastest outfield in the country. IPL run-rates above 9.0 are the norm.',
+      lean: 'Back pace bowlers; spinners get hit. Totals run hot — favour overs on six-count props.',
+    },
+    {
+      name: 'Eden Gardens, Kolkata',
+      characteristic: 'Heavy dew in the second IPL half, true batting surface, drift for left-arm spin under lights.',
+      lean: 'Chase-friendly par excellence. Back the team batting second in evening fixtures.',
+    },
+  ]
+
   return (
     <>
       <JsonLd data={schemaData} />
@@ -82,10 +127,10 @@ function CricketBettingContent({ locale }: { locale: string }) {
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
           <span className="red-badge mb-4">🏏 LIVE CRICKET</span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 max-w-xl">
-            Cricket Betting <span className="gold-text">India 2025</span>
+            Cricket Betting in India <span className="gold-text">2026</span>
           </h1>
           <p className="text-gray-300 text-lg mb-6 max-w-md">
-            Best cricket odds, live markets, and instant UPI payouts — only at DafaBet.
+            Best cricket odds on IPL, T20 World Cup, India vs Pakistan and all matches — 200% welcome bonus up to ₹20,000.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/dafabet-registration" className="btn-primary">
@@ -113,8 +158,47 @@ function CricketBettingContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* Markets */}
+      {/* Top Picks Comparison Table */}
       <section className="py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title mb-2">Best Cricket Betting Sites India: Our Top Picks</h2>
+          <p className="text-gray-400 mb-8">
+            After testing every major platform with real deposits, here are our rankings for 2026.
+          </p>
+          <div className="card overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead className="bg-brand-card text-brand-gold text-xs uppercase">
+                <tr>
+                  <th className="px-4 py-3 text-left">Rank</th>
+                  <th className="px-4 py-3 text-left">Site</th>
+                  <th className="px-4 py-3 text-left">Welcome Bonus</th>
+                  <th className="px-4 py-3 text-left">Min Deposit</th>
+                  <th className="px-4 py-3 text-left">Cricket Markets</th>
+                  <th className="px-4 py-3 text-left">Live Betting</th>
+                </tr>
+              </thead>
+              <tbody>
+                {topSites.map((row, i) => (
+                  <tr key={row.site} className={i % 2 === 0 ? 'bg-brand-bg/50' : ''}>
+                    <td className="px-4 py-3 text-brand-gold font-bold">{row.rank}</td>
+                    <td className="px-4 py-3 text-white font-semibold">{row.site}</td>
+                    <td className="px-4 py-3 text-gray-300">{row.bonus}</td>
+                    <td className="px-4 py-3 text-gray-300">{row.minDeposit}</td>
+                    <td className="px-4 py-3 text-gray-300">{row.markets}</td>
+                    <td className="px-4 py-3 text-gray-300">{row.live ? '✅' : '❌'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="text-gray-500 text-xs mt-3 px-4 pb-4">
+              *Data as of June 2026. Always check current terms on each site.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Markets */}
+      <section className="bg-brand-surface py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title mb-2">Cricket Betting Markets</h2>
           <p className="text-gray-400 mb-8">Explore every market available at DafaBet India.</p>
@@ -129,8 +213,96 @@ function CricketBettingContent({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* How to bet */}
+      {/* Dew Factor & Pitch Notes */}
+      <section className="py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title mb-2">Reading Dew &amp; Pitch: The Real Edge</h2>
+          <p className="text-gray-400 mb-8">
+            Indian grounds are not interchangeable. The same total of 165 is a chase-down at Bengaluru
+            and a defended trophy at Chennai. Dew arrives at most North and West Indian grounds in
+            evening fixtures, dampening spinners&apos; grip and tilting the balance toward chasing
+            teams by <strong className="text-white">5–10%</strong> over the pre-toss baseline. Read
+            the ground before you read the form guide.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {groundCards.map((g) => (
+              <div key={g.name} className="card">
+                <h3 className="text-brand-gold font-bold mb-2">{g.name}</h3>
+                <p className="text-gray-400 text-sm mb-3">{g.characteristic}</p>
+                <p className="text-gray-300 text-sm">
+                  <span className="text-brand-gold font-semibold">Betting lean: </span>
+                  {g.lean}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 Cricket Calendar */}
       <section className="bg-brand-surface py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title mb-2">2026 Cricket Calendar</h2>
+          <p className="text-gray-400 mb-8">
+            The 2026 calendar is unusually rich for Indian cricket bettors — three formats, two world
+            events touching Indian shores, and a packed home season fill almost every week of the year.
+          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="card">
+              <h3 className="text-brand-gold font-bold mb-4">Already Concluded in 2026</h3>
+              <ul className="text-gray-400 text-sm space-y-3">
+                <li>
+                  <span className="text-white font-semibold">ICC Men&apos;s T20 World Cup 2026</span>
+                  <br />
+                  Co-hosted in India &amp; Sri Lanka (Feb–Mar). Knockout-stage liquidity was the
+                  highest of the cricket year.
+                </li>
+                <li>
+                  <span className="text-white font-semibold">IPL 2026</span>
+                  <br />
+                  74 matches, full home-and-away double round-robin (Mar–May). By far the largest
+                  sustained betting event of the Indian calendar.
+                </li>
+                <li>
+                  <span className="text-white font-semibold">Women&apos;s Premier League 2026</span>
+                  <br />
+                  Match-winner and top-batter markets were live for every fixture (Feb–Mar).
+                </li>
+              </ul>
+            </div>
+            <div className="card">
+              <h3 className="text-brand-gold font-bold mb-4">Coming Up — Second Half of 2026</h3>
+              <ul className="text-gray-400 text-sm space-y-3">
+                <li>
+                  <span className="text-white font-semibold">Asia Cup 2026</span>
+                  <br />
+                  T20 format. Strong outright markets and full ball-by-ball live betting at DafaBet.
+                </li>
+                <li>
+                  <span className="text-white font-semibold">India Home Bilateral Season (Oct–Dec)</span>
+                  <br />
+                  Tests and white-ball series at major Indian venues. Watch for swing-friendly Tests in
+                  November and dew-affected ODIs.
+                </li>
+                <li>
+                  <span className="text-white font-semibold">Ranji Trophy 2026–27</span>
+                  <br />
+                  Starts October. Soft pricing on domestic markets — informed bettors with state-level
+                  knowledge regularly find value here.
+                </li>
+                <li>
+                  <span className="text-white font-semibold">ICC Women&apos;s T20 World Cup 2026</span>
+                  <br />
+                  England, June–July.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How to bet */}
+      <section className="py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title mb-10 text-center">How to Bet on Cricket</h2>
           <div className="space-y-6">
@@ -150,7 +322,7 @@ function CricketBettingContent({ locale }: { locale: string }) {
       </section>
 
       {/* Types of Cricket Bets */}
-      <section className="py-14">
+      <section className="bg-brand-surface py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title mb-2">Types of Cricket Bets in India</h2>
           <p className="text-gray-400 mb-8">
@@ -176,7 +348,7 @@ function CricketBettingContent({ locale }: { locale: string }) {
       </section>
 
       {/* Cricket Betting Strategy Tips */}
-      <section className="bg-brand-surface py-14">
+      <section className="py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title mb-2">Cricket Betting Tips for Indian Players</h2>
           <p className="text-gray-400 mb-8">
@@ -213,12 +385,12 @@ function CricketBettingContent({ locale }: { locale: string }) {
       </section>
 
       {/* IPL Betting Guide */}
-      <section className="py-14">
+      <section className="bg-brand-surface py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-brand-surface rounded-xl p-6 border border-brand-border">
             <div className="flex items-center gap-3 mb-4">
-              <span className="red-badge">IPL 2025</span>
-              <h2 className="section-title mb-0">IPL Betting Guide 2025</h2>
+              <span className="red-badge">IPL 2026</span>
+              <h2 className="section-title mb-0">IPL Betting Guide 2026</h2>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Left: schedule info */}
@@ -258,7 +430,7 @@ function CricketBettingContent({ locale }: { locale: string }) {
       </section>
 
       {/* Comparison Table */}
-      <section className="bg-brand-surface py-14">
+      <section className="py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title mb-8">Dafabet vs Other Cricket Betting Sites in India</h2>
           <div className="bg-brand-surface border border-brand-border rounded-xl overflow-hidden">
@@ -301,14 +473,14 @@ function CricketBettingContent({ locale }: { locale: string }) {
               </tbody>
             </table>
             <p className="text-gray-500 text-xs mt-3 px-4 pb-4">
-              *Data as of 2025. Always check current terms.
+              *Data as of June 2026. Always check current terms.
             </p>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-14">
+      <section className="bg-brand-surface py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title mb-8">Cricket Betting FAQ</h2>
           <div className="space-y-4">

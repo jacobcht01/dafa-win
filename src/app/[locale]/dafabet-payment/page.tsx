@@ -19,18 +19,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const DEPOSIT_METHODS = [
-  { method: 'UPI', icon: '📱', time: 'Instant', min: '₹100', max: '₹100,000' },
-  { method: 'Paytm', icon: '💳', time: 'Instant', min: '₹100', max: '₹50,000' },
-  { method: 'PhonePe', icon: '📲', time: 'Instant', min: '₹100', max: '₹50,000' },
-  { method: 'NetBanking', icon: '🏦', time: '1-3 mins', min: '₹500', max: '₹500,000' },
-  { method: 'IMPS', icon: '⚡', time: 'Instant', min: '₹100', max: '₹200,000' },
+const DEPOSIT_TABLE = [
+  { method: 'UPI (PhonePe, GPay, Paytm, BHIM)', min: '₹500', time: 'Seconds', fee: 'None' },
+  { method: 'Paytm Wallet', min: '₹500', time: 'Seconds', fee: 'None' },
+  { method: 'Net Banking / NEFT', min: '₹500', time: 'Same day (banking hours)', fee: 'None' },
+  { method: 'IMPS', min: '₹500', time: 'Minutes', fee: 'None' },
+  { method: 'Crypto (USDT, BTC)', min: '~₹10,000 equiv', time: 'Minutes–1 hour', fee: 'Network fee' },
 ]
 
-const WITHDRAWAL_METHODS = [
-  { method: 'UPI', icon: '📱', time: '1-4 hours', min: '₹500', max: '₹100,000' },
-  { method: 'Bank Transfer', icon: '🏛', time: '1-3 days', min: '₹1,000', max: '₹500,000' },
-  { method: 'Paytm Wallet', icon: '💳', time: '1-4 hours', min: '₹500', max: '₹25,000' },
+const WITHDRAWAL_TABLE = [
+  { method: 'UPI', min: '₹500', time: '~1 hour' },
+  { method: 'NEFT', min: '₹500', time: '~4 hours' },
+  { method: 'IMPS', min: '₹500', time: 'Within 24 hours' },
+  { method: 'Crypto', min: '~₹10,000 equiv', time: 'Minutes once approved' },
+]
+
+const KYC_DOCS = [
+  'PAN card — clear photo of the front',
+  'Aadhaar — front and back, or e-Aadhaar PDF (preferred)',
+  'Proof of address — only if Aadhaar address does not match registration address',
+  'Selfie holding PAN — required for some account profiles',
 ]
 
 function DepositWithdrawalContent({ locale }: { locale: string }) {
@@ -39,9 +47,11 @@ function DepositWithdrawalContent({ locale }: { locale: string }) {
   const pageUrl = locale === 'te' ? `${SITE_URL}/te/dafabet-payment/` : `${SITE_URL}/dafabet-payment/`
 
   const faqs = [
-    { question: 'What is the minimum deposit at DafaBet?', answer: 'Minimum deposit is ₹100 for UPI, Paytm, and PhonePe. NetBanking minimum is ₹500.' },
-    { question: 'How long do withdrawals take?', answer: 'UPI and Paytm withdrawals are processed in 1-4 hours. Bank transfers take 1-3 business days.' },
-    { question: 'Is my payment information secure?', answer: 'Yes. All transactions use SSL encryption. DafaBet does not store card details.' },
+    { question: 'What is the minimum deposit at DafaBet?', answer: '₹500 via UPI, Paytm, PhonePe, Google Pay, or net banking.' },
+    { question: 'How long do UPI withdrawals take?', answer: 'Typically ~1 hour on recent desk runs; the published window is within 24 hours.' },
+    { question: 'What KYC documents does DafaBet require?', answer: 'PAN card and Aadhaar cover most Indian accounts. Some profiles also require a selfie holding the PAN.' },
+    { question: 'Does DafaBet support Google Pay?', answer: 'Yes, GPay routes through UPI in the cashier. Select UPI and your GPay-linked UPI ID works directly.' },
+    { question: 'What happens if my withdrawal is delayed?', answer: 'Check cashier status. If "Pending" past 24 hours, contact live chat with your reference number and the agent can escalate.' },
   ]
 
   const schemaData = [
@@ -75,56 +85,110 @@ function DepositWithdrawalContent({ locale }: { locale: string }) {
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            <span className="gold-text">{t('hero_title')}</span>
+            <span className="gold-text">DafaBet India Payment Methods 2026</span>
           </h1>
-          <p className="text-lg text-gray-300 max-w-xl">{t('hero_subtitle')}</p>
+          <p className="text-lg text-gray-300 max-w-xl">
+            UPI (PhonePe, GPay, Paytm, BHIM), NEFT, IMPS — deposits in seconds, withdrawals in ~1 hour. Min deposit ₹500.
+          </p>
         </div>
       </section>
 
-      {/* Payment tables */}
+      {/* Deposits at a glance */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-          {/* Deposits */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <h2 className="text-2xl font-bold text-white">Deposit Methods</h2>
-              <span className="red-badge">Instant Deposits</span>
-            </div>
-            <div className="space-y-4">
-              {DEPOSIT_METHODS.map((m) => (
-                <div key={m.method} className="card flex justify-between items-center">
-                  <span className="font-semibold text-brand-gold">{m.icon} {m.method}</span>
-                  <div className="text-right text-sm text-gray-400">
-                    <div>{m.time}</div>
-                    <div>{m.min} – {m.max}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Withdrawals */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <h2 className="text-2xl font-bold text-white">Withdrawal Methods</h2>
-              <span className="gold-badge">Fast Withdrawals</span>
-            </div>
-            <div className="space-y-4">
-              {WITHDRAWAL_METHODS.map((m) => (
-                <div key={m.method} className="card flex justify-between items-center">
-                  <span className="font-semibold text-brand-gold">{m.icon} {m.method}</span>
-                  <div className="text-right text-sm text-gray-400">
-                    <div>{m.time}</div>
-                    <div>{m.min} – {m.max}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="flex items-center gap-3 mb-6">
+          <h2 className="text-2xl font-bold text-white">Deposits at a Glance</h2>
+          <span className="red-badge">Instant Deposits</span>
         </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm text-left">
+            <thead>
+              <tr className="border-b border-brand-border">
+                <th className="py-3 pr-4 text-brand-gold font-semibold">Method</th>
+                <th className="py-3 pr-4 text-brand-gold font-semibold">Min Deposit</th>
+                <th className="py-3 pr-4 text-brand-gold font-semibold">Time to Credit</th>
+                <th className="py-3 text-brand-gold font-semibold">Fee</th>
+              </tr>
+            </thead>
+            <tbody>
+              {DEPOSIT_TABLE.map((row) => (
+                <tr key={row.method} className="border-b border-brand-border/50">
+                  <td className="py-3 pr-4 text-white font-medium">{row.method}</td>
+                  <td className="py-3 pr-4 text-gray-300">{row.min}</td>
+                  <td className="py-3 pr-4 text-gray-300">{row.time}</td>
+                  <td className="py-3 text-gray-300">{row.fee}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-gray-500 text-xs mt-4">Minimum deposit on every rail: ₹500. All transactions are encrypted and secure.</p>
+      </section>
 
-        <p className="text-gray-500 text-xs text-center mt-6">All transactions are encrypted and secure. Processing times may vary.</p>
+      {/* Withdrawals at a glance */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="flex items-center gap-3 mb-6">
+          <h2 className="text-2xl font-bold text-white">Withdrawals at a Glance</h2>
+          <span className="gold-badge">Fast Withdrawals</span>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm text-left">
+            <thead>
+              <tr className="border-b border-brand-border">
+                <th className="py-3 pr-4 text-brand-gold font-semibold">Method</th>
+                <th className="py-3 pr-4 text-brand-gold font-semibold">Min Withdrawal</th>
+                <th className="py-3 text-brand-gold font-semibold">Typical Settle</th>
+              </tr>
+            </thead>
+            <tbody>
+              {WITHDRAWAL_TABLE.map((row) => (
+                <tr key={row.method} className="border-b border-brand-border/50">
+                  <td className="py-3 pr-4 text-white font-medium">{row.method}</td>
+                  <td className="py-3 pr-4 text-gray-300">{row.min}</td>
+                  <td className="py-3 text-gray-300">{row.time}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-gray-500 text-xs mt-4">Published window for all methods: within 24 hours. Typical UPI settle is ~1 hour based on June 2026 desk runs.</p>
+      </section>
+
+      {/* KYC Requirements */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <h2 className="section-title mb-6">KYC Requirements</h2>
+        <div className="card">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-3">When KYC Is Required</h3>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li className="flex gap-2">
+                  <span className="text-brand-gold flex-shrink-0">&#10003;</span>
+                  First withdrawals up to ₹25,000 release without KYC
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand-gold flex-shrink-0">&#10003;</span>
+                  KYC required before any withdrawal above ₹25,000
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-brand-gold flex-shrink-0">&#10003;</span>
+                  DafaBet published KYC approval window: within 24 hours
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-3">Required Documents</h3>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                {KYC_DOCS.map((doc) => (
+                  <li key={doc} className="flex gap-2">
+                    <span className="text-brand-gold flex-shrink-0">&#10003;</span>
+                    {doc}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p className="text-gray-500 text-xs mt-5">Tip: Submit KYC the same day you register so it clears before your first withdrawal request.</p>
+        </div>
       </section>
 
       {/* FAQ */}

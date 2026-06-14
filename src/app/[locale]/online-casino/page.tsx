@@ -25,11 +25,11 @@ function CasinoContent() {
   const tCommon = useTranslations('common')
 
   const faqs = [
-    { question: 'Is online casino legal in India?', answer: 'Online casino gambling exists in a legal grey area in India. DafaBet operates under an offshore licence and is accessible to Indian players.' },
-    { question: 'What casino games are available at DafaBet?', answer: 'DafaBet offers 3,000+ games including live roulette, blackjack, baccarat, slots, and live dealer tables from top providers like Evolution Gaming and Playtech.' },
-    { question: 'Can I play casino games on mobile?', answer: 'Yes. The DafaBet mobile site and app support all casino games with full HD streaming for live dealer tables.' },
-    { question: 'Are there Hindi-speaking live dealers?', answer: 'Yes. DafaBet has dedicated live tables with Hindi-speaking dealers for Indian players.' },
-    { question: 'How do I deposit to play casino games?', answer: 'You can deposit instantly via UPI, PhonePe, Google Pay, or net banking. Funds are credited immediately so you can start playing right away.' },
+    { question: 'What casino games does DafaBet offer?', answer: 'Live tables (Teen Patti, Andar Bahar, Roulette, Blackjack, Baccarat), 2,000+ slots, poker, and rummy.' },
+    { question: 'Is the DafaBet casino safe?', answer: 'Yes, the live casino is powered by Evolution and Ezugi — licensed studios with independent auditing.' },
+    { question: 'Can I play Teen Patti at DafaBet?', answer: 'Yes, live Teen Patti tables with Hindi-speaking dealers are available 24/7.' },
+    { question: 'What welcome bonus is available?', answer: '200% match up to ₹20,000 on first deposit (minimum deposit ₹500).' },
+    { question: 'How do I deposit to play casino games?', answer: 'UPI, Paytm, PhonePe, or net banking — minimum ₹500. Funds are credited instantly.' },
   ]
 
   const pageUrl = `${SITE_URL}/online-casino/`
@@ -45,7 +45,7 @@ function CasinoContent() {
 
   const categories = [
     { emoji: '🎲', name: 'Live Casino', desc: 'Real dealers, real tables' },
-    { emoji: '🎰', name: 'Slots', desc: '1,000+ slot titles' },
+    { emoji: '🎰', name: 'Slots', desc: '2,000+ slot titles' },
     { emoji: '🔴', name: 'Roulette', desc: 'European & live variants' },
     { emoji: '🃏', name: 'Blackjack', desc: 'Classic & multi-hand' },
   ]
@@ -66,6 +66,25 @@ function CasinoContent() {
     { value: '24/7', label: 'Mobile Ready' },
   ]
 
+  const cardGames = [
+    {
+      name: 'Teen Patti',
+      desc: 'Live tables with Hindi-speaking dealers. Classic 3-card play with pair-plus and 6-card bonus side bets.',
+    },
+    {
+      name: 'Andar Bahar',
+      desc: 'Goa-room rules, dealt fast. The simplest game in the room — and the hardest to grind.',
+    },
+    {
+      name: 'Rummy',
+      desc: '13-card cash tables and tournament formats alongside the live casino.',
+    },
+    {
+      name: 'Poker',
+      desc: 'Texas Hold\'em at live tables and as video poker. Rewards math, position, and patience.',
+    },
+  ]
+
   return (
     <>
       <JsonLd data={schemaData} />
@@ -81,12 +100,12 @@ function CasinoContent() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent" />
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-          <span className="red-badge mb-4">🎰 3,000+ GAMES</span>
+          <span className="red-badge mb-4">🎰 2,000+ GAMES</span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 max-w-xl">
-            Dafabet Online <span className="gold-text">Casino India</span>
+            Online Casino at <span className="gold-text">DafaBet India</span>
           </h1>
           <p className="text-gray-300 text-lg mb-6 max-w-md">
-            Live dealers, thousands of slots, and instant UPI deposits — the best online casino for India.
+            Live Teen Patti, Andar Bahar, Evolution tables, and 2,000+ slots — with a 200% welcome bonus up to ₹20,000.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/dafabet-registration" className="btn-primary">
@@ -140,16 +159,48 @@ function CasinoContent() {
         </div>
       </section>
 
-      {/* Live casino highlight */}
+      {/* Card Games section */}
+      <section className="bg-brand-surface py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title mb-2">Card Games</h2>
+          <p className="text-gray-400 mb-8">The Indian card lobby at DafaBet — from Teen Patti and Andar Bahar to rummy and poker.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {cardGames.map((game) => (
+              <div key={game.name} className="card card-hover">
+                <h3 className="gold-text font-bold text-lg mb-2">{game.name}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{game.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Goa Casino Connection section */}
+      <section className="py-14">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title mb-6">The Goa Casino Connection</h2>
+          <div className="card border-l-4 border-brand-gold">
+            <p className="text-gray-300 leading-relaxed">
+              If you&apos;ve played on Deltin Royale or Casino Pride on the Mandovi, the DafaBet lobby will feel familiar.
+              Andar Bahar, Teen Patti, Mini-Flush, Roulette, and Baccarat — the Goa casino floor translated online,
+              with Hindi-speaking dealers and UPI withdrawals instead of chips.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Live Casino Studios section */}
       <section className="bg-brand-surface py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="verdict-box">
-            <p className="text-brand-gold font-bold text-sm uppercase tracking-wide mb-2">Live Casino Highlight</p>
+            <p className="text-brand-gold font-bold text-sm uppercase tracking-wide mb-2">Live Casino Studios</p>
             <h2 className="text-white text-xl font-bold mb-4">
-              Evolution Gaming Live Tables — Real dealers 24/7
+              Evolution &amp; Ezugi — Audited, Licensed, Hindi-Ready
             </h2>
             <p className="text-gray-400 text-sm mb-6">
-              DafaBet partners with Evolution Gaming to deliver the most immersive live casino experience for Indian players, including dedicated Hindi-speaking tables.
+              DafaBet&apos;s live casino runs on Evolution (European-style tables: roulette, baccarat, blackjack, game shows)
+              and Ezugi (Hindi-language Teen Patti, Andar Bahar, Hindi Roulette). Both stream from licensed studios
+              with published game logs and independent auditing.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {liveStats.map((stat) => (
@@ -192,7 +243,7 @@ function CasinoContent() {
         <div className="absolute inset-0 bg-black/75" />
         <div className="relative h-full flex flex-col items-center justify-center px-4 text-center gap-4">
           <h2 className="text-white text-2xl md:text-3xl font-bold">
-            3,000+ Games Waiting for You
+            200% Bonus up to ₹20,000 — Claim Now
           </h2>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link href="/dafabet-registration" className="btn-primary">

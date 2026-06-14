@@ -17,6 +17,8 @@ const LABEL_MAP: Record<string, string> = {
   'dafabet-app-download': 'App Download',
   'faq': 'FAQ',
   'responsible-gambling': 'Responsible Gambling',
+  'india-vs-pakistan-betting': 'India vs Pakistan Betting',
+  't20-world-cup-betting': 'T20 World Cup Betting',
 }
 
 export default function BreadcrumbNav() {

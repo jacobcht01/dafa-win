@@ -27,6 +27,15 @@ const PKL_TEAMS = [
   { name: 'Puneri Paltan', icon: '🏅', desc: 'Pune\'s PKL powerhouse' },
 ]
 
+const PKL_MARKET_TYPES = [
+  { name: 'Match Winner', desc: 'Bet on which team wins the PKL match. Two-way market with competitive overround.' },
+  { name: 'Total Points', desc: 'Over/under on the combined points scored by both teams across the full 40 minutes.' },
+  { name: 'Top Raider', desc: 'Pick the match\'s highest-scoring raider. Available on all marquee PKL fixtures at DafaBet.' },
+  { name: 'Handicap', desc: 'One team gets a virtual points head start. Levels the field when one side is a heavy favourite.' },
+  { name: 'Live In-Play', desc: 'Match winner and total points markets stay open through all 40 minutes with live repricing.' },
+  { name: 'Super Tackle Props', desc: 'Will there be a super tackle? A specialist market available on selected PKL fixtures.' },
+]
+
 const MARKETS = [
   { name: 'Match Winner', desc: 'Bet on which team wins the PKL match.' },
   { name: 'Points Handicap', desc: 'Handicap betting to level the competition.' },
@@ -35,10 +44,10 @@ const MARKETS = [
 ]
 
 const FAQS = [
-  { question: 'Is kabaddi betting legal in India?', answer: 'Online kabaddi betting on offshore platforms like DafaBet exists in a legal grey area in India. Most states do not specifically prohibit online betting on foreign sites.' },
-  { question: 'Which kabaddi leagues can I bet on at DafaBet?', answer: 'DafaBet covers the Pro Kabaddi League (PKL) in full, including all team matches, playoffs, and finals with live in-play odds.' },
-  { question: 'Does DafaBet offer live kabaddi betting?', answer: 'Yes. DafaBet offers live in-play kabaddi betting with real-time odds on PKL matches so you can bet as the action unfolds.' },
-  { question: 'What is the minimum kabaddi bet at DafaBet?', answer: 'Minimum bet starts from ₹10 for most PKL pre-match markets and ₹20 for live in-play kabaddi markets.' },
+  { question: 'What is the best site for Kabaddi betting?', answer: 'DafaBet is our #1 pick — full PKL market coverage with live in-play betting on every match, including top raider, top defender, and total points markets.' },
+  { question: 'What kabaddi markets are available?', answer: 'DafaBet offers match winner, total points, top raider, handicap, and live in-play markets. Marquee PKL fixtures also carry super-tackle props and first-team-to-30-points markets.' },
+  { question: 'What is the minimum deposit?', answer: '₹500 via UPI, Paytm, PhonePe, or Google Pay. Funds appear instantly so you are ready before the opening raid.' },
+  { question: 'What welcome bonus is available?', answer: 'New players receive a 200% match bonus up to ₹20,000 on their first deposit at DafaBet. See the DafaBet bonus page for full T&Cs.' },
 ]
 
 function KabaddiBettingContent({ locale }: { locale: string }) {
@@ -72,9 +81,9 @@ function KabaddiBettingContent({ locale }: { locale: string }) {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="red-badge mb-4 inline-block">PKL LIVE</span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            <span className="gold-text">{t('hero_title')}</span>
+            <span className="gold-text">Kabaddi Betting India 2026</span>
           </h1>
-          <p className="text-lg text-gray-300 mb-6 max-w-xl">{t('hero_subtitle')}</p>
+          <p className="text-lg text-gray-300 mb-6 max-w-xl">Pro Kabaddi League betting at DafaBet India — full PKL markets, in-play coverage, UPI deposits and a 200% welcome bonus up to ₹20,000.</p>
           <Link href="/dafabet-registration" className="btn-primary text-lg px-8 py-4">
             Bet on Kabaddi →
           </Link>
@@ -95,8 +104,24 @@ function KabaddiBettingContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      {/* PKL Market Types */}
+      <section className="bg-brand-surface py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title mb-2">PKL Market Types at DafaBet</h2>
+          <p className="text-gray-400 mb-8">Full breakdown of the kabaddi betting markets available on Pro Kabaddi League at DafaBet India.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {PKL_MARKET_TYPES.map((market) => (
+              <div key={market.name} className="card-hover">
+                <h3 className="font-semibold text-brand-gold mb-2">{market.name}</h3>
+                <p className="text-gray-400 text-sm">{market.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Markets */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="section-title text-center mb-10">Kabaddi Betting Markets</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {MARKETS.map((market) => (

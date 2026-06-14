@@ -82,7 +82,7 @@ function HomePageContent({ locale }: { locale: string }) {
   ]
 
   const bonuses = [
-    { img: '/images/first-deposit-bonus.webp', title: 'First Deposit Bonus', desc: '100% up to ₹20,000 on your first deposit', badge: '🏆 Welcome', badgeClass: 'gold-badge' },
+    { img: '/images/first-deposit-bonus.webp', title: 'First Deposit Bonus', desc: '200% deposit bonus up to ₹20,000 for new players.', badge: '🏆 Welcome', badgeClass: 'gold-badge' },
     { img: '/images/cashback-banner.webp', title: 'Weekly Cashback', desc: 'Get 10% cashback on your losses every week — auto credited', badge: '🔥 Hot Deal', badgeClass: 'red-badge' },
     { img: '/images/daily-free-spins.webp', title: 'Daily Free Spins', desc: 'Up to 20 free spins daily on selected slots', badge: '⚡ Daily', badgeClass: 'red-badge' },
   ]
@@ -129,7 +129,7 @@ function HomePageContent({ locale }: { locale: string }) {
                   Dafabet India <span className="gold-text">Review</span>
                 </h1>
                 <p className="text-gray-200 text-base md:text-lg mb-2">
-                  ₹20,000 Welcome Bonus · 3,000+ Games · Cricket &amp; IPL Betting
+                  India&apos;s trusted guide to DafaBet. Expert reviews of IPL betting, cricket odds, and bonus offers for Indian players.
                 </p>
                 <p className="text-brand-red font-semibold text-sm mb-5">
                   ⏰ Offer expires soon — don&apos;t miss out!
@@ -284,6 +284,71 @@ function HomePageContent({ locale }: { locale: string }) {
             <Link href="/dafabet-bonus" className="btn-primary px-8 py-3">
               View All Bonuses →
             </Link>
+          </div>
+        </section>
+
+        {/* DafaBet vs Competitors Comparison Table */}
+        <section className="review-section">
+          <h2 className="section-title mb-2">DafaBet vs Competitors</h2>
+          <p className="section-subtitle mb-8">How DafaBet stacks up against the top betting sites for Indian players in 2026.</p>
+          <div className="bg-brand-surface border border-brand-border rounded-xl overflow-x-auto">
+            <table className="w-full text-sm min-w-[640px]">
+              <thead>
+                <tr className="bg-brand-card">
+                  {['Rank', 'Site', 'Welcome Bonus', 'Min Deposit', 'Sports', 'UPI'].map((col) => (
+                    <th key={col} className="text-left text-brand-gold text-xs uppercase px-4 py-3 font-semibold">
+                      {col}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-brand-border">
+                {[
+                  { rank: '🥇 #1', site: 'DafaBet', bonus: '200% up to ₹20,000', minDeposit: '₹500', sports: '30+', upi: '✅', highlight: true },
+                  { rank: '#2', site: 'Betway', bonus: '100% up to ₹2,500', minDeposit: '₹1,000', sports: '35+', upi: '✅', highlight: false },
+                  { rank: '#3', site: '10Cric', bonus: '150% up to ₹10,000', minDeposit: '₹1,000', sports: '25+', upi: '✅', highlight: false },
+                  { rank: '#4', site: 'Parimatch', bonus: '100% up to ₹12,000', minDeposit: '₹300', sports: '40+', upi: '✅', highlight: false },
+                ].map((row) => (
+                  <tr key={row.site} className={row.highlight ? 'bg-brand-card/50' : 'hover:bg-brand-card/30 transition-colors'}>
+                    <td className={`px-4 py-3 font-semibold ${row.highlight ? 'text-brand-gold' : 'text-gray-400'}`}>{row.rank}</td>
+                    <td className={`px-4 py-3 font-medium ${row.highlight ? 'text-brand-gold' : 'text-gray-300'}`}>{row.site}</td>
+                    <td className="px-4 py-3 text-gray-300">{row.bonus}</td>
+                    <td className="px-4 py-3 text-gray-300">{row.minDeposit}</td>
+                    <td className="px-4 py-3 text-gray-300">{row.sports}</td>
+                    <td className="px-4 py-3 text-gray-300">{row.upi}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-6 text-center">
+            <Link href="/dafabet-review" className="btn-primary px-8 py-3">
+              Read Full DafaBet Review →
+            </Link>
+          </div>
+        </section>
+
+        {/* Sports Covered */}
+        <section className="review-section">
+          <h2 className="section-title mb-2">Sports Covered at DafaBet</h2>
+          <p className="section-subtitle mb-8">DafaBet covers all major sports popular with Indian players, led by deep cricket and IPL markets.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { icon: '🏏', sport: 'Cricket', detail: 'IPL, Tests, ICC events — 30+ markets per match, ball-by-ball live betting' },
+              { icon: '⚽', sport: 'Football', detail: 'ISL, Premier League, Champions League, La Liga, Serie A' },
+              { icon: '🤼', sport: 'Kabaddi', detail: 'Pro Kabaddi League (PKL) — in-play markets through every match' },
+              { icon: '🎾', sport: 'Tennis', detail: 'ATP, WTA, Grand Slams — full pre-match and live markets' },
+              { icon: '🏀', sport: 'Basketball', detail: 'NBA, EuroLeague — major events covered pre-match and in-play' },
+              { icon: '🎮', sport: 'eSports', detail: 'Dota 2, CS2, Valorant — major tournaments and leagues' },
+            ].map((item) => (
+              <div key={item.sport} className="card flex items-start gap-4">
+                <span className="text-3xl flex-shrink-0">{item.icon}</span>
+                <div>
+                  <h3 className="font-semibold text-brand-gold mb-1">{item.sport}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{item.detail}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 

@@ -27,20 +27,20 @@ function BonusesContent() {
   const pageUrl = `${SITE_URL}/dafabet-bonus/`
 
   const faqs = [
-    { question: 'How do I claim the Dafabet welcome bonus?', answer: 'Register a new account, make your first deposit of at least ₹500 via UPI or Net Banking, and the 100% match bonus up to ₹20,000 is credited automatically to your account within minutes.' },
-    { question: 'What is the wagering requirement on the welcome bonus?', answer: 'The welcome bonus carries a 5x wagering requirement on the combined deposit and bonus amount. Wagers on sports with odds of 1.50 or higher count toward the requirement.' },
-    { question: 'Is the 10% weekly cashback automatic?', answer: 'Yes. Net losses from Monday to Sunday are calculated, and 10% cashback is automatically credited to your account every Monday morning with no minimum wagering requirement.' },
-    { question: 'Can I use free spins on any slot game?', answer: 'Free spins are valid on selected slot games that rotate weekly. Check the Promotions page for the current eligible titles. Winnings from free spins are credited as bonus funds.' },
-    { question: 'Are Dafabet bonuses available to Telugu players?', answer: 'All bonuses and promotions are available to players across India, including Telugu-speaking players in Andhra Pradesh and Telangana.' },
+    { question: 'What is the DafaBet welcome bonus?', answer: '200% match up to ₹20,000 on your first deposit, with a minimum qualifying deposit of ₹500. Deposit ₹500 and get ₹1,000 bonus; deposit ₹10,000 and get the full ₹20,000 bonus.' },
+    { question: 'Is there a bonus code?', answer: 'The offer activates automatically — no separate code needed for the headline offer. Simply register, deposit a minimum of ₹500, and the 200% bonus credits to your account.' },
+    { question: 'What is the wagering requirement?', answer: 'Check DafaBet\'s bonus T&Cs — we walk through the requirement on this page. The key figures to know: qualifying bets must be placed at odds of 1.50 or higher, and the wagering clock starts from the date the bonus is credited.' },
+    { question: 'How do I claim the bonus?', answer: 'Register via DafaWin\'s link, deposit a minimum of ₹500, and the bonus credits automatically. No code needed. The full balance — your deposit plus the bonus — appears in your account within minutes.' },
+    { question: 'Can I use the bonus on cricket betting?', answer: 'Yes — sports betting is an eligible category for the welcome bonus. Cricket bets at odds of 1.50 or above count toward clearing the wagering requirement, making it the natural fit for Indian players.' },
   ]
 
   const schemaData = [
     articleSchema({
-      headline: 'Dafabet Bonuses India 2025',
-      description: 'Complete guide to Dafabet bonuses available in India — welcome bonus, cashback, and free spins.',
+      headline: 'DafaBet India Welcome Bonus 2026 — 200% up to ₹20,000',
+      description: 'Complete guide to the DafaBet 200% welcome bonus available in India — full T&Cs, how to claim, and current promotions.',
       url: pageUrl,
       datePublished: '2025-01-01',
-      dateModified: '2025-06-10',
+      dateModified: '2026-06-13',
     }),
     faqSchema(faqs),
     breadcrumbSchema([
@@ -66,9 +66,9 @@ function BonusesContent() {
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
           <span className="red-badge mb-4">Exclusive Bonuses</span>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gold-text">{t('hero_title')}</span>
+            <span className="gold-text">DafaBet India Welcome Bonus 2026</span>
           </h1>
-          <p className="text-lg text-gray-300 mb-6 max-w-xl mx-auto">{t('hero_subtitle')}</p>
+          <p className="text-lg text-gray-300 mb-6 max-w-xl mx-auto">200% match up to ₹20,000 on first deposit — minimum ₹500. Full T&amp;Cs explained.</p>
           <Link href="/dafabet-registration" className="btn-primary text-lg px-8 py-4">
             Claim Bonus Now
           </Link>
@@ -90,9 +90,9 @@ function BonusesContent() {
               />
             </div>
             <span className="gold-badge mb-3 self-start">NEW</span>
-            <h3 className="text-xl font-bold text-white mb-2">100% Welcome Bonus</h3>
+            <h3 className="text-xl font-bold text-white mb-2">200% Welcome Bonus</h3>
             <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">
-              100% deposit match up to ₹20,000 on your first deposit. Min deposit ₹500.
+              200% deposit match up to ₹20,000 on your first deposit. Min deposit ₹500.
             </p>
             <Link href="/dafabet-registration" className="btn-primary w-full">
               {tCommon('claim_bonus')}
@@ -171,6 +171,36 @@ function BonusesContent() {
         </div>
       </section>
 
+      {/* Welcome Bonus Details Card */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+        <h2 className="section-title text-center mb-8">Welcome Bonus — Key Details</h2>
+        <div className="bg-brand-surface border border-brand-border rounded-xl overflow-hidden">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-brand-card">
+                <th className="text-left text-brand-gold font-semibold px-6 py-4 w-1/2">Term</th>
+                <th className="text-left text-white font-semibold px-6 py-4">Detail</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-brand-border">
+              {[
+                { term: 'Bonus', detail: '200% match on first deposit' },
+                { term: 'Max Bonus', detail: '₹20,000' },
+                { term: 'Min Deposit', detail: '₹500' },
+                { term: 'Max Deposit Matched', detail: '₹10,000' },
+                { term: 'Wagering', detail: 'Check DafaBet T&Cs' },
+                { term: 'Eligible', detail: 'Sports and casino' },
+              ].map((row) => (
+                <tr key={row.term} className="hover:bg-brand-card transition-colors">
+                  <td className="px-6 py-4 text-brand-gold font-medium">{row.term}</td>
+                  <td className="px-6 py-4 text-gray-300">{row.detail}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       {/* Welcome Bonus Full Details */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
         <h2 className="section-title text-center mb-10">Dafabet India Welcome Bonus — Full Terms &amp; How to Claim</h2>
@@ -233,7 +263,7 @@ function BonusesContent() {
             </thead>
             <tbody>
               {[
-                { promo: 'Welcome Bonus', amount: '100% up to ₹20,000', wagering: '8x', who: 'New players', valid: 'Ongoing' },
+                { promo: 'Welcome Bonus', amount: '200% up to ₹20,000', wagering: 'Check T&Cs', who: 'New players', valid: 'Ongoing' },
                 { promo: 'Weekly Cashback', amount: '10% on losses', wagering: 'None', who: 'All players', valid: 'Every Monday' },
                 { promo: 'Daily Free Spins', amount: 'Up to 20 spins', wagering: 'None', who: 'Registered', valid: 'Daily' },
                 { promo: 'Reload Bonus', amount: '50% up to ₹5,000', wagering: '5x', who: 'Existing', valid: 'Monthly' },

@@ -26,11 +26,26 @@ function ResponsibleGamblingContent({ locale }: { locale: string }) {
   const t = useTranslations('rg')
 
   const faqs = [
-    { question: 'How can I set deposit limits at DafaBet?', answer: 'Log in to your DafaBet account, go to Account Settings > Responsible Gambling, and set daily, weekly, or monthly deposit limits.' },
-    { question: 'Can I self-exclude from DafaBet?', answer: 'Yes. Contact DafaBet customer support to request a self-exclusion period of 6 months, 1 year, or permanently.' },
-    { question: 'Where can I get help for gambling addiction in India?', answer: 'Call the Vandrevala Foundation helpline: 1860-2662-345 (24/7, free, confidential). iCall also offers support at 9152987821.' },
-    { question: 'What is problem gambling?', answer: 'Problem gambling is when betting interferes with your finances, relationships, or mental health. Signs include chasing losses, hiding gambling from others, and inability to stop.' },
-    { question: 'How do I take a gambling break?', answer: 'Use the cool-off feature in your DafaBet account settings to take a break of 24 hours, 7 days, or 30 days.' },
+    {
+      question: 'How can I set deposit limits at DafaBet?',
+      answer: 'Log in, go to Account Settings > Responsible Gambling, and set daily, weekly, or monthly deposit limits. Changes to lower limits take effect immediately; increases may have a cooling period.',
+    },
+    {
+      question: 'Can I self-exclude from DafaBet?',
+      answer: 'Yes. Use account settings or contact DafaBet support to request 6 months, 1 year, or permanent self-exclusion. A permanent self-exclusion cannot be reopened on a whim — it is designed to be a firm commitment.',
+    },
+    {
+      question: 'Where can I get help for gambling addiction in India?',
+      answer: 'Vandrevala Foundation: +91 9999 666 555 (24/7, free, phone and WhatsApp). iCall, TISS Mumbai: 9152987821 (Mon–Sat, 10am–8pm). AASRA: 022-2754 6669 (24/7 crisis support).',
+    },
+    {
+      question: 'What is problem gambling?',
+      answer: 'When betting interferes with finances, relationships, or mental health — chasing losses, hiding gambling from family, borrowing to fund deposits, or being unable to stop despite wanting to.',
+    },
+    {
+      question: 'What is the minimum gambling age at DafaBet?',
+      answer: '18 years. The Indian Contract Act sets 18 as the legal contracting age. Verify DafaBet\'s current terms for the most up-to-date requirement before registering.',
+    },
   ]
 
   const isTE = locale === 'te'
@@ -60,9 +75,11 @@ function ResponsibleGamblingContent({ locale }: { locale: string }) {
         <div className="absolute inset-0 bg-black/75" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            <span className="gold-text">{t('hero_title')}</span>
+            <span className="gold-text">Responsible Gambling</span>
           </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">{t('hero_subtitle')}</p>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            DafaBet is the operator we recommend. This is what a friend who reads the small print would tell you.
+          </p>
         </div>
       </section>
 
@@ -76,47 +93,132 @@ function ResponsibleGamblingContent({ locale }: { locale: string }) {
               : '18+ only. Gambling involves financial risk. Please bet responsibly.'}
           </p>
           <p className="text-brand-gold font-bold text-lg">
-            Vandrevala Foundation: 1860-2662-345 (24/7, Free, Confidential)
+            Vandrevala Foundation: +91 9999 666 555 (24/7, Free, Confidential)
           </p>
         </div>
 
-        {/* Tools grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {[
-            { title: 'Deposit Limits', desc: 'Set daily, weekly, or monthly deposit limits to control your spending.', icon: '💳' },
-            { title: 'Self-Exclusion', desc: 'Request a self-exclusion period of 6 months, 1 year, or permanently.', icon: '🚫' },
-            { title: 'Cool-Off Period', desc: 'Take a break of 24 hours, 7 days, or 30 days from betting.', icon: '⏸️' },
-            { title: 'Reality Check', desc: 'Set reminders to track how long you have been playing.', icon: '⏰' },
-          ].map((tool) => (
-            <div key={tool.title} className="card">
-              <div className="text-3xl mb-3">{tool.icon}</div>
-              <h3 className="text-lg font-semibold text-white mb-2">{tool.title}</h3>
-              <p className="text-gray-400 text-sm">{tool.desc}</p>
+        {/* The Math section */}
+        <div className="mb-12">
+          <h2 className="section-title mb-2">The Math</h2>
+          <p className="text-gray-400 text-sm mb-6">
+            Every game is designed so the house profits over time. The numbers below are not hidden — they are in the rules. Knowing them does not help you win; it helps you decide how much to play.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card bg-brand-surface">
+              <p className="text-brand-gold font-bold text-lg mb-2">European Roulette</p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                2.7% house edge — ₹2.70 stays with the house for every ₹100 put through. American roulette is 5.26%.
+              </p>
             </div>
-          ))}
+            <div className="card bg-brand-surface">
+              <p className="text-brand-gold font-bold text-lg mb-2">Online Slots</p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                3–5% house edge taken on every spin. Typical RTP is 95–97%.
+              </p>
+            </div>
+            <div className="card bg-brand-surface">
+              <p className="text-brand-gold font-bold text-lg mb-2">Sportsbook</p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                102–104% overround on sharp markets. Soft markets (props, lower-tier) often 110%+.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Set Your Limits section */}
+        <div className="mb-12">
+          <h2 className="section-title mb-2">Set Your Limits</h2>
+          <p className="text-gray-400 text-sm mb-6">
+            DafaBet provides limit tools in account settings. Use them before you need them.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card bg-brand-surface">
+              <p className="text-brand-gold font-bold text-lg mb-2">Deposit Limit</p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Set this to what you would not miss if you lost it — not what you can technically afford. Those are different numbers.
+              </p>
+            </div>
+            <div className="card bg-brand-surface">
+              <p className="text-brand-gold font-bold text-lg mb-2">Loss Limit</p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                The point at which you stop. No &quot;one more bet to get back to even.&quot;
+              </p>
+            </div>
+            <div className="card bg-brand-surface">
+              <p className="text-brand-gold font-bold text-lg mb-2">Session Limit</p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                A clock, not a feeling. Two hours is two hours, no matter how the cards run.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Cooling Off & Self-Exclusion section */}
+        <div className="mb-12">
+          <h2 className="section-title mb-2">Cooling Off &amp; Self-Exclusion</h2>
+          <p className="text-gray-400 text-sm mb-6">
+            Both tools are available in your DafaBet account settings or via support. Neither requires a reason — they are there to use.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="card bg-brand-surface">
+              <p className="text-brand-gold font-bold text-lg mb-2">Cooling-Off</p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                24 hours to 30 days. DafaBet locks your account; you cannot bet. Use when you need a clean break.
+              </p>
+            </div>
+            <div className="card bg-brand-surface">
+              <p className="text-brand-gold font-bold text-lg mb-2">Self-Exclusion</p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                6 months, 1 year, or permanent. Cannot be reopened on a whim. Use when betting has stopped being fun.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Warning Signs section */}
+        <div className="mb-12">
+          <h2 className="section-title mb-4">Warning Signs</h2>
+          <div className="card border-red-500/20">
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Patterns worth taking seriously: betting more than you meant to, hiding amounts from family, borrowing to fund the next deposit, needing to bet to feel normal, anger after losses that lasts past the next morning, promising to stop and not stopping.
+            </p>
+            <p className="text-gray-500 text-xs mt-4">
+              If any of these sound familiar, the helplines below are a good first call. They are free and confidential.
+            </p>
+          </div>
         </div>
 
         {/* Helplines */}
-        <div className="card border-brand-gold/30 mb-12">
+        <div className="card border-brand-gold/30 mb-8">
           <h2 className="text-2xl font-bold text-white mb-4">Get Help in India</h2>
-          <ul className="space-y-3 text-gray-300">
+          <ul className="space-y-4 text-gray-300">
             <li>
               <strong className="text-brand-gold">Vandrevala Foundation:</strong>{' '}
-              1860-2662-345 — 24/7 helpline, free, available in Telugu
+              +91 9999 666 555 — 24/7, phone and WhatsApp, free and confidential
             </li>
             <li>
-              <strong className="text-brand-gold">iCall:</strong>{' '}
-              9152987821 — Psycho-social support, available in Telugu
+              <strong className="text-brand-gold">AASRA:</strong>{' '}
+              022-2754 6669 — 24/7, suicide prevention and crisis support
+            </li>
+            <li>
+              <strong className="text-brand-gold">iCall, TISS Mumbai:</strong>{' '}
+              9152987821 — Mon–Sat, 10am–8pm, psycho-social support
+            </li>
+            <li>
+              <strong className="text-brand-gold">Emergency:</strong>{' '}
+              112
             </li>
           </ul>
         </div>
 
-        {/* Helpline verdict box */}
+        {/* Helpline callout box */}
         <div className="card border-brand-gold/40 bg-brand-surface mb-12 text-center py-6">
           <h3 className="text-lg font-bold text-white mb-3">National Helplines</h3>
-          <p className="text-brand-gold font-semibold mb-1">iCall Helpline: 9152987821</p>
-          <p className="text-brand-gold font-semibold">Vandrevala Foundation: 1860-2662-345</p>
-          <p className="text-gray-500 text-xs mt-3">Free, confidential support available 24/7</p>
+          <p className="text-brand-gold font-semibold mb-1">Vandrevala Foundation: +91 9999 666 555</p>
+          <p className="text-brand-gold font-semibold mb-1">AASRA: 022-2754 6669</p>
+          <p className="text-brand-gold font-semibold mb-1">iCall: 9152987821</p>
+          <p className="text-brand-gold font-semibold">Emergency: 112</p>
+          <p className="text-gray-500 text-xs mt-3">Free, confidential support available</p>
         </div>
 
         {/* FAQ */}

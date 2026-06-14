@@ -23,6 +23,8 @@ const EN_ROUTES: Entry[] = [
   { path: '/football-betting/', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/kabaddi-betting/', priority: 0.75, changeFrequency: 'weekly' },
   { path: '/responsible-gambling/', priority: 0.6, changeFrequency: 'monthly' },
+  { path: '/india-vs-pakistan-betting/', priority: 0.85, changeFrequency: 'weekly' },
+  { path: '/t20-world-cup-betting/', priority: 0.85, changeFrequency: 'weekly' },
 ]
 
 const TE_ROUTES: Entry[] = EN_ROUTES.map((r) => ({
