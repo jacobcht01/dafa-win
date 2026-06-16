@@ -1,5 +1,5 @@
 ---
-title: "DafaBet India Registration 2025 — Sign Up Guide | DafaWin"
+title: "DafaBet India Registration 2026 — Sign Up Guide | DafaWin"
 description: "Complete guide to registering at DafaBet India. Create your account in 5 minutes with this step-by-step guide. 18+ | Gamble responsibly."
 lang: "en"
 url: "/dafabet-registration/"
@@ -11,9 +11,9 @@ schema: ["HowTo", "FAQPage"]
 
 # How to Register at DafaBet India — Sign Up in 5 Minutes
 
-*Last updated: June 2025 | Author: Rahul Sharma, iGaming India Expert*
+*Last updated: June 2026 | Author: Rahul Sharma, iGaming India Expert*
 
-Creating a DafaBet India account takes under 5 minutes. This step-by-step guide covers everything from the registration form to KYC verification and how to claim your **200% welcome bonus up to ₹20,000** immediately after signing up.
+Creating a DafaBet India account takes under 5 minutes. This step-by-step guide covers everything from the registration form to KYC verification and how to claim your **160% welcome bonus up to ₹16,000** immediately after signing up.
 
 ---
 
@@ -37,7 +37,7 @@ The registration form asks for:
 Select your state from the dropdown. This is used for compliance purposes.
 
 ### Step 4: Enter a Bonus Code (Optional)
-In the **"Promo Code"** field, enter **DAWIN200** to activate the 200% welcome bonus up to ₹20,000. If no field appears, the bonus may be applied automatically.
+In the **"Promo Code"** field, enter **DAWIN200** to activate the 160% welcome bonus up to ₹16,000. If no field appears, the bonus may be applied automatically.
 
 ### Step 5: Accept Terms and Submit
 Check the boxes confirming you:

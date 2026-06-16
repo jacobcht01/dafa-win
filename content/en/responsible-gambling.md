@@ -11,7 +11,7 @@ schema: ["Article", "FAQPage"]
 
 # Responsible Gambling India — Help, Tools & Resources
 
-*Last updated: June 2025 | Author: Rahul Sharma, iGaming India Expert*
+*Last updated: June 2026 | Author: Rahul Sharma, iGaming India Expert*
 
 Gambling is entertainment — and for the vast majority of people who bet, it stays that way. But for some, it can become a problem. This page provides practical tools to keep gambling fun, and honest resources for anyone who needs support.
 

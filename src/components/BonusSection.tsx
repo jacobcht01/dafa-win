@@ -11,9 +11,9 @@ export default function BonusSection({ lang = 'en' }: BonusSectionProps) {
   const promos = isTE ? [
     {
       tag: '🎁 స్వాగత ఆఫర్',
-      title: '200% వెల్‌కమ్ బోనస్',
+      title: '160% వెల్‌కమ్ బోనస్',
       amount: '₹20,000 వరకు',
-      desc: 'మొదటి డిపాజిట్‌పై 200% మ్యాచ్ బోనస్. కేవలం 3x వేజరింగ్.',
+      desc: 'మొదటి డిపాజిట్‌పై 160% మ్యాచ్ బోనస్. కేవలం 3x వేజరింగ్.',
       cta: 'ఇప్పుడే పొందండి →',
       href: 'https://www.dafabet.com/?utm_source=dafawin&utm_content=bonus-welcome',
       highlight: true,
@@ -39,9 +39,9 @@ export default function BonusSection({ lang = 'en' }: BonusSectionProps) {
   ] : [
     {
       tag: '🎁 Welcome Offer',
-      title: '200% Welcome Bonus',
+      title: '160% Welcome Bonus',
       amount: 'Up to ₹20,000',
-      desc: '200% match bonus on your first deposit. Only 3x wagering — lowest in the market.',
+      desc: '160% match bonus on your first deposit. Only 3x wagering — lowest in the market.',
       cta: 'Claim Now →',
       href: 'https://www.dafabet.com/?utm_source=dafawin&utm_content=bonus-welcome',
       highlight: true,

@@ -1,5 +1,5 @@
 ---
-title: "DafaBet App Download India 2025 — Android APK & iOS | DafaWin"
+title: "DafaBet App Download India 2026 — Android APK & iOS | DafaWin"
 description: "Download the DafaBet India app for Android (APK) or iOS. Step-by-step guide with screenshots. Bet on cricket and IPL from your phone. 18+ | Gamble responsibly."
 lang: "en"
 url: "/dafabet-app-download/"
@@ -9,9 +9,9 @@ author: "Rahul Sharma, iGaming India Expert"
 schema: ["HowTo", "FAQPage"]
 ---
 
-# DafaBet App Download India 2025 — Android APK & iOS Guide
+# DafaBet App Download India 2026 — Android APK & iOS Guide
 
-*Last updated: June 2025 | Author: Rahul Sharma, iGaming India Expert*
+*Last updated: June 2026 | Author: Rahul Sharma, iGaming India Expert*
 
 The DafaBet India app brings the full sportsbook, live casino, and UPI deposits to your smartphone. Available for **Android** (APK direct download) and **iOS** (App Store), it's one of the best cricket betting apps available in India. This guide walks you through the complete download and installation process.
 

@@ -104,7 +104,7 @@ export default async function EnglishPage({ params }: Props) {
           <div className="bg-dark-900 border-b border-gold-500/10 py-3">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
               <p className="text-gray-300 text-sm">
-                <span className="text-gold-400 font-bold">🎯 Current Offer:</span> 200% Welcome Bonus up to ₹20,000
+                <span className="text-gold-400 font-bold">🎯 Current Offer:</span> 160% Welcome Bonus up to ₹16,000
               </p>
               <a
                 href="https://www.dafabet.com/?utm_source=dafawin&utm_content=topbar"
@@ -146,7 +146,7 @@ export default async function EnglishPage({ params }: Props) {
               )}
               <div className="bg-dark-800 border border-gold-500/20 rounded-2xl p-6 sticky top-20">
                 <p className="text-gold-400 font-bold mb-1 text-sm">Current Offer</p>
-                <p className="text-2xl font-black text-white mb-1">200% Bonus</p>
+                <p className="text-2xl font-black text-white mb-1">160% Bonus</p>
                 <p className="text-gray-400 text-sm mb-4">Up to ₹20,000 — 3x wagering only</p>
                 <a
                   href="https://www.dafabet.com/?utm_source=dafawin&utm_content=sidebar-page"

@@ -1,5 +1,5 @@
 ---
-title: "DafaBet India 2025 — Official Betting Guide & Review | DafaWin"
+title: "DafaBet India 2026 — Official Betting Guide & Review | DafaWin"
 description: "Complete DafaBet India guide. Expert review of odds, bonuses, cricket betting, and the DafaBet app. Get your welcome bonus today. 18+ | Gamble responsibly."
 lang: "en"
 url: "/"
@@ -9,9 +9,9 @@ author: "Rahul Sharma, iGaming India Expert"
 schema: ["Organization", "WebSite", "BreadcrumbList"]
 ---
 
-# DafaBet India — Official Review & Betting Guide 2025
+# DafaBet India — Official Review & Betting Guide 2026
 
-*Last updated: June 2025 | Author: Rahul Sharma, iGaming India Expert*
+*Last updated: June 2026 | Author: Rahul Sharma, iGaming India Expert*
 
 **DafaWin is India's trusted guide to DafaBet** — the leading cricket and sports betting platform for Indian players. Whether you're looking for the best IPL odds, a generous welcome bonus, or a seamless UPI deposit experience, this guide covers everything you need to know.
 
@@ -25,7 +25,7 @@ DafaBet has been serving Indian players since entering the market, building a re
 
 | Feature | DafaBet India |
 |---------|---------------|
-| Welcome Bonus | **200% up to ₹20,000** |
+| Welcome Bonus | **160% up to ₹16,000** |
 | Minimum Deposit | ₹500 |
 | Payment Methods | UPI, Paytm, PhonePe, Net Banking |
 | Sports | 30+ including cricket, football, kabaddi |
@@ -34,7 +34,7 @@ DafaBet has been serving Indian players since entering the market, building a re
 | Licence | Isle of Man GSC |
 | Support | 24/7 Live Chat |
 
-**The 200% welcome bonus** means a ₹10,000 first deposit gives you ₹20,000 to bet with — one of the most generous offers in the Indian market. The 3x wagering requirement is among the lowest we've seen.
+**The 160% welcome bonus** means a ₹10,000 first deposit gives you ₹16,000 to bet with — one of the most generous offers in the Indian market. The 3x wagering requirement is among the lowest we've seen.
 
 ---
 
@@ -80,12 +80,12 @@ Download guide with step-by-step screenshots: [DafaBet App Download](/dafabet-ap
 
 ## DafaBet Welcome Bonus India
 
-The current welcome bonus is **200% up to ₹20,000** for new sports betting accounts.
+The current welcome bonus is **160% up to ₹16,000** for new sports betting accounts.
 
 **How it works:**
 1. Register a new account
 2. Make your first deposit (minimum ₹500)
-3. The 200% bonus is credited automatically
+3. The 160% bonus is credited automatically
 4. Wager 3x the bonus amount on sports bets
 5. Withdraw your winnings
 

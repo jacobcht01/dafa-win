@@ -23,7 +23,7 @@ export const PAGE_CONFIG: Record<string, PageConfig> = {
       { label: 'Support', score: 8 },
     ],
     pros: [
-      '200% welcome bonus up to ₹20,000',
+      '160% welcome bonus up to ₹16,000',
       'Lowest wagering requirement (3x)',
       'Instant UPI, Paytm & PhonePe deposits',
       'Best cricket odds — tested across 50 IPL matches',

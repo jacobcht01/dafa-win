@@ -45,15 +45,15 @@ export default function HeroSection({ lang = 'en' }: HeroProps) {
 
             <p className="text-navy-200 text-base sm:text-lg mb-7 leading-relaxed">
               {isTE
-                ? 'IPL క్రికెట్, ఫుట్‌బాల్, కబడ్డీ — అన్ని స్పోర్ట్స్‌లో లైవ్ బెట్టింగ్. 200% వెల్‌కమ్ బోనస్ + తక్షణ UPI పేమెంట్లు.'
-                : 'Cricket, Football, Kabaddi — live betting on all sports. 200% welcome bonus + instant UPI payments for Indian players.'}
+                ? 'IPL క్రికెట్, ఫుట్‌బాల్, కబడ్డీ — అన్ని స్పోర్ట్స్‌లో లైవ్ బెట్టింగ్. 160% వెల్‌కమ్ బోనస్ + తక్షణ UPI పేమెంట్లు.'
+                : 'Cricket, Football, Kabaddi — live betting on all sports. 160% welcome bonus + instant UPI payments for Indian players.'}
             </p>
 
             {/* Stats strip */}
             <div className="flex flex-wrap gap-4 mb-7">
               {[
                 { icon: '⭐', val: '8.5/10', label: isTE ? 'రేటింగ్' : 'Rating' },
-                { icon: '🎁', val: '200%', label: isTE ? 'బోనస్' : 'Bonus' },
+                { icon: '🎁', val: '160%', label: isTE ? 'బోనస్' : 'Bonus' },
                 { icon: '⚡', val: isTE ? 'తక్షణ' : 'Instant', label: 'UPI' },
                 { icon: '🏆', val: '30+', label: isTE ? 'స్పోర్ట్స్' : 'Sports' },
               ].map((s) => (
@@ -76,7 +76,7 @@ export default function HeroSection({ lang = 'en' }: HeroProps) {
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-sport-red-500 hover:bg-sport-red-400 text-white font-black text-base rounded-xl transition-all hover:scale-105 shadow-lg shadow-sport-red-500/30"
               >
                 <span>🎯</span>
-                <span>{isTE ? '200% బోనస్ పొందండి' : 'Claim 200% Bonus'}</span>
+                <span>{isTE ? '160% బోనస్ పొందండి' : 'Claim 160% Bonus'}</span>
                 <span>→</span>
               </a>
               <Link
@@ -101,10 +101,10 @@ export default function HeroSection({ lang = 'en' }: HeroProps) {
                   {isTE ? 'స్వాగత ఆఫర్' : 'Welcome Offer'}
                 </div>
                 <div className="text-white text-3xl font-black">
-                  {isTE ? '200% వరకు ₹20,000' : 'Up to ₹20,000'}
+                  {isTE ? '160% వరకు ₹16,000' : 'Up to ₹20,000'}
                 </div>
                 <div className="text-sport-red-100 text-sm">
-                  {isTE ? '200% మ్యాచ్ బోనస్' : '200% Match Bonus'}
+                  {isTE ? '160% మ్యాచ్ బోనస్' : '160% Match Bonus'}
                 </div>
               </div>
 

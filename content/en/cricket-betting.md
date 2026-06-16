@@ -1,5 +1,5 @@
 ---
-title: "Cricket Betting India 2025 — Best Sites & Tips | DafaWin"
+title: "Cricket Betting India 2026 — Best Sites & Tips | DafaWin"
 description: "Expert guide to cricket betting in India. Compare the best cricket betting sites, find the top odds, and learn how to bet on cricket. 18+ | Gamble responsibly."
 lang: "en"
 url: "/cricket-betting/"
@@ -9,11 +9,11 @@ author: "Rahul Sharma, iGaming India Expert"
 schema: ["Article", "FAQPage"]
 ---
 
-# Cricket Betting in India 2025 — Best Sites, Tips & Odds
+# Cricket Betting in India 2026 — Best Sites, Tips & Odds
 
-*Last updated: June 2025 | Author: Rahul Sharma, iGaming India Expert*
+*Last updated: June 2026 | Author: Rahul Sharma, iGaming India Expert*
 
-Cricket and betting are inseparable in India. Whether it's IPL, Test cricket, or the ICC World Cup, tens of millions of Indian fans back their predictions with real money every year. This guide covers the best cricket betting sites in India, how the markets work, and how to bet safely in 2025.
+Cricket and betting are inseparable in India. Whether it's IPL, Test cricket, or the ICC World Cup, tens of millions of Indian fans back their predictions with real money every year. This guide covers the best cricket betting sites in India, how the markets work, and how to bet safely in 2026.
 
 ---
 
@@ -23,12 +23,12 @@ After testing every major platform with real deposits, here are our rankings:
 
 | Rank | Site | Welcome Bonus | Min Deposit | Cricket Markets | Live Betting |
 |------|------|--------------|-------------|-----------------|--------------|
-| 🥇 #1 | **DafaBet** | 200% up to ₹20,000 | ₹500 | 30+ per match | ✅ |
+| 🥇 #1 | **DafaBet** | 160% up to ₹16,000 | ₹500 | 30+ per match | ✅ |
 | #2 | Betway | 100% up to ₹2,500 | ₹1,000 | 25+ per match | ✅ |
 | #3 | 10Cric | 150% up to ₹10,000 | ₹1,000 | 20+ per match | ✅ |
 | #4 | Parimatch | 100% up to ₹12,000 | ₹300 | 15+ per match | ✅ |
 
-**DafaBet is our #1 recommendation** for cricket betting in India. The combination of the best welcome bonus (200% up to ₹20,000), instant UPI deposits, and the most comprehensive IPL and cricket markets makes it the top choice for both new and experienced bettors.
+**DafaBet is our #1 recommendation** for cricket betting in India. The combination of the best welcome bonus (160% up to ₹16,000), instant UPI deposits, and the most comprehensive IPL and cricket markets makes it the top choice for both new and experienced bettors.
 
 ---
 
@@ -122,7 +122,7 @@ Live betting is the most exciting way to bet on cricket. At DafaBet:
 ## How to Start Betting on Cricket: Step-by-Step
 
 1. **Register at DafaBet** — takes under 5 minutes → [Registration Guide](/dafabet-registration/)
-2. **Claim your welcome bonus** — 200% up to ₹20,000 on first deposit → [Bonus Guide](/dafabet-bonus/)
+2. **Claim your welcome bonus** — 160% up to ₹16,000 on first deposit → [Bonus Guide](/dafabet-bonus/)
 3. **Deposit via UPI** — minimum ₹500, instant funding
 4. **Navigate to Cricket** in the sportsbook
 5. **Select a match** and choose your market

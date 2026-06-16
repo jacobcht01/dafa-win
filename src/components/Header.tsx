@@ -42,8 +42,8 @@ export default function Header({ lang = 'en' }: HeaderProps) {
           className="underline underline-offset-2 hover:no-underline"
         >
           {isTE
-            ? '200% వెల్‌కమ్ బోనస్ — ₹20,000 వరకు పొందండి! ఇప్పుడు రిజిస్టర్ చేయండి →'
-            : '200% Welcome Bonus — Claim up to ₹20,000! Register Now →'}
+            ? '160% వెల్‌కమ్ బోనస్ — ₹16,000 వరకు పొందండి! ఇప్పుడు రిజిస్టర్ చేయండి →'
+            : '160% Welcome Bonus — Claim up to ₹16,000! Register Now →'}
         </a>
       </div>
 

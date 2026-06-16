@@ -1,5 +1,5 @@
 ---
-title: "DafaBet Payment Methods India 2025 — UPI, Deposit & Withdrawal"
+title: "DafaBet Payment Methods India 2026 — UPI, Deposit & Withdrawal"
 description: "Complete guide to depositing and withdrawing at DafaBet India. UPI, Paytm, Net Banking supported. Instant deposits from ₹500. 18+ | Gamble responsibly."
 lang: "en"
 url: "/dafabet-payment/"
@@ -9,9 +9,9 @@ author: "Rahul Sharma, iGaming India Expert"
 schema: ["Article", "FAQPage"]
 ---
 
-# DafaBet Payment Methods India 2025 — Deposit & Withdrawal Guide
+# DafaBet Payment Methods India 2026 — Deposit & Withdrawal Guide
 
-*Last updated: June 2025 | Author: Rahul Sharma, iGaming India Expert*
+*Last updated: June 2026 | Author: Rahul Sharma, iGaming India Expert*
 
 DafaBet supports all the major Indian payment methods — UPI, Paytm, PhonePe, and Net Banking — with **instant deposits** and a **₹500 minimum**. Withdrawals process in 1-3 business days. This guide covers everything you need to know about funding your DafaBet account and cashing out your winnings.
 

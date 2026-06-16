@@ -57,7 +57,7 @@ const RATINGS = [
 ];
 
 const PROS = [
-  '200% వెల్‌కమ్ బోనస్ ₹20,000 వరకు',
+  '160% వెల్‌కమ్ బోనస్ ₹16,000 వరకు',
   'అత్యల్ప వేజరింగ్ రిక్వైర్‌మెంట్ (3x)',
   'తక్షణ UPI, PhonePe డిపాజిట్లు',
   'ఉత్తమ IPL క్రికెట్ అడ్డాలు',
@@ -79,7 +79,7 @@ const FAQS = [
   },
   {
     question: 'DafaBet వెల్‌కమ్ బోనస్ ఏమిటి?',
-    answer: 'కొత్త ఆటగాళ్ళు మొదటి స్పోర్ట్స్ డిపాజిట్‌పై 200% వెల్‌కమ్ బోనస్ ₹20,000 వరకు పొందుతారు. ₹10,000 డిపాజిట్ చేస్తే ₹30,000 తో ఆడవచ్చు. వేజరింగ్ అవసరం కేవలం 3x.',
+    answer: 'కొత్త ఆటగాళ్ళు మొదటి స్పోర్ట్స్ డిపాజిట్‌పై 160% వెల్‌కమ్ బోనస్ ₹16,000 వరకు పొందుతారు. ₹10,000 డిపాజిట్ చేస్తే ₹26,000 తో ఆడవచ్చు. వేజరింగ్ అవసరం కేవలం 3x.',
   },
   {
     question: 'DafaBet PhonePe డిపాజిట్లు అంగీకరిస్తుందా?',
@@ -125,7 +125,7 @@ export default function TeluguHomePage() {
                     rel="nofollow noopener noreferrer"
                     className="block w-full text-center px-4 py-3 bg-sport-red-500 hover:bg-sport-red-400 text-white font-black rounded-xl transition-all hover:scale-105 mb-3 font-telugu"
                   >
-                    🎯 200% బోనస్ →
+                    🎯 160% బోనస్ →
                   </a>
                   <p className="text-navy-400 text-xs text-center font-telugu">18+ | T&C వర్తిస్తాయి</p>
                 </div>

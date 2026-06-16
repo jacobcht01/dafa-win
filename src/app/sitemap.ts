@@ -9,7 +9,7 @@ function parseLastModified(slug: string, lang: 'en' | 'te'): Date {
     const parsed = new Date(page.lastUpdated);
     if (!isNaN(parsed.getTime())) return parsed;
   }
-  return new Date('2025-06-09');
+  return new Date('2026-06-16');
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -20,7 +20,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: slug === 'index' ? 1.0 : 0.8,
     alternates: {
       languages: {
+        'en-IN': slug === 'index' ? `${BASE}/` : `${BASE}/${slug}/`,
         'te-IN': slug === 'index' ? `${BASE}/te/` : `${BASE}/te/${slug}/`,
+        'x-default': slug === 'index' ? `${BASE}/` : `${BASE}/${slug}/`,
       },
     },
   }));
@@ -33,6 +35,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: {
       languages: {
         'en-IN': slug === 'index' ? `${BASE}/` : `${BASE}/${slug}/`,
+        'te-IN': slug === 'index' ? `${BASE}/te/` : `${BASE}/te/${slug}/`,
+        'x-default': slug === 'index' ? `${BASE}/` : `${BASE}/${slug}/`,
       },
     },
   }));

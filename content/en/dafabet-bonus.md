@@ -1,6 +1,6 @@
 ---
-title: "DafaBet Bonus Code India 2025 — Welcome Offer Claim Now | DafaWin"
-description: "Latest DafaBet bonus codes for India. Get the 200% welcome bonus up to ₹20,000, free bets, and promo codes. See T&Cs. 18+ | Gamble responsibly."
+title: "DafaBet Bonus Code India 2026 — Welcome Offer Claim Now | DafaWin"
+description: "Latest DafaBet bonus codes for India. Get the 160% welcome bonus up to ₹16,000, free bets, and promo codes. See T&Cs. 18+ | Gamble responsibly."
 lang: "en"
 url: "/dafabet-bonus/"
 keywords: ["dafabet bonus code", "dafabet promo code", "dafabet welcome bonus", "dafabet sign up bonus", "dafabet free bet"]
@@ -9,11 +9,11 @@ author: "Rahul Sharma, iGaming India Expert"
 schema: ["Article", "FAQPage"]
 ---
 
-# DafaBet Bonus Code India 2025 — Welcome Offer & Promo Codes
+# DafaBet Bonus Code India 2026 — Welcome Offer & Promo Codes
 
-*Last updated: June 2025 | Author: Rahul Sharma, iGaming India Expert*
+*Last updated: June 2026 | Author: Rahul Sharma, iGaming India Expert*
 
-DafaBet's **200% welcome bonus up to ₹20,000** is the best new player offer we've found for Indian sports bettors. This page covers all current DafaBet bonus codes, how to claim them, and the full terms and conditions — so you don't get caught out by the fine print.
+DafaBet's **160% welcome bonus up to ₹16,000** is the best new player offer we've found for Indian sports bettors. This page covers all current DafaBet bonus codes, how to claim them, and the full terms and conditions — so you don't get caught out by the fine print.
 
 ---
 
@@ -23,7 +23,7 @@ The DafaBet welcome bonus for Indian players works as follows:
 
 | Detail | Value |
 |--------|-------|
-| Bonus Type | 200% match on first deposit |
+| Bonus Type | 160% match on first deposit |
 | Maximum Bonus | ₹20,000 |
 | Minimum Deposit | ₹500 |
 | Wagering Requirement | 3x (sports) / 20x (casino) |
@@ -40,7 +40,7 @@ The **3x wagering requirement** is genuinely one of the lowest in the Indian mar
 
 | Bonus Code | Offer | Valid Until |
 |------------|-------|-------------|
-| **DAWIN200** | 200% welcome bonus up to ₹20,000 | Ongoing |
+| **DAWIN200** | 160% welcome bonus up to ₹16,000 | Ongoing |
 | **DAWIN100** | 100% reload bonus up to ₹5,000 | Weekly |
 | **CRICKETFREE** | Free bet on IPL match | During IPL season |
 

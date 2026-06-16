@@ -1,5 +1,5 @@
 ---
-title: "Sports Betting India 2025 — Best Sites & Bonuses | DafaWin"
+title: "Sports Betting India 2026 — Best Sites & Bonuses | DafaWin"
 description: "Compare the best sports betting sites in India. Expert reviews of cricket, football, and kabaddi betting with UPI deposits. 18+ | Gamble responsibly."
 lang: "en"
 url: "/sports-betting/"
@@ -9,11 +9,11 @@ author: "Rahul Sharma, iGaming India Expert"
 schema: ["Article", "FAQPage"]
 ---
 
-# Sports Betting India 2025 — Best Sites for Cricket, Football & More
+# Sports Betting India 2026 — Best Sites for Cricket, Football & More
 
-*Last updated: June 2025 | Author: Rahul Sharma, iGaming India Expert*
+*Last updated: June 2026 | Author: Rahul Sharma, iGaming India Expert*
 
-India is one of the world's largest sports betting markets, with cricket alone driving billions in annual wagers. But Indian bettors are increasingly diversifying — football (ISL and global leagues), kabaddi, and tennis are all growing. This guide covers the best sports betting sites in India for 2025 and how to make the most of your betting budget.
+India is one of the world's largest sports betting markets, with cricket alone driving billions in annual wagers. But Indian bettors are increasingly diversifying — football (ISL and global leagues), kabaddi, and tennis are all growing. This guide covers the best sports betting sites in India for 2026 and how to make the most of your betting budget.
 
 ---
 
@@ -21,7 +21,7 @@ India is one of the world's largest sports betting markets, with cricket alone d
 
 | Rank | Site | Welcome Bonus | Sports | UPI | Live Betting |
 |------|------|--------------|--------|-----|--------------|
-| 🥇 #1 | **DafaBet** | 200% up to ₹20,000 | 30+ | ✅ | ✅ |
+| 🥇 #1 | **DafaBet** | 160% up to ₹16,000 | 30+ | ✅ | ✅ |
 | #2 | Betway | 100% up to ₹2,500 | 35+ | ✅ | ✅ |
 | #3 | 10Cric | 150% up to ₹10,000 | 25+ | ✅ | ✅ |
 | #4 | Parimatch | 100% up to ₹12,000 | 40+ | ✅ | ✅ |
@@ -92,7 +92,7 @@ DafaBet's international sports coverage extends to:
 
 1. **Register at DafaBet** — 5-minute process → [Registration Guide](/dafabet-registration/)
 2. **Deposit via UPI** — minimum ₹500, funds credited instantly
-3. **Claim your 200% welcome bonus** → [Bonus Guide](/dafabet-bonus/)
+3. **Claim your 160% welcome bonus** → [Bonus Guide](/dafabet-bonus/)
 4. **Browse sports** — use the menu to navigate to cricket, football, kabaddi, or any other sport
 5. **Select your event** and choose a market
 6. **Enter your stake** — the potential payout is shown before you confirm
@@ -102,7 +102,7 @@ DafaBet's international sports coverage extends to:
 
 ## Sports Betting Bonuses India
 
-DafaBet's **200% welcome bonus up to ₹20,000** applies to sports betting. The 3x wagering requirement is among the lowest in the Indian market.
+DafaBet's **160% welcome bonus up to ₹16,000** applies to sports betting. The 3x wagering requirement is among the lowest in the Indian market.
 
 Other sports betting promotions at DafaBet:
 - **Reload bonuses:** Weekly offers for returning depositors

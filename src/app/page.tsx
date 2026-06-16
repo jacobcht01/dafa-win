@@ -57,7 +57,7 @@ const RATINGS = [
 ];
 
 const PROS = [
-  '200% welcome bonus up to ₹20,000',
+  '160% welcome bonus up to ₹16,000',
   'Lowest wagering requirement (3x) in market',
   'Instant UPI, Paytm & PhonePe deposits',
   'Best cricket odds — tested across 50 IPL matches',
@@ -80,7 +80,7 @@ const FAQS = [
   },
   {
     question: 'What is the DafaBet welcome bonus?',
-    answer: 'New players receive a 200% welcome bonus up to ₹20,000 on their first sports deposit. Deposit ₹10,000 and play with ₹30,000. The wagering requirement is just 3x — the lowest in the Indian market.',
+    answer: 'New players receive a 160% welcome bonus up to ₹16,000 on their first sports deposit. Deposit ₹10,000 and play with ₹26,000. The wagering requirement is just 3x — the lowest in the Indian market.',
   },
   {
     question: 'Does DafaBet accept UPI deposits?',
@@ -126,7 +126,7 @@ export default function HomePage() {
                     rel="nofollow noopener noreferrer"
                     className="block w-full text-center px-4 py-3 bg-sport-red-500 hover:bg-sport-red-400 text-white font-black rounded-xl transition-all hover:scale-105 mb-3"
                   >
-                    🎯 200% Bonus →
+                    🎯 160% Bonus →
                   </a>
                   <p className="text-navy-400 text-xs text-center">18+ | T&C Apply | Gamble Responsibly</p>
                 </div>

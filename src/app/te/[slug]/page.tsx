@@ -112,7 +112,7 @@ export default async function TeluguPage({ params }: Props) {
           <div className="bg-dark-900 border-b border-gold-500/10 py-3">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
               <p className="text-gray-300 text-sm font-telugu">
-                <span className="text-gold-400 font-bold">🎯 ప్రస్తుత ఆఫర్:</span> 200% వెల్‌కమ్ బోనస్ ₹20,000 వరకు
+                <span className="text-gold-400 font-bold">🎯 ప్రస్తుత ఆఫర్:</span> 160% వెల్‌కమ్ బోనస్ ₹16,000 వరకు
               </p>
               <a
                 href="https://www.dafabet.com/?utm_source=dafawin&utm_content=topbar-te"
@@ -149,7 +149,7 @@ export default async function TeluguPage({ params }: Props) {
               )}
               <div className="bg-dark-800 border border-gold-500/20 rounded-2xl p-6 sticky top-20">
                 <p className="text-gold-400 font-bold mb-1 text-sm font-telugu">ప్రస్తుత ఆఫర్</p>
-                <p className="text-2xl font-black text-white mb-1">200% బోనస్</p>
+                <p className="text-2xl font-black text-white mb-1">160% బోనస్</p>
                 <p className="text-gray-400 text-sm mb-4 font-telugu">₹20,000 వరకు — 3x వేజరింగ్ మాత్రమే</p>
                 <a
                   href="https://www.dafabet.com/?utm_source=dafawin&utm_content=sidebar-page-te"
@@ -192,7 +192,7 @@ function translateRatingLabel(label: string): string {
 
 function translatePro(pro: string): string {
   const map: Record<string, string> = {
-    '200% welcome bonus up to ₹20,000': '200% వెల్‌కమ్ బోనస్ ₹20,000 వరకు',
+    '160% welcome bonus up to ₹16,000': '160% వెల్‌కమ్ బోనస్ ₹16,000 వరకు',
     'Lowest wagering requirement (3x)': 'అత్యల్ప వేజరింగ్ (3x)',
     'Instant UPI, Paytm & PhonePe deposits': 'తక్షణ UPI, PhonePe డిపాజిట్లు',
     'Best cricket odds — tested across 50 IPL matches': 'ఉత్తమ క్రికెట్ అడ్డాలు',

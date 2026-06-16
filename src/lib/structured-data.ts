@@ -34,8 +34,8 @@ export function buildReviewSchema(lang: 'en' | 'te') {
     publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
     reviewRating: { '@type': 'Rating', ratingValue: '8.5', bestRating: '10', worstRating: '1' },
     reviewBody: lang === 'te'
-      ? 'దఫాబెట్ ఇండియాలో బెట్టింగ్‌కు #1 సైట్. IPL క్రికెట్, UPI పేమెంట్, 200% బోనస్.'
-      : 'DafaBet India is the #1 betting site for IPL cricket. Best odds, instant UPI deposits, and a 200% welcome bonus.',
+      ? 'దఫాబెట్ ఇండియాలో బెట్టింగ్‌కు #1 సైట్. IPL క్రికెట్, UPI పేమెంట్, 160% బోనస్.'
+      : 'DafaBet India is the #1 betting site for IPL cricket. Best odds, instant UPI deposits, and a 160% welcome bonus.',
   };
 }
 
@@ -73,6 +73,14 @@ export function buildWebSiteSchema() {
     '@type': 'WebSite',
     name: SITE_NAME,
     url: SITE_URL,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   };
 }
 
@@ -81,12 +89,12 @@ export function buildHowToSchema(lang: 'en' | 'te') {
     { name: 'DafaBet సైట్ సందర్శించండి', text: 'DafaBet వెబ్‌సైట్ తెరవండి మరియు "రిజిస్టర్" బటన్ క్లిక్ చేయండి.' },
     { name: 'వ్యక్తిగత వివరాలు నమోదు చేయండి', text: 'మీ పేరు, పుట్టిన తేదీ, ఇమెయిల్ మరియు మొబైల్ నంబర్ నమోదు చేయండి.' },
     { name: 'డిపాజిట్ చేయండి', text: 'PhonePe లేదా UPI ద్వారా కనీసం ₹500 డిపాజిట్ చేయండి.' },
-    { name: 'బోనస్ పొందండి', text: '200% వెల్‌కమ్ బోనస్ స్వయంచాలకంగా జమ అవుతుంది.' },
+    { name: 'బోనస్ పొందండి', text: '160% వెల్‌కమ్ బోనస్ స్వయంచాలకంగా జమ అవుతుంది.' },
   ] : [
     { name: 'Visit DafaBet India', text: 'Open the DafaBet website and click the "Register" or "Join Now" button.' },
     { name: 'Enter Personal Details', text: 'Fill in your name, date of birth, email, and mobile number.' },
     { name: 'Make a Deposit', text: 'Deposit at least ₹500 via UPI, Paytm, or PhonePe.' },
-    { name: 'Claim Your Bonus', text: 'Your 200% welcome bonus is credited automatically after deposit.' },
+    { name: 'Claim Your Bonus', text: 'Your 160% welcome bonus is credited automatically after deposit.' },
   ];
 
   return {
