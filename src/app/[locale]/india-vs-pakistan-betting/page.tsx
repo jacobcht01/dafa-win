@@ -301,6 +301,55 @@ function IndiaVsPakistanBettingContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      {/* Telugu Section */}
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <h2 className="section-title mb-6">ఇండ్-పాక్ పందెం తెలుగు గైడ్</h2>
+
+          {/* Block 1: Match context */}
+          <div className="card mb-6">
+            <h3 className="gold-text font-bold text-lg mb-3">ఇండియా vs పాకిస్తాన్ — తెలుగు ఆటగాళ్ళకు సూటి గైడ్</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-3">
+              ఈ మ్యాచ్ ICC టోర్నీలో మాత్రమే. ద్వైపాక్షిక సిరీస్ లేవు. DafaWin ఇండ్-పాక్ మ్యాచ్‌కి 200+ మార్కెట్‌లు, లైవ్ బాల్-బై-బాల్ ఆడ్స్, cash-out సేవ అందిస్తుంది.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              మ్యాచ్ విన్నర్ ఆడ్స్ మ్యాచ్ 48 గంటల ముందే తెరుచుకుంటాయి; లిక్విడిటీ ICC టోర్నీ సమయంలో అత్యధికంగా ఉంటుంది.
+            </p>
+          </div>
+
+          {/* Block 2: H2H stats */}
+          <div className="card mb-6">
+            <h3 className="gold-text font-bold text-lg mb-3">హెడ్-టు-హెడ్ రికార్డ్</h3>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li><span className="text-brand-gold font-semibold">ODIs:</span> పాకిస్తాన్ 73–58 లీడ్ (136 ODIs)</li>
+              <li><span className="text-brand-gold font-semibold">T20Is:</span> ఇండియా 14–3 లీడ్ (17 T20Is)</li>
+              <li><span className="text-brand-gold font-semibold">50-ఓవర్ వరల్డ్ కప్:</span> ఇండియా అన్ని 8 మ్యాచ్‌లు గెలిచింది</li>
+              <li><span className="text-brand-gold font-semibold">టెస్ట్:</span> పాకిస్తాన్ 12–9 (38 డ్రాలతో)</li>
+            </ul>
+          </div>
+
+          {/* Block 3: Scam warning */}
+          <div className="card border-l-4 border-red-500 mb-6">
+            <h3 className="text-red-400 font-bold text-lg mb-3">హెచ్చరిక: మ్యాచ్ ఫిక్సింగ్ స్కామ్‌లు</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              ఇండ్-పాక్ మ్యాచ్ రోజు &ldquo;fixed match&rdquo; టెలిగ్రామ్ మెసేజ్‌లు ఎక్కువగా వస్తాయి. వీటిలో 100% మోసాలే. &ldquo;₹500 పంపితే guaranteed winner&rdquo; — ఇది శుద్ధ దొంగతనం. మ్యాచ్ ఫిక్సింగ్ ఉందో లేదో DafaWin కి తెలియదు; ఎవరికీ తెలియదు.
+            </p>
+          </div>
+
+          {/* Block 4: Quick links */}
+          <div className="bg-brand-surface rounded-lg p-4">
+            <p className="text-gray-400 text-sm">
+              సంబంధిత పేజీలు:{' '}
+              <Link href="/cricket-betting" className="text-brand-gold hover:underline">క్రికెట్ పందెం</Link>
+              {', '}
+              <Link href="/ipl-betting" className="text-brand-gold hover:underline">IPL పందెం</Link>
+              {', '}
+              <Link href="/t20-world-cup-betting" className="text-brand-gold hover:underline">T20 వరల్డ్ కప్</Link>
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
       <section className="bg-brand-surface py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

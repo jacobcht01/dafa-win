@@ -161,6 +161,58 @@ function FootballBettingContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      {/* Telugu Section */}
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <h2 className="section-title mb-6">ఫుట్‌బాల్ పందెం తెలుగు గైడ్</h2>
+
+          {/* Block 1: Hyderabad FC card */}
+          <div className="card mb-6">
+            <h3 className="font-semibold text-brand-gold mb-2">హైదరాబాద్ FC &amp; ISL</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              తెలుగు ఫుట్‌బాల్ అభిమానులకు హైదరాబాద్ FC (ISL) ప్రధానం. DafaWin ISL మ్యాచ్‌లకు మ్యాచ్ విన్నర్, గోల్ టోటల్, హ్యాండిక్యాప్ మార్కెట్‌లు ఇస్తుంది. హైదరాబాద్ నుంచి లివర్‌పూల్, చెల్సీ సపోర్టర్ క్లబ్‌లు ఉన్నాయి — ప్రీమియర్ లీగ్ మ్యాచ్‌లు IST రాత్రి 10:00–12:00 మధ్య నడుస్తాయి. లైవ్ బెట్టింగ్ కూడా ఉంది.
+            </p>
+          </div>
+
+          {/* Block 2: Market types */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="card-hover">
+              <h3 className="font-semibold text-brand-gold mb-2">మ్యాచ్ విన్నర్</h3>
+              <p className="text-gray-400 text-sm">1X2 — హోమ్/డ్రా/అవే. మొదటి పందెంకి బేసిక్ మార్కెట్.</p>
+            </div>
+            <div className="card-hover">
+              <h3 className="font-semibold text-brand-gold mb-2">ఆసియన్ హ్యాండిక్యాప్</h3>
+              <p className="text-gray-400 text-sm">ఒక జట్టుకి ముందే గోల్ ఆడ్వాంటేజ్ ఇస్తుంది. ఒకే స్ట్రెంగ్త్ జట్ల మ్యాచ్‌కి ఉపయోగపడదు.</p>
+            </div>
+            <div className="card-hover">
+              <h3 className="font-semibold text-brand-gold mb-2">గోల్ O/U (2.5)</h3>
+              <p className="text-gray-400 text-sm">మొత్తం గోల్స్ 2.5 కంటే ఎక్కువ/తక్కువ. ISL మ్యాచ్‌లకు 2.5 గోల్ లైన్ సాధారణం.</p>
+            </div>
+            <div className="card-hover">
+              <h3 className="font-semibold text-brand-gold mb-2">లైవ్ పందెం</h3>
+              <p className="text-gray-400 text-sm">90 నిమిషాలూ మార్కెట్‌లు ఓపెన్. నెక్స్ట్ గోల్, నెక్స్ట్ కార్డ్ — IST రాత్రికి తగిన నిర్ణయాలు.</p>
+            </div>
+          </div>
+
+          {/* Block 3: Legal note */}
+          <div className="card bg-brand-surface mb-6">
+            <p className="text-gray-400 text-sm leading-relaxed">
+              <span className="text-brand-gold font-semibold">AP, తెలంగాణ చట్ట స్థితి:</span> ఆఫ్‌షోర్ ఆపరేటర్‌లపై స్టేట్ లా నేరుగా అమలవ్వడం అరుదు. మీ నిర్ణయం మీరు తీసుకోండి. 18+ మాత్రమే.
+            </p>
+          </div>
+
+          {/* Block 4: Quick links */}
+          <div className="card">
+            <p className="text-gray-400 text-sm mb-3">సంబంధిత పేజీలు:</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/sports-betting" className="btn-primary text-sm px-4 py-2">స్పోర్ట్స్ హబ్</Link>
+              <Link href="/dafabet-review" className="btn-primary text-sm px-4 py-2">దాఫాబెట్ సమీక్ష</Link>
+              <Link href="/dafabet-registration" className="btn-primary text-sm px-4 py-2">రిజిస్ట్రేషన్</Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <h2 className="section-title mb-8">Football Betting FAQ</h2>

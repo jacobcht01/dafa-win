@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-function CasinoContent() {
+function CasinoContent({ locale }: { locale: string }) {
   const t = useTranslations('casino')
   const tCommon = useTranslations('common')
 
@@ -214,6 +214,53 @@ function CasinoContent() {
         </div>
       </section>
 
+      {/* Telugu Section */}
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <h2 className="section-title mb-6">ఆన్‌లైన్ క్యాసినో తెలుగు గైడ్</h2>
+
+          {/* Block 1: Card games for Telugu players */}
+          <div className="card mb-6">
+            <h3 className="gold-text font-bold text-lg mb-3">తెలుగు ఆటగాళ్ళకు ఇష్టమైన క్యాసినో గేమ్‌లు</h3>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li><span className="text-brand-gold font-semibold">తీన్ పత్తి (Teen Patti):</span> లైవ్ టేబుల్స్ — హిందీ/తెలుగు డీలర్లతో. 3-కార్డ్ ప్లే, సైడ్-బెట్‌లు.</li>
+              <li><span className="text-brand-gold font-semibold">అందర్ బహర్ (Andar Bahar):</span> గోవా రూమ్ రూల్స్, వేగంగా డీల్. సరళమైన గేమ్.</li>
+              <li><span className="text-brand-gold font-semibold">రమ్మీ:</span> 13-కార్డ్ క్యాష్ టేబుల్స్ మరియు టోర్నమెంట్ ఫార్మాట్‌లు.</li>
+              <li><span className="text-brand-gold font-semibold">పోకర్:</span> Texas Hold&apos;em లైవ్ టేబుల్స్ మరియు వీడియో పోకర్.</li>
+            </ul>
+          </div>
+
+          {/* Block 2: Online vs Goa */}
+          <div className="card mb-6">
+            <h3 className="gold-text font-bold text-lg mb-3">గోవా క్యాసినో vs ఆన్‌లైన్ — తేడాలు</h3>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li><span className="text-brand-gold font-semibold">గోవా క్యాసినో:</span> డెల్టిన్ రాయల్, కాసినో ప్రైడ్. అందర్ బహర్, తీన్ పత్తి — అదే నిర్మాణం.</li>
+              <li><span className="text-brand-gold font-semibold">DafaWin ఆన్‌లైన్:</span> అదే టేబుల్ టైప్లు, కానీ UPI విత్‌డ్రా పడవ గ్యాంగ్‌ప్లాంక్ లేకుండా. హిందీ-స్పీకింగ్ లైవ్ డీలర్‌లు Evolution + Ezugi స్టూడియో నుండి.</li>
+            </ul>
+          </div>
+
+          {/* Block 3: Legal note */}
+          <div className="card mb-6">
+            <h3 className="gold-text font-bold text-lg mb-3">AP, తెలంగాణ క్యాసినో చట్ట స్థితి</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              ఆంధ్రప్రదేశ్, తెలంగాణ లో ఆన్‌లైన్ క్యాసినో మీద ఆంక్షలు ఉన్నాయి. ఆఫ్‌షోర్ ఆపరేటర్‌లను ఎన్‌ఫోర్స్ చేయడం అరుదు, కానీ చట్టం స్పష్టత లేదు. మీ రిస్క్ మీరు అంచనా వేసుకోండి. 18+ మాత్రమే.
+            </p>
+          </div>
+
+          {/* Block 4: Quick links */}
+          <div className="bg-brand-surface rounded-lg p-4">
+            <p className="text-gray-400 text-sm">
+              సంబంధిత పేజీలు:{' '}
+              <Link href="/dafabet-review" className="text-brand-gold hover:underline">దాఫాబెట్ సమీక్ష</Link>
+              {', '}
+              <Link href="/dafabet-bonus" className="text-brand-gold hover:underline">దాఫాబెట్ బోనస్</Link>
+              {', '}
+              <Link href="/dafabet-registration" className="text-brand-gold hover:underline">రిజిస్ట్రేషన్</Link>
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
       <section className="py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -262,5 +309,5 @@ function CasinoContent() {
 export default async function CasinoPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-  return <CasinoContent />
+  return <CasinoContent locale={locale} />
 }

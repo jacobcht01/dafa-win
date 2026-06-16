@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-function BonusesContent() {
+function BonusesContent({ locale }: { locale: string }) {
   const t = useTranslations('bonuses')
   const tCommon = useTranslations('common')
 
@@ -364,6 +364,59 @@ function BonusesContent() {
         </div>
       </section>
 
+      {/* Telugu Section — DafaBet Bonus */}
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          {/* Block 1: Bonus breakdown with gold border */}
+          <div className="card border border-brand-gold/40 mb-6">
+            <h2 className="text-brand-gold font-bold text-xl mb-3">200% వెల్‌కం బోనస్ — T&amp;C దాచకుండా</h2>
+            <p className="text-gray-400 text-sm leading-relaxed mb-3">
+              మొదటి డిపాజిట్‌పై 200% మ్యాచ్, రూ.20,000 వరకు. కనీస డిపాజిట్: రూ.500.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed mb-3">
+              రూ.500 వేస్తే రూ.1,500 ఖాతాలో పడుతుంది; రూ.10,000 వేస్తే రూ.30,000 — అందులో రూ.20,000 బోనస్ ఫండ్స్.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              <span className="text-brand-gold font-semibold">ముఖ్యం:</span> wagering requirement (రోల్‌ఓవర్) వర్తిస్తుంది. max-cashout cap ఉంటుంది. డిపాజిట్ చేసే ముందు T&amp;C పేజీ చదవండి.
+            </p>
+          </div>
+
+          {/* Block 2: How to claim — 3 step cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            <div className="card card-hover">
+              <p className="text-brand-gold font-bold text-lg mb-2">1</p>
+              <p className="text-gray-400 text-sm leading-relaxed">DafaWin లింక్ నుండి దాఫాబెట్‌లో అకౌంట్ తెరవండి. నిజమైన పేరు, చిరునామా వాడండి — KYC దగ్గర తనిఖీ చేస్తారు.</p>
+            </div>
+            <div className="card card-hover">
+              <p className="text-brand-gold font-bold text-lg mb-2">2</p>
+              <p className="text-gray-400 text-sm leading-relaxed">UPI (PhonePe/GPay/Paytm) ద్వారా కనీసం రూ.500 జమ చేయండి. బోనస్ ఆటోమేటిగా క్రెడిట్ అవుతుంది — ప్రత్యేక కోడ్ అక్కర్లేదు.</p>
+            </div>
+            <div className="card card-hover">
+              <p className="text-brand-gold font-bold text-lg mb-2">3</p>
+              <p className="text-gray-400 text-sm leading-relaxed">wagering requirement పూర్తి చేయండి — eligible మార్కెట్‌లలో పందెం వేయండి. తర్వాత విత్‌డ్రా అడగండి.</p>
+            </div>
+          </div>
+
+          {/* Block 3: Telegram scam warning */}
+          <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-4 mb-6">
+            <h3 className="text-red-400 font-bold mb-2">హెచ్చరిక: &quot;Bonus unlock&quot; స్కామ్‌లు</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              టెలిగ్రామ్‌లో &quot;DafaWin బోనస్ unlock చేయండి — ₹200 పంపండి&quot; చెప్పేవాళ్ళు మోసగాళ్ళు. DafaWin లో బోనస్ కోడ్ అక్కర్లేదు; అవసరం లేదు, అడగడం అక్కర్లేదు.
+            </p>
+          </div>
+
+          {/* Block 4: Quick links */}
+          <div className="card">
+            <p className="text-gray-400 text-sm mb-2">సంబంధిత పేజీలు:</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/dafabet-review" className="text-brand-gold text-sm hover:underline">దాఫాబెట్ సమీక్ష</Link>
+              <Link href="/dafabet-payment" className="text-brand-gold text-sm hover:underline">జమ-విత్‌డ్రా గైడ్</Link>
+              <Link href="/dafabet-registration" className="text-brand-gold text-sm hover:underline">రిజిస్ట్రేషన్</Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <h2 className="section-title text-center mb-8">Bonus FAQ</h2>
@@ -388,5 +441,5 @@ function BonusesContent() {
 export default async function BonusesPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-  return <BonusesContent />
+  return <BonusesContent locale={locale} />
 }

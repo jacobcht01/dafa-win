@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { JsonLd } from '@/components/JsonLd'
 import { howToSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
 import { pageAlternates, SITE_URL } from '@/lib/seo'
+import { Link } from '@/i18n/navigation'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -149,6 +150,68 @@ function AppDownloadContent({ locale }: { locale: string }) {
           <p className="text-gray-500 text-xs mt-3">QR Code — DafaBet App</p>
         </div>
       </section>
+
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <h2 className="section-title mb-6">యాప్ డౌన్‌లోడ్ తెలుగు గైడ్</h2>
+
+          {/* Android APK steps */}
+          <div className="card mb-6">
+            <h3 className="text-lg font-semibold text-white mb-3">Android APK ఇన్‌స్టాల్ ఎలా చేయాలి?</h3>
+            <ol className="space-y-3 text-gray-400 text-sm">
+              <li className="flex gap-3">
+                <span className="text-brand-gold font-bold flex-shrink-0">1.</span>
+                <span>Phone → Settings → Security → &quot;Unknown sources&quot; enable చేయండి.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-brand-gold font-bold flex-shrink-0">2.</span>
+                <span>DafaWin మొబైల్ సైట్ తెరవండి → &quot;Download App&quot; / &quot;Android APK&quot; నొక్కండి.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-brand-gold font-bold flex-shrink-0">3.</span>
+                <span>APK ఫైల్ డౌన్‌లోడ్ అయిన తరువాత — తెరవండి.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-brand-gold font-bold flex-shrink-0">4.</span>
+                <span>&quot;Install&quot; నొక్కండి — ~30 సెకన్లు. అయింది.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-brand-gold font-bold flex-shrink-0">5.</span>
+                <span>DafaWin యాప్ తెరవండి, లాగిన్/రిజిస్టర్ చేయండి.</span>
+              </li>
+            </ol>
+            <p className="text-gray-400 text-sm mt-4 border-t border-brand-border pt-3">
+              <strong className="text-white">ముఖ్యం:</strong> APK ఎప్పుడూ అధికారిక DafaWin URL నుండి మాత్రమే తీసుకోండి — టెలిగ్రామ్ APK వద్దు.
+            </p>
+          </div>
+
+          {/* iOS note */}
+          <div className="card mb-6">
+            <h3 className="text-lg font-semibold text-white mb-3">iOS వాడేవారికి</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              iPhone/iPad వినియోగదారులు Safari బ్రౌజర్‌లో దాఫాబెట్ అక్సెస్ చేయవచ్చు — App Store యాప్ లేదు. Share మెనూ → &quot;Add to Home Screen&quot; — యాప్‌లాగా ఉంటుంది.
+            </p>
+          </div>
+
+          {/* Warning */}
+          <div className="card mb-6 border-l-4 border-red-500">
+            <h3 className="text-lg font-semibold text-white mb-3">హెచ్చరిక: నకిలీ APK లు</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              టెలిగ్రామ్ &quot;DafaWin APK&quot; శేర్ చేసేవాళ్ళు నకిలీ ఫైల్‌లు ఇస్తారు — ఇన్‌స్టాల్ చేస్తే UPI పిన్, పాస్‌వర్డ్ చోరీకి అవకాశం. ఎప్పుడూ అధికారిక సైట్ నుండి మాత్రమే.
+            </p>
+          </div>
+
+          {/* Quick links */}
+          <div className="card bg-brand-surface">
+            <p className="text-gray-400 text-sm mb-3 font-semibold">సంబంధిత పేజీలు:</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/dafabet-registration" className="text-brand-gold hover:underline text-sm">రిజిస్ట్రేషన్</Link>
+              <Link href="/dafabet-payment" className="text-brand-gold hover:underline text-sm">జమ-విత్‌డ్రా గైడ్</Link>
+              <Link href="/dafabet-review" className="text-brand-gold hover:underline text-sm">దాఫాబెట్ సమీక్ష</Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">

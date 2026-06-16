@@ -346,6 +346,64 @@ function T20WorldCupBettingContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      {/* Telugu Section */}
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <h2 className="section-title mb-6">T20 వరల్డ్ కప్ తెలుగు గైడ్</h2>
+
+          {/* Block 1: Tournament context */}
+          <div className="card mb-6">
+            <h3 className="gold-text font-bold text-lg mb-3">T20 వరల్డ్ కప్ పందెం — తెలుగు ఆటగాళ్ళ గైడ్</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-3">
+              ICC T20 వరల్డ్ కప్ ప్రతి 2 సంవత్సరాలకు జరుగుతుంది. భారతదేశం 2007 (దక్షిణ అఫ్రికా) మరియు 2024 లో గెలిచింది. DafaWin టోర్నమెంట్ ఎన్నో నెలల ముందే ఔట్‌రైట్ మార్కెట్‌లు తెరుస్తుంది.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              ముఖ్యమైన ఇండియా T20 WC మ్యాచ్‌లు IST ఆధారంగా 7:30 లేదా 3:30 PM లో మొదలవుతాయి.
+            </p>
+          </div>
+
+          {/* Block 2: Markets for Telugu fans — 4 card grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div className="card">
+              <h3 className="gold-text font-bold text-base mb-2">టోర్నమెంట్ విన్నర్</h3>
+              <p className="text-gray-400 text-sm">మ్యాచ్ మొదలవ్వడానికి నెలల ముందే పందెం వేయవచ్చు. ఔట్‌రైట్ ఆడ్స్ ముందు ఎక్కువగా ఉంటాయి.</p>
+            </div>
+            <div className="card">
+              <h3 className="gold-text font-bold text-base mb-2">ఇండియా మ్యాచ్ విన్నర్</h3>
+              <p className="text-gray-400 text-sm">ప్రతి ఇండియా మ్యాచ్‌కి ప్రత్యేకంగా. వాల్యూమ్ అత్యధికం — ఆడ్స్ షార్ప్‌గా ఉంటాయి.</p>
+            </div>
+            <div className="card">
+              <h3 className="gold-text font-bold text-base mb-2">టాప్ రన్-స్కోరర్</h3>
+              <p className="text-gray-400 text-sm">టోర్నీ వ్యాప్తంగా అత్యధిక పరుగులు. సెమీస్ వరకు వెళ్ళే జట్ల ఓపెనర్లపై ఆడ్స్ ఉంటాయి.</p>
+            </div>
+            <div className="card">
+              <h3 className="gold-text font-bold text-base mb-2">గ్రూప్ స్టేజ్ ఔట్‌రైట్</h3>
+              <p className="text-gray-400 text-sm">ఒక గ్రూప్ లో ఏ జట్టు అగ్రగామిగా నిలుస్తుంది? ట్రోఫీ కంటే రిస్క్ తక్కువ.</p>
+            </div>
+          </div>
+
+          {/* Block 3: Scam warning */}
+          <div className="card border-l-4 border-red-500 mb-6">
+            <h3 className="text-red-400 font-bold text-lg mb-3">హెచ్చరిక: T20 WC సమయంలో మోసాలు</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              ఇండియా మ్యాచ్ రోజు &ldquo;score tip&rdquo; అమ్మే టెలిగ్రామ్ ఛానల్‌లు మోసాలు. &ldquo;₹200 పంపితే ఈ రాత్రి స్కోర్ చెప్తాం&rdquo; — ఇది అసాధ్యం, దొంగతనం. మ్యాచ్ ఫిక్సింగ్ అరుదు; చెప్పే వాళ్ళు మోసగాళ్ళు.
+            </p>
+          </div>
+
+          {/* Block 4: Quick links */}
+          <div className="bg-brand-surface rounded-lg p-4">
+            <p className="text-gray-400 text-sm">
+              సంబంధిత పేజీలు:{' '}
+              <Link href="/cricket-betting" className="text-brand-gold hover:underline">క్రికెట్ పందెం</Link>
+              {', '}
+              <Link href="/ipl-betting" className="text-brand-gold hover:underline">IPL పందెం</Link>
+              {', '}
+              <Link href="/india-vs-pakistan-betting" className="text-brand-gold hover:underline">ఇండ్-పాక్ పందెం</Link>
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
       <section className="py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

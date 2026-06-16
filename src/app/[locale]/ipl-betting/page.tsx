@@ -212,6 +212,57 @@ function IplBettingContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      {/* Telugu Section — IPL */}
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          {/* Block 1: SRH + Telugu context */}
+          <div className="card mb-6">
+            <h2 className="text-brand-gold font-bold text-xl mb-3">సన్‌రైజర్స్ హైదరాబాద్ — తెలుగు ఆటగాళ్ళ కోసం IPL గైడ్</h2>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              SRH హోమ్ జట్టు. హైదరాబాద్ రజీవ్ గాంధీ స్టేడియం — స్పిన్ ఫ్రెండ్లీ పిచ్, రాత్రి డ్యూ కింద పేస్ ఎక్కువ అవుతుంది. మ్యాచ్ టైమ్‌లో టాస్ అర్థం పడుతుంది — హైదరాబాద్‌లో చేస్ చేయడం ఎక్కువగా అనుకూలం. IPL 2026 SRH మ్యాచ్‌లపై DafaWin 500+ మార్కెట్‌లు అందిస్తుంది.
+            </p>
+          </div>
+
+          {/* Block 2: Market types grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div className="card card-hover">
+              <h3 className="text-brand-gold font-bold mb-2">మ్యాచ్ విన్నర్</h3>
+              <p className="text-gray-400 text-sm">ప్రతి IPL మ్యాచ్‌కి బేసిక్ మార్కెట్. ₹500 పందెంతో మొదలుపెట్టండి.</p>
+            </div>
+            <div className="card card-hover">
+              <h3 className="text-brand-gold font-bold mb-2">టాప్ బ్యాట్స్‌మన్</h3>
+              <p className="text-gray-400 text-sm">ఒక ఇన్నింగ్స్‌లో అత్యధిక పరుగులు. అభిషేక్ శర్మ, ట్రావిస్ హెడ్ — హైదరాబాద్ ఓపెనర్ పర్ఫామెన్స్ ట్రాక్ చేయండి.</p>
+            </div>
+            <div className="card card-hover">
+              <h3 className="text-brand-gold font-bold mb-2">లైవ్ బాల్-బై-బాల్</h3>
+              <p className="text-gray-400 text-sm">ఒక ఓవర్‌లో ఎన్ని పరుగులు? ఒక బౌలర్ ఔట్ తీస్తాడా? మ్యాచ్ చూస్తూ లైవ్‌లో పందెం వేయండి.</p>
+            </div>
+            <div className="card card-hover">
+              <h3 className="text-brand-gold font-bold mb-2">సీజన్ ఔట్‌రైట్</h3>
+              <p className="text-gray-400 text-sm">IPL 2026 విన్నర్ ఎవరు? IPL మొదటికన్నా ముందే ఔట్‌రైట్ ఆడ్స్ వేయడం వల్ల ఎక్కువ రిటర్న్ వస్తుంది.</p>
+            </div>
+          </div>
+
+          {/* Block 3: Scam warning */}
+          <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-4 mb-6">
+            <h3 className="text-red-400 font-bold mb-2">హెచ్చరిక: టెలిగ్రామ్ &quot;IPL fixed match&quot; స్కామ్‌లు</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              &quot;రేపటి మ్యాచ్ ఫిక్స్‌డ్&quot; చెప్పే టెలిగ్రామ్ ఛానల్‌లు మోసాలు. ₹500–₹2000 వేస్తే &quot;guaranteed టిప్&quot; ఇస్తారు; తరువాత మళ్ళీ అడుగుతారు, ఒక్కసారి పోగొట్టారు. నకిలీ APK లింక్‌లు UPI పిన్ దొంగిలిస్తాయి.
+            </p>
+          </div>
+
+          {/* Block 4: Quick links */}
+          <div className="card">
+            <p className="text-gray-400 text-sm mb-2">సంబంధిత పేజీలు:</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/cricket-betting" className="text-brand-gold text-sm hover:underline">క్రికెట్ పందెం</Link>
+              <Link href="/india-vs-pakistan-betting" className="text-brand-gold text-sm hover:underline">ఇండ్-పాక్ పందెం</Link>
+              <Link href="/t20-world-cup-betting" className="text-brand-gold text-sm hover:underline">T20 వరల్డ్ కప్</Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
       <section className="bg-brand-surface py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -425,6 +425,52 @@ function ReviewContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      {/* Telugu Section — DafaBet Review */}
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          {/* Block 1: Telugu verdict card */}
+          <div className="card bg-brand-surface border border-brand-gold/30 mb-6">
+            <h2 className="text-brand-gold font-bold text-xl mb-3">తెలుగు ఆటగాళ్ళకు తీర్పు — 9.2/10</h2>
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              క్రికెట్ + UPI కలయిక ఉన్న జట్టు: సిఫార్సు. రేటింగ్: క్రికెట్ లోతు 9.5/10 ⭐, UPI సర్వీస్ 9.0/10, బోనస్ విలువ 8.5/10.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              DafaWin డెస్క్ జూన్ 2026 లో నిజ-రూపాయి అకౌంట్ టెస్ట్ చేసింది: ₹5,000 UPI విత్‌డ్రా ప్రకటిత 24 గంటల SLA లోపు సెటిల్ అయింది.
+            </p>
+          </div>
+
+          {/* Block 2: AP/Telangana context */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold mb-2">AP + తెలంగాణ ఆటగాళ్ళకు నిర్దిష్ట నోట్</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-3">
+              ఆంధ్రప్రదేశ్‌లో 2020 సవరణతో ఆన్‌లైన్ గేమింగ్ పరిమితులు ఉన్నాయి. తెలంగాణ‌లో 2017 నిషేధం ఉంది. DafaWin ఆఫ్‌షోర్ ఆపరేటర్; మీ స్టేట్ చట్టం అర్థం చేసుకుని నిర్ణయించుకోండి.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              మే 2026 ఫెడరల్ PROG రూల్స్ అమల్లోకి వస్తున్నాయి — పూర్తి నోట్{' '}
+              <Link href="/faq" className="text-brand-gold hover:underline">FAQ పేజీలో</Link>.
+            </p>
+          </div>
+
+          {/* Block 3: Scam warning */}
+          <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-4 mb-6">
+            <h3 className="text-red-400 font-bold mb-2">నకిలీ సైట్‌ల గురించి హెచ్చరిక</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              DafaWin మిర్రర్ సైట్‌లు — URL లో ఒక అక్షరం మారుస్తారు. నకిలీ APK లు టెలిగ్రామ్‌లో వస్తాయి. ఎప్పుడూ బుక్‌మార్క్‌డ్ URL మాత్రమే వాడండి.
+            </p>
+          </div>
+
+          {/* Block 4: Quick links */}
+          <div className="card">
+            <p className="text-gray-400 text-sm mb-2">సంబంధిత పేజీలు:</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/dafabet-bonus" className="text-brand-gold text-sm hover:underline">దాఫాబెట్ బోనస్</Link>
+              <Link href="/dafabet-payment" className="text-brand-gold text-sm hover:underline">జమ-విత్‌డ్రా గైడ్</Link>
+              <Link href="/dafabet-registration" className="text-brand-gold text-sm hover:underline">రిజిస్ట్రేషన్</Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <h2 className="section-title text-center mb-8">Frequently Asked Questions</h2>

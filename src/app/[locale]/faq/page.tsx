@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { pageAlternates } from '@/lib/seo'
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { Link } from '@/i18n/navigation'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -89,7 +90,7 @@ const FAQ_GROUPS = [
 
 const allFaqs = FAQ_GROUPS.flatMap((g) => g.faqs)
 
-function FaqContent() {
+function FaqContent({ locale }: { locale: string }) {
   const t = useTranslations('faq')
 
   const faqSchema = {
@@ -152,6 +153,83 @@ function FaqContent() {
           ))}
         </div>
       </section>
+
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <h2 className="section-title mb-6">తెలుగు ఆటగాళ్ళు తరచుగా అడిగే ప్రశ్నలు</h2>
+
+          {/* Editorial note */}
+          <div className="card border-l-4 border-brand-gold mb-6">
+            <p className="text-gray-300 text-sm leading-relaxed">
+              <span className="gold-text font-semibold">DafaWin గురించి ముఖ్య వివరణ:</span>{' '}
+              DafaWin తెలుగు-ఇంగ్లీష్ గైడ్ సైట్. దాఫాబెట్ ఆపరేటర్. మీరు రిజిస్టర్ అయ్యేది, జమ-విత్‌డ్రా చేసేది దాఫాబెట్‌లో — DafaWin లో కాదు.
+            </p>
+          </div>
+
+          {/* Telugu FAQs */}
+          <div className="space-y-3">
+            <details className="card mb-3 group">
+              <summary className="flex justify-between items-start cursor-pointer list-none py-1">
+                <span className="font-semibold text-white">AP, తెలంగాణ లో ఆన్‌లైన్ పందెం చట్టబద్ధమేనా?</span>
+                <span className="text-brand-gold text-xl flex-shrink-0 ml-4">+</span>
+              </summary>
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+                ఆంధ్రప్రదేశ్‌లో 2020 సవరణతో పరిమితులు ఉన్నాయి. తెలంగాణ‌లో 2017 నిషేధం ఉంది. DafaWin ఆఫ్‌షోర్ ఆపరేటర్; స్టేట్ లా నేరుగా అమలవ్వడం అరుదు, కానీ మీ రిస్క్ మీరు అంచనా వేసుకోండి.
+              </p>
+            </details>
+
+            <details className="card mb-3 group">
+              <summary className="flex justify-between items-start cursor-pointer list-none py-1">
+                <span className="font-semibold text-white">దాఫాబెట్ వెల్‌కం బోనస్ ఏమిటి?</span>
+                <span className="text-brand-gold text-xl flex-shrink-0 ml-4">+</span>
+              </summary>
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+                మొదటి డిపాజిట్‌పై 200% మ్యాచ్, రూ.20,000 వరకు. కనీస డిపాజిట్ రూ.500. బోనస్ ఆటోమేటిగా క్రెడిట్ అవుతుంది — ప్రత్యేక కోడ్ అక్కర్లేదు. wagering requirement వర్తిస్తుంది — T&amp;C చదవండి.
+              </p>
+            </details>
+
+            <details className="card mb-3 group">
+              <summary className="flex justify-between items-start cursor-pointer list-none py-1">
+                <span className="font-semibold text-white">UPI విత్‌డ్రా ఎంత సేపు పడుతుంది?</span>
+                <span className="text-brand-gold text-xl flex-shrink-0 ml-4">+</span>
+              </summary>
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+                KYC పూర్తయి ఉంటే, DafaWin ప్రకటిత SLA ప్రకారం 24 గంటల్లోపు. మా జూన్ 2026 టెస్ట్‌లో ₹5,000 UPI విత్‌డ్రా ~1 గంటలో సెటిల్ అయింది. KYC పెండింగ్ ఉంటే వారాలు ఆగొచ్చు.
+              </p>
+            </details>
+
+            <details className="card mb-3 group">
+              <summary className="flex justify-between items-start cursor-pointer list-none py-1">
+                <span className="font-semibold text-white">KYC కి ఏ డాక్యుమెంట్‌లు కావాలి?</span>
+                <span className="text-brand-gold text-xl flex-shrink-0 ml-4">+</span>
+              </summary>
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+                PAN కార్డ్ (ముందు వైపు ఫోటో) మరియు ఆధార్ (ముందు + వెనుక, లేదా e-Aadhaar PDF). ₹25,000 పైన విత్‌డ్రాకి KYC తప్పనిసరి — రిజిస్ట్రేషన్ రోజే అప్‌లోడ్ చేయడం మంచిది.
+              </p>
+            </details>
+
+            <details className="card mb-3 group">
+              <summary className="flex justify-between items-start cursor-pointer list-none py-1">
+                <span className="font-semibold text-white">తెలుగులో కస్టమర్ సపోర్ట్ ఉందా?</span>
+                <span className="text-brand-gold text-xl flex-shrink-0 ml-4">+</span>
+              </summary>
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+                DafaWin 24/7 లైవ్ చాట్ ఇంగ్లీష్‌లో అందుబాటులో ఉంది. తెలుగు-నిర్దిష్ట సపోర్ట్ ఏజెంట్ హామీ ఇవ్వబడలేదు — ఇంగ్లీష్‌లో చాట్ చేయడం మీద దృష్టి పెట్టండి.
+              </p>
+            </details>
+
+            <details className="card mb-3 group">
+              <summary className="flex justify-between items-start cursor-pointer list-none py-1">
+                <span className="font-semibold text-white">పందెంలో నష్టం వస్తే ఎవరికి సంప్రదించాలి?</span>
+                <span className="text-brand-gold text-xl flex-shrink-0 ml-4">+</span>
+              </summary>
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+                Tele-MANAS: 1800-599-0019 (24×7, ఉచితం). Vandrevala Foundation: +91 9999 666 555. DafaWin లో ఖాతా సెట్టింగ్స్ నుండి డిపాజిట్ లిమిట్, సెల్ఫ్-ఎక్స్‌క్లూజన్ పెట్టుకోవచ్చు.
+              </p>
+            </details>
+          </div>
+        </section>
+      )}
     </>
   )
 }
@@ -159,5 +237,5 @@ function FaqContent() {
 export default async function FaqPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-  return <FaqContent />
+  return <FaqContent locale={locale} />
 }

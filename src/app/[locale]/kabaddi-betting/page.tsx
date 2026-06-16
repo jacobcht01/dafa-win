@@ -133,6 +133,51 @@ function KabaddiBettingContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      {/* Telugu Section */}
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <h2 className="section-title mb-6">కబడ్డీ పందెం తెలుగు గైడ్</h2>
+
+          {/* Block 1: Telangana Threshers card */}
+          <div className="card mb-6">
+            <h3 className="font-semibold text-brand-gold mb-2">Pro Kabaddi League — తెలుగు అభిమానులకు గైడ్</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Telangana Threshers (లేదా మీ హోమ్ ఫ్రాంచైజీ) మ్యాచ్‌లపై DafaWin మ్యాచ్ విన్నర్, టోటల్ పాయింట్‌లు, టాప్ రెయిడర్, హ్యాండిక్యాప్ మార్కెట్‌లు ఇస్తుంది. Pro Kabaddi League (PKL) మ్యాచ్‌లు IST మధ్యాహ్నం 7:30 – 10:00 మధ్య నడుస్తాయి. లైవ్ బెట్టింగ్ ప్రతి మ్యాచ్‌కీ అందుబాటులో ఉంటుంది.
+            </p>
+          </div>
+
+          {/* Block 2: PKL market cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="card-hover">
+              <h3 className="font-semibold text-brand-gold mb-2">మ్యాచ్ విన్నర్</h3>
+              <p className="text-gray-400 text-sm">ఏ జట్టు గెలుస్తుంది? PKL లో బేసిక్ మార్కెట్.</p>
+            </div>
+            <div className="card-hover">
+              <h3 className="font-semibold text-brand-gold mb-2">టోటల్ పాయింట్‌లు</h3>
+              <p className="text-gray-400 text-sm">రెండు జట్ల కలిపిన పాయింట్లు O/U లైన్ కంటే ఎక్కువ/తక్కువ.</p>
+            </div>
+            <div className="card-hover">
+              <h3 className="font-semibold text-brand-gold mb-2">టాప్ రెయిడర్</h3>
+              <p className="text-gray-400 text-sm">మ్యాచ్‌లో అత్యధిక రెయిడ్ పాయింట్‌లు తెచ్చే ఆటగాడు.</p>
+            </div>
+            <div className="card-hover">
+              <h3 className="font-semibold text-brand-gold mb-2">లైవ్ హ్యాండిక్యాప్</h3>
+              <p className="text-gray-400 text-sm">మ్యాచ్ నడుస్తున్నప్పుడు, ఒక జట్టు 10 పాయింట్‌లు ముందున్నప్పుడు — హ్యాండిక్యాప్ మారుతుంది.</p>
+            </div>
+          </div>
+
+          {/* Block 3: Quick links */}
+          <div className="card">
+            <p className="text-gray-400 text-sm mb-3">సంబంధిత పేజీలు:</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/sports-betting" className="btn-primary text-sm px-4 py-2">స్పోర్ట్స్ హబ్</Link>
+              <Link href="/cricket-betting" className="btn-primary text-sm px-4 py-2">క్రికెట్ పందెం</Link>
+              <Link href="/dafabet-review" className="btn-primary text-sm px-4 py-2">దాఫాబెట్ సమీక్ష</Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <h2 className="section-title mb-8">Kabaddi Betting FAQ</h2>

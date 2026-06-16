@@ -180,6 +180,69 @@ function SportsBettingContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      {/* Telugu Section */}
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <h2 className="section-title mb-6">స్పోర్ట్స్ పందెం తెలుగు గైడ్</h2>
+
+          {/* Block 1: Sports overview */}
+          <div className="card mb-6">
+            <h3 className="font-semibold text-brand-gold mb-2">తెలుగు ఆటగాళ్ళకు ముఖ్యమైన క్రీడలు</h3>
+            <ul className="text-gray-400 text-sm leading-relaxed space-y-2">
+              <li><span className="text-brand-gold font-semibold">క్రికెట్:</span> IPL, T20 వరల్డ్ కప్, ఇండియా vs పాకిస్తాన్ — DafaWin క్రికెట్‌కి బలంగా ఉంది. సన్‌రైజర్స్ హైదరాబాద్ IPL జట్టుపై ప్రత్యేక దృష్టి.</li>
+              <li><span className="text-brand-gold font-semibold">ఫుట్‌బాల్:</span> ISL హైదరాబాద్ FC, ప్రీమియర్ లీగ్, చాంపియన్స్ లీగ్ — AP, తెలంగాణ సపోర్టర్ క్లబ్‌లు ఉన్న లీగ్‌లు అన్నీ కవర్.</li>
+              <li><span className="text-brand-gold font-semibold">కబడ్డీ:</span> Pro Kabaddi League — ప్రతి PKL మ్యాచ్‌కి పూర్తి లైవ్ కవరేజ్.</li>
+            </ul>
+          </div>
+
+          {/* Block 2: Comparison table */}
+          <div className="card mb-6 overflow-x-auto">
+            <h3 className="font-semibold text-brand-gold mb-4">దాఫాబెట్ vs ఇతర సైట్‌లు — తెలుగు ఆటగాళ్ళకు</h3>
+            <table className="w-full text-sm border border-brand-border">
+              <thead>
+                <tr className="border-b border-brand-border bg-brand-surface">
+                  <th className="text-left py-2 px-3 text-brand-gold font-semibold">సైట్</th>
+                  <th className="text-left py-2 px-3 text-brand-gold font-semibold">వెల్‌కం బోనస్</th>
+                  <th className="text-left py-2 px-3 text-brand-gold font-semibold">కనీస జమ</th>
+                  <th className="text-left py-2 px-3 text-brand-gold font-semibold">క్రికెట్</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-border bg-brand-surface">
+                  <td className="py-2 px-3 text-brand-gold font-bold">దాఫాబెట్ ⭐</td>
+                  <td className="py-2 px-3 text-gray-400">200% రూ.20,000 వరకు</td>
+                  <td className="py-2 px-3 text-gray-400">రూ.500</td>
+                  <td className="py-2 px-3 text-gray-400">250+ మార్కెట్లు/మ్యాచ్</td>
+                </tr>
+                <tr className="border-b border-brand-border">
+                  <td className="py-2 px-3 text-white font-semibold">Betway</td>
+                  <td className="py-2 px-3 text-gray-400">100% రూ.2,500 వరకు</td>
+                  <td className="py-2 px-3 text-gray-400">రూ.1,000</td>
+                  <td className="py-2 px-3 text-gray-400">150+ మార్కెట్లు/మ్యాచ్</td>
+                </tr>
+                <tr className="border-b border-brand-border">
+                  <td className="py-2 px-3 text-white font-semibold">10Cric</td>
+                  <td className="py-2 px-3 text-gray-400">150% రూ.10,000 వరకు</td>
+                  <td className="py-2 px-3 text-gray-400">రూ.1,000</td>
+                  <td className="py-2 px-3 text-gray-400">100+ మార్కెట్లు/మ్యాచ్</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Block 3: Quick links */}
+          <div className="card">
+            <p className="text-gray-400 text-sm mb-3">సంబంధిత పేజీలు:</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/cricket-betting" className="btn-primary text-sm px-4 py-2">క్రికెట్ పందెం</Link>
+              <Link href="/ipl-betting" className="btn-primary text-sm px-4 py-2">IPL పందెం</Link>
+              <Link href="/football-betting" className="btn-primary text-sm px-4 py-2">ఫుట్‌బాల్ పందెం</Link>
+              <Link href="/kabaddi-betting" className="btn-primary text-sm px-4 py-2">కబడ్డీ పందెం</Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
       <section className="bg-brand-surface py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

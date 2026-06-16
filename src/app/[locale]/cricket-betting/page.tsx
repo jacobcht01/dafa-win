@@ -321,6 +321,66 @@ function CricketBettingContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      {/* Telugu Content Section — shown only for te locale */}
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <h2 className="section-title mb-6">తెలుగులో క్రికెట్ బెట్టింగ్ గైడ్</h2>
+
+          {/* Block 1: Market depth */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold mb-3">DafaWin మీద క్రికెట్ మార్కెట్‌లు</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              ఒక IPL మ్యాచ్‌కి 200+ మార్కెట్‌లు, ఒక మామూలు ఇంటర్నేషనల్ T20కి 150 దాకా: మ్యాచ్ విన్నర్, టాస్ విన్నర్, టాప్ బ్యాట్స్‌మన్, టాప్ బౌలర్, పవర్‌ప్లే పరుగులు, మొత్తం 6లు, సెషన్ రన్‌లు, మెథడ్ ఆఫ్ డిస్మిసల్. లైవ్ మార్కెట్‌లు ఒక బౌలర్ ఔట్ తీసిన మరుక్షణం రిఫ్రెష్ అవుతాయి.
+            </p>
+          </div>
+
+          {/* Block 2: Sunrisers Hyderabad */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold mb-3">సన్‌రైజర్స్ హైదరాబాద్ పందెం</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              SRH హోమ్ ఫ్రాంచైజీగా చూసే ఆంధ్ర, తెలంగాణ ఆటగాళ్ళకు: DafaWin సన్‌రైజర్స్ హైదరాబాద్ మ్యాచ్‌లకు 500+ ప్రి-మ్యాచ్ మార్కెట్‌లు ఇస్తుంది. హైదరాబాద్ పిచ్ (ములా-ముసీ రిజర్వాయర్ దగ్గర) — తక్కువ బౌన్స్, స్పిన్ ఫ్రెండ్లీ; రాత్రి డ్యూ కింద పేస్ ఎక్కువ అవుతుంది. ఇది మ్యాచ్ టోటల్ మీద పందెం వేసేటప్పుడు ముఖ్యం.
+            </p>
+          </div>
+
+          {/* Block 3: Scam warning */}
+          <div className="card border border-red-500/30 bg-red-900/20 mb-6">
+            <h3 className="text-red-400 font-bold mb-3">హెచ్చరిక — మోసాలు</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              టెలిగ్రామ్ &quot;fixed match&quot;, &quot;guaranteed win&quot; — ఇవి మోసాలు. DafaWin URL మాత్రమే వాడండి. నకిలీ APK మీ UPI పిన్ దొంగిలిస్తుంది. సోషల్ మీడియా లింక్‌ల మీద క్లిక్ చేయొద్దు — ఎప్పుడూ మీ బుక్‌మార్క్‌డ్ URL వాడండి.
+            </p>
+          </div>
+
+          {/* Block 4: AP/Telangana legal note */}
+          <div className="card border border-brand-border mb-6">
+            <p className="text-gray-500 text-xs leading-relaxed">
+              <span className="text-gray-400 font-semibold">ఆంధ్రప్రదేశ్, తెలంగాణ చట్ట స్థితి:</span> ఆఫ్‌షోర్ ఆపరేటర్‌లపై స్టేట్ నిషేధ చట్టాలు నేరుగా అమలవ్వడం అరుదు. కానీ చట్టం మారుతుంది — మీ రిస్క్ మీరు అంచనా వేసుకోండి. 18+ మాత్రమే.
+            </p>
+          </div>
+
+          {/* Related pages */}
+          <div className="card">
+            <h3 className="text-brand-gold font-bold mb-4">సంబంధిత పేజీలు</h3>
+            <ul className="space-y-2">
+              {[
+                { label: 'IPL బెట్టింగ్', href: '/ipl-betting' as const },
+                { label: 'ఇండ్-పాక్ పందెం', href: '/india-vs-pakistan-betting' as const },
+                { label: 'T20 వరల్డ్ కప్ పందెం', href: '/t20-world-cup-betting' as const },
+                { label: 'రిజిస్ట్రేషన్', href: '/dafabet-registration' as const },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-brand-gold hover:text-white text-sm underline underline-offset-2 transition-colors"
+                  >
+                    → {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* Types of Cricket Bets */}
       <section className="bg-brand-surface py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

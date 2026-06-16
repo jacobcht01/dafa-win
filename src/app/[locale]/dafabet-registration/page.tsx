@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { JsonLd } from '@/components/JsonLd'
 import { howToSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
 import { pageAlternates, SITE_URL } from '@/lib/seo'
+import { Link } from '@/i18n/navigation'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -133,6 +134,59 @@ function RegistrationContent({ locale }: { locale: string }) {
           ))}
         </div>
       </section>
+
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <h2 className="section-title mb-6">నమోదు తెలుగు గైడ్</h2>
+
+          {/* Registration steps card */}
+          <div className="card mb-6">
+            <h3 className="text-lg font-semibold text-white mb-3">దాఫాబెట్ అకౌంట్ — 5 నిమిషాల్లో ఇలా చేయండి:</h3>
+            <ol className="space-y-3 text-gray-400 text-sm">
+              <li className="flex gap-3">
+                <span className="text-brand-gold font-bold flex-shrink-0">1.</span>
+                <span>DafaWin లింక్ నుండి దాఫాబెట్ హోమ్‌పేజ్ తెరవండి. &quot;Sign Up&quot; నొక్కండి.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-brand-gold font-bold flex-shrink-0">2.</span>
+                <span>పేరు (నిజమైన పేరు — KYC తనిఖీ చేస్తుంది), ఈమెయిల్, ఫోన్ (+91), పుట్టిన తేదీ (18+), కరెన్సీ INR నింపండి.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-brand-gold font-bold flex-shrink-0">3.</span>
+                <span>ప్రమో కోడ్ ఫీల్డ్ ఉంటే ఖాళీగా వదలండి — 200% బోనస్ ఆటోమేటిగా వస్తుంది.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-brand-gold font-bold flex-shrink-0">4.</span>
+                <span>OTP వెరిఫై చేయండి, ఈమెయిల్ లింక్ క్లిక్ చేయండి.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-brand-gold font-bold flex-shrink-0">5.</span>
+                <span>వెంటనే KYC అప్‌లోడ్ చేయండి: PAN కార్డ్ + ఆధార్. విత్‌డ్రాకి ముందు కాదు — రోజే.</span>
+              </li>
+            </ol>
+          </div>
+
+          {/* KYC tip card */}
+          <div className="card mb-6">
+            <h3 className="text-lg font-semibold text-white mb-3">KYC ఆలస్యమైన కారణాలు (తరచుగా వచ్చే సమస్యలు)</h3>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li className="flex gap-2"><span className="text-brand-gold flex-shrink-0">&#10003;</span><span>PAN ఫోటో అంచు కటైంది — అన్ని 4 మూలలు కనపడాలి.</span></li>
+              <li className="flex gap-2"><span className="text-brand-gold flex-shrink-0">&#10003;</span><span>ఆధార్ పేరు + అకౌంట్ పేరు తేడా ఉంది — పేరు అచ్చం ఒకేలా ఉండాలి.</span></li>
+              <li className="flex gap-2"><span className="text-brand-gold flex-shrink-0">&#10003;</span><span>e-Aadhaar PDF (UIDAI పోర్టల్ నుండి) ఫోన్ ఫోటో కంటే మంచిది.</span></li>
+            </ul>
+          </div>
+
+          {/* Quick links */}
+          <div className="card bg-brand-surface">
+            <p className="text-gray-400 text-sm mb-3 font-semibold">సంబంధిత పేజీలు:</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/dafabet-payment" className="text-brand-gold hover:underline text-sm">జమ-విత్‌డ్రా గైడ్</Link>
+              <Link href="/dafabet-bonus" className="text-brand-gold hover:underline text-sm">దాఫాబెట్ బోనస్</Link>
+              <Link href="/dafabet-app-download" className="text-brand-gold hover:underline text-sm">దాఫాబెట్ యాప్</Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

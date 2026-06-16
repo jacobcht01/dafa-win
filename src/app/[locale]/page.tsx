@@ -352,6 +352,81 @@ function HomePageContent({ locale }: { locale: string }) {
           </div>
         </section>
 
+        {/* Telugu Content Section — shown only for te locale */}
+        {locale === 'te' && (
+          <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <h2 className="section-title mb-6">తెలుగు ఆటగాళ్ళకు గైడ్</h2>
+
+            {/* Block 1: DafaWin vs DafaBet distinction */}
+            <div className="card border border-brand-gold/40 mb-6">
+              <h3 className="text-brand-gold font-bold mb-3">ఈ సైట్ ఏంటి, దాఫాబెట్ ఏంటి — తేడా ముఖ్యం</h3>
+              <ul className="space-y-3 text-gray-300 text-sm leading-relaxed">
+                <li>
+                  <span className="text-white font-semibold">దాఫాబెట్</span> — ఇండియాలో సర్వీస్ ఇచ్చే ఆసియన్ స్పోర్ట్స్‌బుక్ ఆపరేటర్; మీరు పందెం వేసే సైట్. CEZA లైసెన్స్ కింద ఆఫ్‌షోర్ నుండి పనిచేస్తుంది.
+                </li>
+                <li>
+                  <span className="text-white font-semibold">DafaWin</span> — ఇండియన్ ఆటగాళ్ళకు దాఫాబెట్‌ని సిఫార్సు చేస్తూ సమీక్షించే తెలుగు-ఇంగ్లీష్ గైడ్ సైట్. మీరు ఇప్పుడు చదువుతున్నది ఇదే.
+                </li>
+              </ul>
+            </div>
+
+            {/* Block 2: Quick navigation */}
+            <div className="card mb-6">
+              <h3 className="text-brand-gold font-bold mb-4">త్వరిత నావిగేషన్</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {[
+                  { label: 'క్రికెట్ పందెం', href: '/cricket-betting' as const },
+                  { label: 'IPL బెట్టింగ్', href: '/ipl-betting' as const },
+                  { label: 'ఫుట్‌బాల్ పందెం', href: '/football-betting' as const },
+                  { label: 'కబడ్డీ పందెం', href: '/kabaddi-betting' as const },
+                  { label: 'స్పోర్ట్స్ హబ్', href: '/sports-betting' as const },
+                  { label: 'దాఫాబెట్ సమీక్ష', href: '/dafabet-review' as const },
+                  { label: 'దాఫాబెట్ బోనస్', href: '/dafabet-bonus' as const },
+                  { label: 'జమ-చెల్లింపు ఫ్లో', href: '/dafabet-payment' as const },
+                  { label: 'రిజిస్ట్రేషన్', href: '/dafabet-registration' as const },
+                ].map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-brand-gold hover:text-white text-sm underline underline-offset-2 transition-colors"
+                  >
+                    → {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Block 3: Summary verdict */}
+            <div className="card mb-6">
+              <h3 className="text-brand-gold font-bold mb-3">దాఫాబెట్ సంక్షిప్త తీర్పు</h3>
+              <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                క్రికెట్ + UPI ప్రాధాన్యం ఉన్న తెలుగు ఆటగాళ్ళకు సిఫార్సు.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                <div className="bg-brand-card rounded-lg px-4 py-3">
+                  <span className="text-gray-400">వెల్‌కం బోనస్: </span>
+                  <span className="text-white font-semibold">200% రూ.20,000 వరకు</span>
+                </div>
+                <div className="bg-brand-card rounded-lg px-4 py-3">
+                  <span className="text-gray-400">కనీస డిపాజిట్: </span>
+                  <span className="text-white font-semibold">రూ.500</span>
+                </div>
+                <div className="bg-brand-card rounded-lg px-4 py-3 sm:col-span-2">
+                  <span className="text-gray-400">UPI: </span>
+                  <span className="text-white font-semibold">PhonePe, Google Pay, Paytm, BHIM</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Block 4: AP/Telangana legal note */}
+            <div className="card border border-brand-border">
+              <p className="text-gray-500 text-xs leading-relaxed">
+                <span className="text-gray-400 font-semibold">ఆంధ్రప్రదేశ్ + తెలంగాణ చట్ట స్థితి:</span> ఆఫ్‌షోర్ ఆపరేటర్‌లపై స్టేట్ లా నేరుగా అమలవ్వదు. మే 2026 PROG రూల్స్ అమల్లోకి వస్తున్నాయి. మీ సొంత నిర్ణయం, మీ సొంత రిస్క్. 18+ మాత్రమే.
+              </p>
+            </div>
+          </section>
+        )}
+
         {/* Registration */}
         <section className="review-section">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">

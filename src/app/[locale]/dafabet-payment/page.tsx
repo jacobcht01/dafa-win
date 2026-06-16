@@ -5,6 +5,7 @@ import { articleSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
 import { pageAlternates, SITE_URL } from '@/lib/seo'
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { Link } from '@/i18n/navigation'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -190,6 +191,49 @@ function DepositWithdrawalContent({ locale }: { locale: string }) {
           <p className="text-gray-500 text-xs mt-5">Tip: Submit KYC the same day you register so it clears before your first withdrawal request.</p>
         </div>
       </section>
+
+      {locale === 'te' && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <h2 className="section-title mb-6">జమ-విత్‌డ్రా తెలుగు గైడ్</h2>
+
+          {/* UPI guide */}
+          <div className="card mb-6">
+            <h3 className="text-lg font-semibold text-white mb-3">UPI ద్వారా జమ — PhonePe, Google Pay, Paytm</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              DafaWin కాషియర్‌లో UPI ఎంచుకోండి, మీ యాప్ (PhonePe/GPay/Paytm) ఎంచుకోండి, కనీసం రూ.500 ఎంటర్ చేయండి. UPI collect request వస్తుంది — మీ యాప్‌లో accept చేయండి. జమ సెకన్లలో పడుతుంది.
+            </p>
+          </div>
+
+          {/* Withdrawal guide */}
+          <div className="card mb-6">
+            <h3 className="text-lg font-semibold text-white mb-3">విత్‌డ్రా — ఎంత సేపు పడుతుంది?</h3>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li className="flex gap-2"><span className="text-brand-gold flex-shrink-0">&#10003;</span><span><strong className="text-white">UPI:</strong> ప్రకటిత గడువు 24 గంటలు. మా టెస్ట్ — ~1 గంట (₹5,000 PhonePe, జూన్ 2026).</span></li>
+              <li className="flex gap-2"><span className="text-brand-gold flex-shrink-0">&#10003;</span><span><strong className="text-white">NEFT:</strong> ప్రకటిత గడువు 24 గంటలు. మా టెస్ట్ — ~4 గంటలు (₹10 లక్ష, జూన్ 2026).</span></li>
+              <li className="flex gap-2"><span className="text-brand-gold flex-shrink-0">&#10003;</span><span>₹50,000 పైన విత్‌డ్రా NEFT కి రూట్ అవుతుంది.</span></li>
+              <li className="flex gap-2"><span className="text-brand-gold flex-shrink-0">&#10003;</span><span>KYC పెండింగ్‌లో ఉంటే — విత్‌డ్రా ఆగుతుంది. రిజిస్ట్రేషన్ రోజే KYC సబ్మిట్ చేయండి.</span></li>
+            </ul>
+          </div>
+
+          {/* UPI failure tip */}
+          <div className="card mb-6">
+            <h3 className="text-lg font-semibold text-white mb-3">UPI ఫెయిల్ అయితే?</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              మీ బ్యాంక్ గేమింగ్ ట్రాన్సాక్షన్ బ్లాక్ చేయవచ్చు. రెండవ UPI హ్యాండిల్ (వేరే బ్యాంక్) లేదా NEFT వాడండి. DafaWin లైవ్ చాట్‌లో &quot;UPI deposit rejected at bank end&quot; అని చెప్పండి — 2 నిమిషాల్లో అల్టర్నేట్ రూట్ ఇస్తారు.
+            </p>
+          </div>
+
+          {/* Quick links */}
+          <div className="card bg-brand-surface">
+            <p className="text-gray-400 text-sm mb-3 font-semibold">సంబంధిత పేజీలు:</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/dafabet-registration" className="text-brand-gold hover:underline text-sm">రిజిస్ట్రేషన్</Link>
+              <Link href="/dafabet-review" className="text-brand-gold hover:underline text-sm">దాఫాబెట్ సమీక్ష</Link>
+              <Link href="/dafabet-bonus" className="text-brand-gold hover:underline text-sm">బోనస్ గైడ్</Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
