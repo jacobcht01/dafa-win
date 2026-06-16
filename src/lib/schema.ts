@@ -44,11 +44,6 @@ export function websiteSchema() {
     description: 'DafaWin India — Expert DafaBet review, cricket & IPL betting guide, app download, bonuses and more.',
     inLanguage: ['en-IN', 'te-IN'],
     publisher: { '@id': ORG_ID },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: { '@type': 'EntryPoint', urlTemplate: `${BASE_URL}/?s={search_term_string}` },
-      'query-input': 'required name=search_term_string',
-    },
   }
 }
 
@@ -139,6 +134,7 @@ export function articleSchema(args: {
   url: string
   datePublished: string
   dateModified?: string
+  locale?: string
 }) {
   return {
     '@context': 'https://schema.org',
@@ -150,7 +146,7 @@ export function articleSchema(args: {
     dateModified: args.dateModified ?? args.datePublished,
     author: { '@id': ORG_ID },
     publisher: { '@id': ORG_ID },
-    inLanguage: 'en-IN',
+    inLanguage: args.locale === 'te' ? 'te-IN' : 'en-IN',
   }
 }
 

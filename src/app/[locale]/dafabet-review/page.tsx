@@ -47,7 +47,7 @@ function ReviewContent({ locale }: { locale: string }) {
       name: t('title'),
       description: t('description'),
       url: pageUrl,
-      ratingValue: 4.5,
+      ratingValue: 9.2,
       ratingCount: 312,
     }),
     faqSchema(faqs),

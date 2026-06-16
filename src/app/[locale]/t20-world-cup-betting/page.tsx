@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { JsonLd } from '@/components/JsonLd'
 import { articleSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
@@ -10,11 +10,11 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 't20' })
   const alts = pageAlternates(locale, '/t20-world-cup-betting/')
   return {
-    title: 'T20 World Cup Betting — Odds, Markets & Best Sites | DafaWin',
-    description:
-      "Indian punter's guide to betting on the ICC T20 World Cup — format, markets, outright strategy, and where to bet.",
+    title: t('title'),
+    description: t('description'),
     alternates: { canonical: alts.canonical, languages: alts.languages },
   }
 }
@@ -55,6 +55,7 @@ function T20WorldCupBettingContent({ locale }: { locale: string }) {
         "Indian punter's guide to betting on the ICC T20 World Cup — format, markets, outright strategy, and where to bet.",
       url: pageUrl,
       datePublished: '2025-01-01',
+      locale,
     }),
     faqSchema(faqs),
     breadcrumbSchema([

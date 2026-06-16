@@ -49,7 +49,7 @@ function CricketBettingContent({ locale }: { locale: string }) {
   ]
 
   const schemaData = [
-    articleSchema({ headline: t('title'), description: t('description'), url: pageUrl, datePublished: '2025-01-01' }),
+    articleSchema({ headline: t('title'), description: t('description'), url: pageUrl, datePublished: '2025-01-01', locale }),
     faqSchema(faqs),
     breadcrumbSchema([
       { name: 'Home', url: SITE_URL + '/' },

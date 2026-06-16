@@ -41,6 +41,7 @@ function BonusesContent({ locale }: { locale: string }) {
       url: pageUrl,
       datePublished: '2025-01-01',
       dateModified: '2026-06-13',
+      locale,
     }),
     faqSchema(faqs),
     breadcrumbSchema([

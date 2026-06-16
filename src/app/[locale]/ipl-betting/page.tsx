@@ -42,6 +42,7 @@ function IplBettingContent({ locale }: { locale: string }) {
       url: locale === 'te' ? `${SITE_URL}/te/ipl-betting/` : `${SITE_URL}/ipl-betting/`,
       datePublished: '2025-01-01',
       dateModified: new Date().toISOString().split('T')[0],
+      locale,
     }),
     sportsEventSchema({
       name: 'IPL 2026 — Indian Premier League',

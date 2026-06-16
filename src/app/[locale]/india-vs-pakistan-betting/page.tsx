@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { JsonLd } from '@/components/JsonLd'
 import { articleSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
@@ -16,10 +16,11 @@ const PAGE_SLUG = '/india-vs-pakistan-betting/'
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'ivp' })
   const alts = pageAlternates(locale, PAGE_SLUG)
   return {
-    title: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
+    title: t('title'),
+    description: t('description'),
     alternates: { canonical: alts.canonical, languages: alts.languages },
   }
 }
@@ -140,6 +141,7 @@ function IndiaVsPakistanBettingContent({ locale }: { locale: string }) {
       url: pageUrl,
       datePublished: '2025-01-01',
       dateModified: '2026-06-14',
+      locale,
     }),
     faqSchema(faqs),
     breadcrumbSchema([
