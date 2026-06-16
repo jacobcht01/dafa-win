@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { JsonLd } from '@/components/JsonLd'
 import { articleSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
@@ -10,13 +10,10 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 't20' })
   const alts = pageAlternates(locale, '/t20-world-cup-betting/')
-  const title = locale === 'te'
-    ? 'T20 ప్రపంచ కప్ పందెం 2026 — AP, తెలంగాణ గైడ్ | DafaWin'
-    : 'T20 World Cup Betting 2026 — Odds, Markets & Best Sites | DafaWin'
-  const description = locale === 'te'
-    ? 'ICC T20 ప్రపంచ కప్‌పై పందెం — ఫార్మాట్, మార్కెట్లు, DafaBet ఇండియాలో 200% బోనస్ రూ.20,000 వరకు. AP, తెలంగాణ ఆటగాళ్ళ గైడ్.'
-    : "Indian punter's guide to betting on the ICC T20 World Cup — format, markets, outright strategy, and where to bet."
+  const title = t('title')
+  const description = t('description')
   return {
     title,
     description,

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { JsonLd } from '@/components/JsonLd'
 import { articleSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
@@ -16,13 +16,10 @@ const PAGE_SLUG = '/india-vs-pakistan-betting/'
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'indvspak' })
   const alts = pageAlternates(locale, PAGE_SLUG)
-  const title = locale === 'te'
-    ? 'ఇండియా vs పాకిస్తాన్ పందెం — మార్కెట్లు, అడ్డాలు & గైడ్ | DafaWin'
-    : PAGE_TITLE
-  const description = locale === 'te'
-    ? 'ఇండియా vs పాకిస్తాన్ మ్యాచ్‌లపై పందెం వేయడం ఎక్కడ? ముఖ్యమైన మార్కెట్లు, హెడ్-టు-హెడ్ చారిత్రక రికార్డు, DafaBet ఇండియా బోనస్ గైడ్.'
-    : PAGE_DESCRIPTION
+  const title = t('title')
+  const description = t('description')
   return {
     title,
     description,
