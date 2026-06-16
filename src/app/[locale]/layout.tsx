@@ -34,11 +34,13 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dafa-win.com'
+  const gscToken = process.env.GSC_VERIFICATION
 
   return {
     metadataBase: new URL(baseUrl),
     // Per-page canonical and hreflang are set by each page's generateMetadata.
     // Layout provides the metadataBase so relative URLs resolve correctly.
+    ...(gscToken ? { verification: { google: gscToken } } : {}),
   }
 }
 
