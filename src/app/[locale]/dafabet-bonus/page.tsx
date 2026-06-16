@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { JsonLd } from '@/components/JsonLd'
 import { articleSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
-import { pageAlternates, SITE_URL } from '@/lib/seo'
+import { pageAlternates, pageOGMeta, SITE_URL } from '@/lib/seo'
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
@@ -13,10 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'bonuses' })
   const alts = pageAlternates(locale, '/dafabet-bonus/')
+  const title = t('title')
+  const description = t('description')
   return {
-    title: t('title'),
-    description: t('description'),
+    title,
+    description,
     alternates: { canonical: alts.canonical, languages: alts.languages },
+    ...pageOGMeta({ title, description, canonicalUrl: alts.canonical, locale }),
   }
 }
 
@@ -41,6 +44,7 @@ function BonusesContent({ locale }: { locale: string }) {
       url: pageUrl,
       datePublished: '2025-01-01',
       dateModified: '2026-06-13',
+      locale,
     }),
     faqSchema(faqs),
     breadcrumbSchema([

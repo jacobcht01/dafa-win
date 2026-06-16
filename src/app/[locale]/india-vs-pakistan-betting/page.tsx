@@ -4,7 +4,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { JsonLd } from '@/components/JsonLd'
 import { articleSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
-import { pageAlternates, SITE_URL } from '@/lib/seo'
+import { pageAlternates, pageOGMeta, SITE_URL } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -17,10 +17,17 @@ const PAGE_SLUG = '/india-vs-pakistan-betting/'
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const alts = pageAlternates(locale, PAGE_SLUG)
+  const title = locale === 'te'
+    ? 'ఇండియా vs పాకిస్తాన్ పందెం — మార్కెట్లు, అడ్డాలు & గైడ్ | DafaWin'
+    : PAGE_TITLE
+  const description = locale === 'te'
+    ? 'ఇండియా vs పాకిస్తాన్ మ్యాచ్‌లపై పందెం వేయడం ఎక్కడ? ముఖ్యమైన మార్కెట్లు, హెడ్-టు-హెడ్ చారిత్రక రికార్డు, DafaBet ఇండియా బోనస్ గైడ్.'
+    : PAGE_DESCRIPTION
   return {
-    title: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
+    title,
+    description,
     alternates: { canonical: alts.canonical, languages: alts.languages },
+    ...pageOGMeta({ title, description, canonicalUrl: alts.canonical, locale }),
   }
 }
 
@@ -140,6 +147,7 @@ function IndiaVsPakistanBettingContent({ locale }: { locale: string }) {
       url: pageUrl,
       datePublished: '2025-01-01',
       dateModified: '2026-06-14',
+      locale,
     }),
     faqSchema(faqs),
     breadcrumbSchema([

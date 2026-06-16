@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { JsonLd } from '@/components/JsonLd'
 import { articleSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
-import { pageAlternates, SITE_URL } from '@/lib/seo'
+import { pageAlternates, pageOGMeta, SITE_URL } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -13,10 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'cricket' })
   const alts = pageAlternates(locale, '/cricket-betting/')
+  const title = t('title')
+  const description = t('description')
   return {
-    title: t('title'),
-    description: t('description'),
+    title,
+    description,
     alternates: { canonical: alts.canonical, languages: alts.languages },
+    ...pageOGMeta({ title, description, canonicalUrl: alts.canonical, locale }),
   }
 }
 
@@ -49,7 +52,7 @@ function CricketBettingContent({ locale }: { locale: string }) {
   ]
 
   const schemaData = [
-    articleSchema({ headline: t('title'), description: t('description'), url: pageUrl, datePublished: '2025-01-01' }),
+    articleSchema({ headline: t('title'), description: t('description'), url: pageUrl, datePublished: '2025-01-01', locale }),
     faqSchema(faqs),
     breadcrumbSchema([
       { name: 'Home', url: SITE_URL + '/' },

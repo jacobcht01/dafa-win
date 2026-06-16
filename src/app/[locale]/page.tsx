@@ -5,7 +5,7 @@ import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { JsonLd } from '@/components/JsonLd'
 import { organizationSchema, websiteSchema, breadcrumbSchema } from '@/lib/schema'
-import { pageAlternates, SITE_URL } from '@/lib/seo'
+import { pageAlternates, pageOGMeta, SITE_URL } from '@/lib/seo'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -15,13 +15,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'home' })
   const alts = pageAlternates(locale, '/')
+  const title = t('title')
+  const description = t('description')
   return {
-    title: t('title'),
-    description: t('description'),
+    title,
+    description,
     alternates: {
       canonical: alts.canonical,
       languages: alts.languages,
     },
+    ...pageOGMeta({ title, description, canonicalUrl: alts.canonical, locale }),
   }
 }
 

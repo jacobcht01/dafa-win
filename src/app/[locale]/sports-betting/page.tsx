@@ -77,6 +77,7 @@ function SportsBettingContent({ locale }: { locale: string }) {
       url: pageUrl,
       datePublished: '2025-01-01',
       dateModified: new Date().toISOString().split('T')[0],
+      locale,
     }),
     faqSchema(FAQS),
     breadcrumbSchema([

@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { JsonLd } from '@/components/JsonLd'
 import { reviewSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
-import { pageAlternates, SITE_URL } from '@/lib/seo'
+import { pageAlternates, pageOGMeta, SITE_URL } from '@/lib/seo'
 import Image from 'next/image'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -13,10 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'review' })
   const alts = pageAlternates(locale, '/dafabet-review/')
+  const title = t('title')
+  const description = t('description')
   return {
-    title: t('title'),
-    description: t('description'),
+    title,
+    description,
     alternates: { canonical: alts.canonical, languages: alts.languages },
+    ...pageOGMeta({ title, description, canonicalUrl: alts.canonical, locale }),
   }
 }
 
@@ -47,7 +50,7 @@ function ReviewContent({ locale }: { locale: string }) {
       name: t('title'),
       description: t('description'),
       url: pageUrl,
-      ratingValue: 4.5,
+      ratingValue: 9.2,
       ratingCount: 312,
     }),
     faqSchema(faqs),

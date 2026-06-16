@@ -5,14 +5,14 @@ import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { JsonLd } from '@/components/JsonLd'
-import { faqSchema, breadcrumbSchema } from '@/lib/schema'
+import { articleSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
 
 type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'kabaddi' })
-  const alts = pageAlternates(locale, '/kabaddi-betting//')
+  const alts = pageAlternates(locale, '/kabaddi-betting/')
   return {
     title: t('title'),
     description: t('description'),
@@ -57,6 +57,7 @@ function KabaddiBettingContent({ locale }: { locale: string }) {
   const pageUrl = locale === 'te' ? `${SITE_URL}/te/kabaddi-betting/` : `${SITE_URL}/kabaddi-betting/`
 
   const schemaData = [
+    articleSchema({ headline: t('title'), description: t('description'), url: pageUrl, datePublished: '2025-01-01', dateModified: new Date().toISOString().split('T')[0], locale }),
     faqSchema(FAQS),
     breadcrumbSchema([
       { name: 'Home', url: SITE_URL + '/' },

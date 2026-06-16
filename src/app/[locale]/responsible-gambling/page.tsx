@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { JsonLd } from '@/components/JsonLd'
-import { faqSchema, breadcrumbSchema } from '@/lib/schema'
+import { articleSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
 import { pageAlternates, SITE_URL } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: string }> }
@@ -52,6 +52,7 @@ function ResponsibleGamblingContent({ locale }: { locale: string }) {
   const pageUrl = isTE ? `${SITE_URL}/te/responsible-gambling/` : `${SITE_URL}/responsible-gambling/`
 
   const schemaData = [
+    articleSchema({ headline: t('title'), description: t('description'), url: pageUrl, datePublished: '2025-01-01', dateModified: new Date().toISOString().split('T')[0], locale }),
     faqSchema(faqs),
     breadcrumbSchema([
       { name: 'Home', url: SITE_URL + '/' },

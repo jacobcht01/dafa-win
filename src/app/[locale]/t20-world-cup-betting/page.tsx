@@ -4,18 +4,24 @@ import { setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { JsonLd } from '@/components/JsonLd'
 import { articleSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
-import { pageAlternates, SITE_URL } from '@/lib/seo'
+import { pageAlternates, pageOGMeta, SITE_URL } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const alts = pageAlternates(locale, '/t20-world-cup-betting/')
+  const title = locale === 'te'
+    ? 'T20 ప్రపంచ కప్ పందెం 2026 — AP, తెలంగాణ గైడ్ | DafaWin'
+    : 'T20 World Cup Betting 2026 — Odds, Markets & Best Sites | DafaWin'
+  const description = locale === 'te'
+    ? 'ICC T20 ప్రపంచ కప్‌పై పందెం — ఫార్మాట్, మార్కెట్లు, DafaBet ఇండియాలో 200% బోనస్ రూ.20,000 వరకు. AP, తెలంగాణ ఆటగాళ్ళ గైడ్.'
+    : "Indian punter's guide to betting on the ICC T20 World Cup — format, markets, outright strategy, and where to bet."
   return {
-    title: 'T20 World Cup Betting — Odds, Markets & Best Sites | DafaWin',
-    description:
-      "Indian punter's guide to betting on the ICC T20 World Cup — format, markets, outright strategy, and where to bet.",
+    title,
+    description,
     alternates: { canonical: alts.canonical, languages: alts.languages },
+    ...pageOGMeta({ title, description, canonicalUrl: alts.canonical, locale }),
   }
 }
 
@@ -55,6 +61,7 @@ function T20WorldCupBettingContent({ locale }: { locale: string }) {
         "Indian punter's guide to betting on the ICC T20 World Cup — format, markets, outright strategy, and where to bet.",
       url: pageUrl,
       datePublished: '2025-01-01',
+      locale,
     }),
     faqSchema(faqs),
     breadcrumbSchema([

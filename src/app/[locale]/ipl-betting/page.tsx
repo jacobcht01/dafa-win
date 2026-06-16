@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { JsonLd } from '@/components/JsonLd'
 import { articleSchema, sportsEventSchema, faqSchema, breadcrumbSchema } from '@/lib/schema'
-import { pageAlternates, SITE_URL } from '@/lib/seo'
+import { pageAlternates, pageOGMeta, SITE_URL } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -13,13 +13,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'ipl' })
   const alts = pageAlternates(locale, '/ipl-betting/')
+  const title = t('title')
+  const description = t('description')
   return {
-    title: t('title'),
-    description: t('description'),
+    title,
+    description,
     alternates: {
       canonical: alts.canonical,
       languages: alts.languages,
     },
+    ...pageOGMeta({ title, description, canonicalUrl: alts.canonical, locale }),
   }
 }
 
@@ -42,6 +45,7 @@ function IplBettingContent({ locale }: { locale: string }) {
       url: locale === 'te' ? `${SITE_URL}/te/ipl-betting/` : `${SITE_URL}/ipl-betting/`,
       datePublished: '2025-01-01',
       dateModified: new Date().toISOString().split('T')[0],
+      locale,
     }),
     sportsEventSchema({
       name: 'IPL 2026 — Indian Premier League',
@@ -54,7 +58,7 @@ function IplBettingContent({ locale }: { locale: string }) {
     faqSchema(faqs),
     breadcrumbSchema([
       { name: 'Home', url: SITE_URL + '/' },
-      { name: 'Cricket Betting', url: `${SITE_URL}/cricket-betting/` },
+      { name: locale === 'te' ? 'క్రికెట్ పందెం' : 'Cricket Betting', url: locale === 'te' ? `${SITE_URL}/te/cricket-betting/` : `${SITE_URL}/cricket-betting/` },
       { name: 'IPL Betting', url: locale === 'te' ? `${SITE_URL}/te/ipl-betting/` : `${SITE_URL}/ipl-betting/` },
     ]),
   ]
