@@ -27,42 +27,23 @@ const EN_ROUTES: Entry[] = [
   { path: '/t20-world-cup-betting/', priority: 0.85, changeFrequency: 'weekly' },
 ]
 
+const TE_ROUTES: Entry[] = EN_ROUTES.map((r) => ({
+  ...r,
+  path: r.path === '/' ? '/te/' : `/te${r.path}`,
+}))
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
-  return EN_ROUTES.map((r) => {
-    const tePath = r.path === '/' ? '/te/' : `/te${r.path}`
-    const enUrl = `${BASE_URL}${r.path}`
-    const teUrl = `${BASE_URL}${tePath}`
-    return {
-      url: enUrl,
-      lastModified: now,
-      changeFrequency: r.changeFrequency,
-      priority: r.priority,
-      alternates: {
-        languages: {
-          'en-IN': enUrl,
-          'te-IN': teUrl,
-        },
-      },
-    }
-  }).concat(
-    EN_ROUTES.map((r) => {
-      const tePath = r.path === '/' ? '/te/' : `/te${r.path}`
-      const enUrl = `${BASE_URL}${r.path}`
-      const teUrl = `${BASE_URL}${tePath}`
-      return {
-        url: teUrl,
-        lastModified: now,
-        changeFrequency: r.changeFrequency,
-        priority: r.priority,
-        alternates: {
-          languages: {
-            'en-IN': enUrl,
-            'te-IN': teUrl,
-          },
-        },
-      }
-    })
-  )
+  const toEntry = (r: Entry): MetadataRoute.Sitemap[number] => ({
+    url: `${BASE_URL}${r.path}`,
+    lastModified: now,
+    changeFrequency: r.changeFrequency,
+    priority: r.priority,
+  })
+
+  return [
+    ...EN_ROUTES.map(toEntry),
+    ...TE_ROUTES.map(toEntry),
+  ]
 }
