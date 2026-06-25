@@ -142,6 +142,9 @@ function HomePageContent({ locale }: { locale: string }) {
     <>
       <JsonLd data={schemaData} />
 
+      {/* Hero, urgency bar, quick verdict — English only */}
+      {locale !== 'te' && (
+        <>
       {/* Hero Banner */}
       <section className="relative w-full overflow-hidden">
         <div className="relative h-[420px] md:h-[520px] w-full">
@@ -254,9 +257,15 @@ function HomePageContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+        </>
+      )}
+
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
+        {/* English sections before te block — only for non-te locales */}
+        {locale !== 'te' && (
+          <>
         {/* About Dafabet */}
         <section className="review-section">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -406,81 +415,285 @@ function HomePageContent({ locale }: { locale: string }) {
           </div>
         </section>
 
+          </>
+        )}
+
         {/* Telugu Content Section — shown only for te locale */}
         {locale === 'te' && (
           <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <h2 className="section-title mb-6">తెలుగు ఆటగాళ్ళకు గైడ్</h2>
 
-            {/* Block 1: DafaWin vs DafaBet distinction */}
-            <div className="card border border-brand-gold/40 mb-6">
-              <h3 className="text-brand-gold font-bold mb-3">ఈ సైట్ ఏంటి, దాఫాబెట్ ఏంటి — తేడా ముఖ్యం</h3>
-              <ul className="space-y-3 text-gray-300 text-sm leading-relaxed">
-                <li>
-                  <span className="text-white font-semibold">దాఫాబెట్</span> — ఇండియాలో సర్వీస్ ఇచ్చే ఆసియన్ స్పోర్ట్స్‌బుక్ ఆపరేటర్; మీరు పందెం వేసే సైట్. CEZA లైసెన్స్ కింద ఆఫ్‌షోర్ నుండి పనిచేస్తుంది.
-                </li>
-                <li>
-                  <span className="text-white font-semibold">DafaWin</span> — ఇండియన్ ఆటగాళ్ళకు దాఫాబెట్‌ని సిఫార్సు చేస్తూ సమీక్షించే తెలుగు-ఇంగ్లీష్ గైడ్ సైట్. మీరు ఇప్పుడు చదువుతున్నది ఇదే.
-                </li>
-              </ul>
+            {/* H1 */}
+            <h1 className="text-3xl md:text-4xl font-bold text-brand-gold mb-8 leading-tight">
+              DafaBet ఇండియా — అధికారిక రివ్యూ &amp; బెట్టింగ్ గైడ్ 2026
+            </h1>
+
+            {/* Section 1: DafaBet అంటే ఏమిటి */}
+            <div className="card mb-6">
+              <h2 className="text-brand-gold font-bold text-xl mb-4">DafaBet ఇండియా అంటే ఏమిటి?</h2>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                DafaBet 2004 లో స్థాపించబడింది. రెండు దశాబ్దాలకు పైగా ఆసియాలో బెట్టింగ్ పరిశ్రమలో అత్యంత నమ్మకమైన ఆపరేటర్లలో ఒకటిగా DafaBet నిలిచింది. ఈ వేదిక ఇండియాలో లక్షలాది ఆటగాళ్ళకు క్రికెట్, ఫుట్‌బాల్, కబడ్డీ మరియు కేసినో గేమ్‌ల అనుభవాన్ని అందిస్తోంది.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                DafaBet Curaçao eGaming లైసెన్స్ 1668/JAZ కింద ఆఫ్‌షోర్ నుండి పనిచేస్తుంది. ఈ లైసెన్స్ ఆపరేటర్ ఆర్థిక స్థిరత్వాన్ని, ఆటగాళ్ళ ఫండ్ సురక్షణను మరియు SSL ఎన్‌క్రిప్షన్ ఉపయోగాన్ని తప్పనిసరి చేస్తుంది. 20 సంవత్సరాల అనుభవంతో, DafaBet ఇప్పటివరకు ఒక్క పెద్ద ఆర్థిక వివాదంలోనూ చిక్కుకోలేదు — ఇది ఆపరేటర్ నమ్మకానికి బలమైన సూచిక.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                DafaBet లో 3,000+ కేసినో గేమ్‌లు మరియు 30+ స్పోర్ట్స్ మార్కెట్‌లు అందుబాటులో ఉన్నాయి. ఇండియన్ ఆటగాళ్ళకు అత్యంత అనుకూలంగా UPI, Paytm, PhonePe ద్వారా నేరుగా జమ మరియు విత్‌డ్రా చేసుకోవచ్చు. ఇవి సెకన్లలో ప్రాసెస్ అవుతాయి — ఎలాంటి ఆలస్యం లేదు.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                ఒక ముఖ్యమైన తేడా అర్థం చేసుకోవాలి: <span className="text-white font-semibold">DafaBet</span> అంటే పందెం వేసే బెట్టింగ్ ఆపరేటర్ సైట్. <span className="text-white font-semibold">DafaWin</span> అంటే ఇప్పుడు మీరు చదువుతున్న ఈ రివ్యూ సైట్ — ఇది DafaBet యొక్క స్వతంత్ర సమీక్ష మరియు గైడ్ వేదిక. DafaWin ఎప్పుడూ పందెం వేయించదు; మీకు సరైన సమాచారం ఇవ్వడం మాత్రమే దీని పని.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                మొత్తం మీద, DafaBet ను 9.2/10 రేటింగ్‌తో DafaWin సంపాదకీయ బృందం అత్యధికంగా సిఫార్సు చేస్తోంది. ఇది 2026 లో ఇండియన్ ప్లేయర్‌లకు అత్యుత్తమ ఆన్‌లైన్ బెట్టింగ్ వేదికగా మా నిపుణుల అభిప్రాయం.
+              </p>
             </div>
 
-            {/* Block 2: Quick navigation */}
+            {/* Section 2: స్వాగత బోనస్ */}
             <div className="card mb-6">
-              <h3 className="text-brand-gold font-bold mb-4">త్వరిత నావిగేషన్</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {[
-                  { label: 'క్రికెట్ పందెం', href: '/cricket-betting' as const },
-                  { label: 'IPL బెట్టింగ్', href: '/ipl-betting' as const },
-                  { label: 'ఫుట్‌బాల్ పందెం', href: '/football-betting' as const },
-                  { label: 'కబడ్డీ పందెం', href: '/kabaddi-betting' as const },
-                  { label: 'స్పోర్ట్స్ హబ్', href: '/sports-betting' as const },
-                  { label: 'దాఫాబెట్ సమీక్ష', href: '/dafabet-review' as const },
-                  { label: 'దాఫాబెట్ బోనస్', href: '/dafabet-bonus' as const },
-                  { label: 'జమ-చెల్లింపు ఫ్లో', href: '/dafabet-payment' as const },
-                  { label: 'రిజిస్ట్రేషన్', href: '/dafabet-registration' as const },
-                ].map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-brand-gold hover:text-white text-sm underline underline-offset-2 transition-colors"
-                  >
-                    → {link.label}
-                  </Link>
-                ))}
+              <h2 className="text-brand-gold font-bold text-xl mb-4">స్వాగత బోనస్ — 200% వరకు ₹20,000</h2>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                DafaBet కొత్త ఆటగాళ్ళకు 200% మ్యాచ్ బోనస్ ఇస్తుంది, గరిష్టంగా ₹20,000 వరకు. ఇది ఎలా పనిచేస్తుందో చూద్దాం: మీరు ₹10,000 జమ చేస్తే, DafaBet మీకు ₹20,000 బోనస్ ఇస్తుంది — మొత్తం ₹30,000 తో మీరు బెట్టింగ్ మొదలు పెట్టవచ్చు. ఇంత పెద్ద స్వాగత బోనస్ ఇండియన్ మార్కెట్ లో చాలా అరుదు.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                ఈ బోనస్ పొందడానికి కనీస జమ కేవలం ₹500 మాత్రమే. అంటే చాలా తక్కువ మొత్తంతో కూడా ఈ బోనస్ క్లెయిమ్ చేసుకోవచ్చు. UPI ద్వారా లేదా Paytm, PhonePe వంటి ఏ మెథడ్ ద్వారా జమ చేసినా బోనస్ వర్తిస్తుంది.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                ముఖ్యమైన విషయం: ఎలాంటి ప్రోమో కోడ్ అక్కర్లేదు. మీ మొదటి జమ పూర్తయిన వెంటనే బోనస్ అటోమేటిగా మీ అకౌంట్‌లో క్రెడిట్ అవుతుంది — సాధారణంగా UPI జమలకు కేవలం సెకన్లలో.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                వేజరింగ్ అవసరాలు: బోనస్ మొత్తంపై 8x వేజరింగ్ 30 రోజుల వ్యవధిలో పూర్తి చేయాలి. ఉదాహరణకు, ₹20,000 బోనస్ పొందితే, ₹1,60,000 (20,000 × 8) పందెం వేయాలి. స్పోర్ట్స్ బెట్టింగ్ మరియు కేసినో గేమ్‌లు రెండూ వేజరింగ్ లెక్కలోకి వస్తాయి. స్పోర్ట్స్ బెట్టింగ్‌లో అర్హత పొందాలంటే ఆడ్స్ కనీసం 1.50 ఉండాలి.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                30 రోజుల కౌంట్‌డౌన్ బోనస్ క్రెడిట్ అయిన క్షణం నుండి మొదలవుతుంది. ఈ వ్యవధిలో పందెం వేజరింగ్ పూర్తి చేసిన తర్వాత బోనస్ మొత్తాన్ని నేరుగా విత్‌డ్రా చేసుకోవచ్చు. DafaBet యొక్క ఇతర ప్రమోషన్‌లలో వీక్లీ కేష్‌బ్యాక్ 10% మరియు డైలీ ఫ్రీ స్పిన్స్ కూడా ఉన్నాయి, అవి ఆటగాళ్ళకు నిరంతరం విలువ అందిస్తాయి.
+              </p>
+            </div>
+
+            {/* Section 3: క్రికెట్ బెట్టింగ్ */}
+            <div className="card mb-6">
+              <h2 className="text-brand-gold font-bold text-xl mb-4">క్రికెట్ బెట్టింగ్ — IPL, T20, టెస్ట్</h2>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                DafaBet లో క్రికెట్ అత్యంత ప్రముఖమైన విభాగం. ఇండియన్ ఆటగాళ్ళకు అత్యంత ఆసక్తికరమైన IPL లో DafaBet 10 జట్లు, 74 మ్యాచ్‌లు అన్నింటికీ 30+ మార్కెట్‌లు అందుబాటులో ఉంచుతుంది. ఒక్కో మ్యాచ్‌కు మ్యాచ్ విన్నర్, టాప్ బ్యాటర్, టాప్ బౌలర్, టాస్ విన్నర్, మొదటి వికెట్ పడే ఓవర్, ఆటగాళ్ళ స్కోర్ ప్రాప్స్, మరియు బాల్-బై-బాల్ లైవ్ బెట్టింగ్ — ఇవన్నీ అందుబాటులో ఉంటాయి.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                IPL తో పాటు, T20 వరల్డ్ కప్, ODI వరల్డ్ కప్, మరియు Asia Cup వంటి అంతర్జాతీయ టోర్నమెంట్‌లు కూడా పూర్తిగా కవర్ చేయబడతాయి. IND vs AUS, IND vs ENG సీరీస్‌లు ప్రత్యేకంగా విస్తారమైన మార్కెట్‌లతో కవర్ అవుతాయి. ప్రతి టెస్ట్ మ్యాచ్‌కు సెషన్ స్కోర్, ఇన్నింగ్స్ స్కోర్, మరియు మ్యాచ్ రిజల్ట్ మార్కెట్‌లు ఉంటాయి.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                హైదరాబాద్ ఆటగాళ్ళకు అత్యంత ఇష్టమైన సన్‌రైజర్స్ హైదరాబాద్ జట్టు మ్యాచ్‌లపై DafaBet ప్రత్యేక దృష్టి పెడుతుంది. హైదరాబాద్ మ్యాచ్‌లలో లైవ్ ఇన్-ప్లే బెట్టింగ్ ద్వారా ప్రతి బాల్‌పై పందెం వేయవచ్చు — ఆడ్స్ రెండు సెకన్లలోపు అప్‌డేట్ అవుతాయి.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                లైవ్ ఇన్-ప్లే బెట్టింగ్ DafaBet యొక్క అత్యంత శక్తివంతమైన ఫీచర్. క్రికెట్ మ్యాచ్ జరుగుతుండగా ప్రతి బాల్‌పై పందెం వేయవచ్చు — ఈ బాల్ నో-బాల్ అవుతుందా? ఈ ఓవర్‌లో సిక్సర్ వస్తుందా? వికెట్ పడుతుందా? — ఇలాంటి మైక్రో మార్కెట్‌లు పూర్తి ఉత్సాహాన్ని అందిస్తాయి.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                క్యాష్-అవుట్ ఫీచర్ మీకు మ్యాచ్ పూర్తవ్వక ముందే లాభం లాక్ చేసుకోవడానికి లేదా నష్టం తగ్గించుకోవడానికి అనుమతిస్తుంది. ఉదాహరణకు, మీరు ₹500 పెట్టి ఒక జట్టు గెలుస్తుందని పందెం వేసారు. మ్యాచ్ మధ్యలో ఆ జట్టు ముందంజలో ఉంది కానీ మీకు రిస్క్ ఇష్టం లేదు — క్యాష్-అవుట్ బటన్ నొక్కి ప్రస్తుత లాభంతో బయటపడవచ్చు.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                DafaBet లో 500+ క్రికెట్ మార్కెట్‌లు ఏకకాలంలో నడుస్తుంటాయి — అన్ని ఫార్మాట్‌లలో (టెస్ట్, ODI, T20, IPL, BBL, PSL) ఒకే వేదికపై అందుబాటులో ఉంటాయి. ఇది ఇండియన్ మార్కెట్‌లో లభ్యమయ్యే అత్యంత సమగ్రమైన క్రికెట్ పుస్తకం.
+              </p>
+            </div>
+
+            {/* Section 4: ఆన్లైన్ కేసినో */}
+            <div className="card mb-6">
+              <h2 className="text-brand-gold font-bold text-xl mb-4">ఆన్‌లైన్ కేసినో — 3,000+ గేమ్‌లు</h2>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                DafaBet కేసినో విభాగంలో 3,000+ గేమ్‌లు అందుబాటులో ఉన్నాయి. ఇందులో ఇండియన్ ఆటగాళ్ళకు అత్యంత ఇష్టమైన పేకముక్కల ఆటలు, లైవ్ డీలర్ టేబుళ్ళు, స్లాట్‌లు మరియు వర్చువల్ స్పోర్ట్స్ ఉన్నాయి.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                <span className="text-white font-semibold">Teen Patti</span>: DafaBet లో 7+ Teen Patti వేరియంట్‌లు అందుబాటులో ఉన్నాయి — క్లాసిక్, జోకర్, మఫ్లిస్, AK47 తదితర వేరియంట్‌లు. లైవ్ వెర్షన్‌లో హిందీ డీలర్లతో రియల్ టైమ్‌లో ఆడవచ్చు. ఒక్కో రౌండ్ 30–60 సెకన్లలో పూర్తవుతుంది — వేగంగా ఉండి ఆసక్తికరంగా ఉంటుంది.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                <span className="text-white font-semibold">Andar Bahar</span>: ఈ సంప్రదాయ ఇండియన్ కార్డ్ గేమ్ DafaBet లో RTP ~97% తో అందుబాటులో ఉంది. ప్రతి రౌండ్ కేవలం 30 సెకన్లలో పూర్తవుతుంది — వేగమైన నిర్ణయాలు, వేగమైన ఫలితాలు. RNG మరియు లైవ్ డీలర్ రెండు ఫార్మాట్‌లు అందుబాటులో ఉన్నాయి.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                <span className="text-white font-semibold">Rummy</span>: 13-కార్డ్ క్యాష్ టేబుళ్ళు అందుబాటులో ఉన్నాయి. వివిధ స్టేక్ లెవెల్స్‌లో ఆడవచ్చు — తక్కువ స్టేక్ నుండి హై-రోలర్ టేబుళ్ళ వరకు. Rummy అనేది నైపుణ్యం-ఆధారిత ఆట కాబట్టి చాలా రాష్ట్రాలలో చట్టపరంగా వెసులుబాటు ఎక్కువగా ఉంటుంది.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                <span className="text-white font-semibold">Evolution Gaming</span> లైవ్ స్టూడియో DafaBet కేసినోలో ప్రముఖ స్థానం వహిస్తుంది. Lightning Roulette, Crazy Time, Mega Ball, Dream Catcher వంటి ప్రత్యేక గేమ్ షో ఫార్మాట్‌లు అందుబాటులో ఉన్నాయి. <span className="text-white font-semibold">Ezugi</span> ప్లాట్‌ఫారం ద్వారా మరిన్ని లైవ్ కేసినో గేమ్‌లు అందుబాటులో ఉన్నాయి, హిందీ-స్పీకింగ్ డీలర్‌లతో. 2,000+ స్లాట్ టైటిళ్ళలో Mega Moolah, Gates of Olympus, Sweet Bonanza వంటివి ఉన్నాయి.
+              </p>
+            </div>
+
+            {/* Section 5: పేమెంట్ మెథడ్స్ */}
+            <div className="card mb-6">
+              <h2 className="text-brand-gold font-bold text-xl mb-4">పేమెంట్ మెథడ్స్ — UPI, PhonePe, GPay, Paytm</h2>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                DafaBet ఇండియన్ ఆటగాళ్ళకు అత్యంత అనుకూలమైన పేమెంట్ వ్యవస్థ కలిగి ఉంది. UPI (PhonePe, GPay, Paytm, BHIM) ద్వారా జమ చేస్తే కేవలం 60 సెకన్లలోపు మీ అకౌంట్‌లో పడుతుంది — ఇది ఇండియన్ ఆటగాళ్ళకు చాలా ముఖ్యమైన సౌకర్యం.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                కనీస జమ కేవలం ₹500 మాత్రమే. ఇది మార్కెట్‌లో అత్యంత తక్కువ ప్రవేశ అవసరం. గరిష్ట జమ ₹1,00,000 వరకు ఒక్కో ట్రాన్సాక్షన్‌కు. నెట్ బ్యాంకింగ్ (NEFT/IMPS) ద్వారా కూడా 1–5 నిమిషాల్లో జమ పూర్తవుతుంది.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                విత్‌డ్రాల్ విషయంలో: UPI ద్వారా విత్‌డ్రా చేస్తే 1–4 గంటల్లో మీ బ్యాంక్ అకౌంట్‌కు వస్తుంది. బ్యాంక్ ట్రాన్స్‌ఫర్ ద్వారా అయితే 1–3 పని రోజులు పడుతుంది. క్రిప్టో (Bitcoin, USDT) ద్వారా విత్‌డ్రా చేస్తే 1–4 గంటలు పడుతుంది.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                రుసుముల విషయంలో అత్యంత మంచి వార్త: DafaBet జమకు గానీ, విత్‌డ్రాల్‌కు గానీ ఎలాంటి ఫీజు వసూలు చేయదు. రెండు దిశల్లోనూ పూర్తి ఉచితం. మీ బ్యాంక్ లేదా UPI యాప్ ఏదైనా ఫీజు వేయవచ్చు కానీ DafaBet వేపు నుండి శూన్యం.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                KYC (Know Your Customer) ధృవీకరణ మొదటి విత్‌డ్రాల్‌కు ముందు ఒక్కసారి మాత్రమే అవసరం. PAN కార్డ్ మరియు Aadhaar కార్డ్ సమర్పించాలి. ఈ ప్రక్రియ సాధారణంగా 24 గంటల్లోపు పూర్తవుతుంది. KYC ఒకసారి అప్రూవ్ అయిన తర్వాత మళ్ళీ అవసరం లేదు — ప్రతిసారీ నిరంతరాయంగా విత్‌డ్రా చేసుకోవచ్చు.
+              </p>
+            </div>
+
+            {/* Section 6: DafaBet సురక్షితమా */}
+            <div className="card mb-6">
+              <h2 className="text-brand-gold font-bold text-xl mb-4">DafaBet సురక్షితమా? విశ్వసనీయమా?</h2>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                DafaBet సురక్షితత మరియు విశ్వసనీయత విషయంలో పలు కారణాలు ఉన్నాయి. మొదటిది, DafaBet Curaçao eGaming లైసెన్స్ 1668/JAZ కింద నిరంతరం నియంత్రించబడుతోంది. ఈ లైసెన్స్ SSL ఎన్‌క్రిప్షన్, ఆర్థిక ఆడిట్‌లు మరియు RNG పారదర్శకతను తప్పనిసరి చేస్తుంది.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                రెండవది, 20+ సంవత్సరాల అనుభవం (2004 నుండి నిరంతరం నడుస్తోంది). ఇంత దీర్ఘ కాలంపాటు నడుస్తున్న ఆపరేటర్ ఆర్థికంగా స్థిరంగా ఉంటుంది మరియు చెల్లింపుల్లో మోసం చేసే అవకాశం చాలా తక్కువగా ఉంటుంది. మూడవది, SSL 128-బిట్ ఎన్‌క్రిప్షన్ మీ వ్యక్తిగత డేటా మరియు ఆర్థిక వివరాలను సురక్షితంగా ఉంచుతుంది.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                ప్లేయర్ ఫండ్లు ఆపరేటర్ ఆపరేటింగ్ ఖాతాల నుండి వేరే అకౌంట్‌లో భద్రపరచబడతాయి. ఇది మీ డబ్బు DafaBet యొక్క వ్యాపార కార్యకలాపాలకు వాడబడే ప్రమాదం లేకుండా చేస్తుంది.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                హెచ్చరిక: ఇంటర్నెట్‌లో DafaBet పేరుతో నకిలీ సైట్‌లు ఉన్నాయి. ఎప్పుడూ DafaWin లింక్ ద్వారా మాత్రమే DafaBet సైట్‌కు వెళ్ళండి — ఇది మీకు అధికారిక మరియు సురక్షితమైన లింక్ అందిస్తుంది. నకిలీ సైట్‌లలో లాగిన్ చేయడం ద్వారా మీ అకౌంట్ వివరాలు దొంగిలించబడవచ్చు.
+              </p>
+            </div>
+
+            {/* Section 7: AP/తెలంగాణ నోట్ */}
+            <div className="card border border-amber-500/30 mb-6">
+              <h2 className="text-brand-gold font-bold text-xl mb-4">ఆంధ్రప్రదేశ్ / తెలంగాణ ఆటగాళ్ళకు ముఖ్యమైన సమాచారం</h2>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                ఆంధ్రప్రదేశ్ 2020 లో గేమింగ్ చట్టానికి సవరణలు చేసింది, ఆన్‌లైన్ గేమింగ్‌పై అదనపు పరిమితులు విధించింది. తెలంగాణ 2017 లో టెలంగాణ గేమింగ్ (సవరణ) చట్టం ద్వారా ఆన్‌లైన్ గేమింగ్ కార్యకలాపాలను నిషేధించింది. ఈ రెండు రాష్ట్రాలు ఆన్‌లైన్ జూదానికి సంబంధించి మరింత కఠినమైన నిబంధనలు కలిగి ఉన్నాయి.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                DafaBet ఆఫ్‌షోర్ ఆపరేటర్ కావడం వల్ల నేరుగా ఇండియన్ రాష్ట్ర చట్టాల పరిధిలోకి రాకపోవచ్చు. అయినప్పటికీ, మీ రాష్ట్ర చట్టాల గురించి పూర్తిగా అర్థం చేసుకున్న తర్వాత మాత్రమే నిర్ణయించుకోవాలి. ప్రతి ఆటగాడు తమ స్వంత చట్టపరమైన పరిశోధన చేయాలి.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                <span className="text-amber-400 font-semibold">గమనిక:</span> ఇది చట్టపరమైన సలహా కాదు. మీ రాష్ట్ర చట్టాలు మరియు మీ వ్యక్తిగత పరిస్థితి ఆధారంగా స్వయంగా నిర్ణయించుకోండి. చట్టపరమైన సలహా కోసం అర్హత కలిగిన న్యాయవాది సంప్రదించండి.
+              </p>
+            </div>
+
+            {/* Section 8: FAQ Telugu */}
+            <div className="card mb-6">
+              <h2 className="text-brand-gold font-bold text-xl mb-5">తరచుగా అడిగే ప్రశ్నలు (Telugu FAQ)</h2>
+
+              <details className="mb-4 border-b border-brand-border pb-4 group">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between items-center gap-4">
+                  <span>DafaBet ఇండియాలో చట్టపరంగా అనుమతించబడిందా?</span>
+                  <span className="text-brand-gold text-xl shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
+                </summary>
+                <div className="text-gray-400 text-sm leading-relaxed mt-3">
+                  <p className="mb-2">భారత కేంద్ర చట్టం వ్యక్తులు ఆఫ్‌షోర్-లైసెన్స్ ఆపరేటర్‌లతో బెట్టింగ్ చేయడాన్ని స్పష్టంగా నిషేధించదు. పబ్లిక్ గ్యాంబ్లింగ్ యాక్ట్ 1867 భౌతిక జూదశాలలకు మాత్రమే వర్తిస్తుంది — ఆన్‌లైన్ ఆఫ్‌షోర్ బెట్టింగ్‌కు కాదు.</p>
+                  <p>DafaBet Curaçao eGaming లైసెన్స్ 1668/JAZ కింద నడుస్తుంది మరియు ఆఫ్‌షోర్ నుండి ఇండియన్ ఆటగాళ్ళకు సేవ అందిస్తుంది. అయితే, ఆంధ్రప్రదేశ్ మరియు తెలంగాణ వంటి రాష్ట్రాలు మరింత కఠినమైన నిబంధనలు కలిగి ఉన్నాయి. మీ రాష్ట్ర నిబంధనలు తెలుసుకున్న తర్వాత నిర్ణయించుకోండి.</p>
+                </div>
+              </details>
+
+              <details className="mb-4 border-b border-brand-border pb-4 group">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between items-center gap-4">
+                  <span>వెల్కం బోనస్ ఎంత మరియు ఎలా క్లెయిమ్ చేయాలి?</span>
+                  <span className="text-brand-gold text-xl shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
+                </summary>
+                <div className="text-gray-400 text-sm leading-relaxed mt-3">
+                  <p className="mb-2">DafaBet 200% ఫస్ట్-డిపాజిట్ మ్యాచ్ బోనస్ అందిస్తుంది, గరిష్టంగా ₹20,000 వరకు. మీరు ₹10,000 జమ చేస్తే ₹20,000 బోనస్ పొందుతారు — మొత్తం ₹30,000 అందుబాటులో ఉంటుంది.</p>
+                  <p className="mb-2">కనీస జమ: ₹500. ప్రోమో కోడ్ అవసరం లేదు — మొదటి జమతో అటోమేటిగా బోనస్ క్రెడిట్ అవుతుంది.</p>
+                  <p>వేజరింగ్: బోనస్‌పై 8x, 30 రోజుల్లో పూర్తి చేయాలి. స్పోర్ట్స్ మరియు కేసినో రెండూ వేజరింగ్‌లో లెక్కవుతాయి.</p>
+                </div>
+              </details>
+
+              <details className="mb-4 border-b border-brand-border pb-4 group">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between items-center gap-4">
+                  <span>UPI తో DafaBet లో ఎలా జమ చేయాలి?</span>
+                  <span className="text-brand-gold text-xl shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
+                </summary>
+                <div className="text-gray-400 text-sm leading-relaxed mt-3">
+                  <p className="mb-2">1. DafaBet లో లాగిన్ చేయండి మరియు &quot;డిపాజిట్&quot; క్లిక్ చేయండి.</p>
+                  <p className="mb-2">2. UPI ఎంచుకోండి — PhonePe, GPay, Paytm, లేదా BHIM.</p>
+                  <p className="mb-2">3. మొత్తం నమోదు చేయండి (కనీసం ₹500).</p>
+                  <p className="mb-2">4. మీ UPI యాప్‌లో చెల్లింపు ధృవీకరించండి.</p>
+                  <p>60 సెకన్లలోపు మీ DafaBet అకౌంట్‌లో డబ్బు కనిపిస్తుంది. ఎలాంటి ఫీజు లేదు.</p>
+                </div>
+              </details>
+
+              <details className="mb-4 border-b border-brand-border pb-4 group">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between items-center gap-4">
+                  <span>IPL మ్యాచ్‌లపై DafaBet లో పందెం వేయవచ్చా?</span>
+                  <span className="text-brand-gold text-xl shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
+                </summary>
+                <div className="text-gray-400 text-sm leading-relaxed mt-3">
+                  <p className="mb-2">అవును. DafaBet IPL లో 10 జట్లు అన్నింటి మ్యాచ్‌లను 30+ మార్కెట్‌లతో కవర్ చేస్తుంది. అందుబాటులో ఉన్న మార్కెట్‌లు:</p>
+                  <ul className="list-disc list-inside space-y-1 mb-2">
+                    <li>మ్యాచ్ విన్నర్</li>
+                    <li>టాప్ బ్యాటర్, టాప్ బౌలర్</li>
+                    <li>లైవ్ బాల్-బై-బాల్ బెట్టింగ్</li>
+                    <li>క్యాష్-అవుట్ ఫీచర్</li>
+                    <li>ప్లేయర్ పర్ఫార్మెన్స్ ప్రాప్స్</li>
+                  </ul>
+                  <p>సన్‌రైజర్స్ హైదరాబాద్ మ్యాచ్‌లు సహా అన్ని IPL మ్యాచ్‌లు కవర్ చేయబడతాయి.</p>
+                </div>
+              </details>
+
+              <details className="mb-4 border-b border-brand-border pb-4 group">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between items-center gap-4">
+                  <span>మొబైల్‌లో DafaBet వాడవచ్చా?</span>
+                  <span className="text-brand-gold text-xl shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
+                </summary>
+                <div className="text-gray-400 text-sm leading-relaxed mt-3">
+                  <p className="mb-2">అవును. DafaBet Android మరియు iOS రెండింటికీ నేటివ్ యాప్‌లు అందిస్తుంది.</p>
+                  <p className="mb-2"><span className="text-white font-medium">Android:</span> APK ని నేరుగా DafaBet అధికారిక సైట్ నుండి డౌన్‌లోడ్ చేయాలి (Google Play Store లో లేదు — గేమింగ్ యాప్ పాలసీ కారణంగా). ఇది 100% సురక్షితం.</p>
+                  <p className="mb-2"><span className="text-white font-medium">iOS:</span> Apple App Store లో భారత వినియోగదారులకు అందుబాటులో ఉంది.</p>
+                  <p>యాప్ లేకుండా కూడా మొబైల్ బ్రౌజర్ ద్వారా పూర్తి సైట్ యాక్సెస్ చేయవచ్చు.</p>
+                </div>
+              </details>
+
+              <details className="group">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between items-center gap-4">
+                  <span>DafaBet విత్‌డ్రాల్ ఎంత సమయం పడుతుంది?</span>
+                  <span className="text-brand-gold text-xl shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
+                </summary>
+                <div className="text-gray-400 text-sm leading-relaxed mt-3">
+                  <p className="mb-2">విత్‌డ్రాల్ సమయాలు పేమెంట్ మెథడ్ ఆధారంగా మారుతాయి:</p>
+                  <ul className="list-disc list-inside space-y-1 mb-2">
+                    <li>UPI (PhonePe, GPay, Paytm): <span className="text-white">1–4 గంటలు</span></li>
+                    <li>బ్యాంక్ ట్రాన్స్‌ఫర్: <span className="text-white">1–3 పని రోజులు</span></li>
+                  </ul>
+                  <p className="mb-2">మొదటి విత్‌డ్రాల్‌కు ముందు KYC (PAN + Aadhaar) అవసరం — ఇది ఒక్కసారి మాత్రమే. ఆ తర్వాత అన్ని విత్‌డ్రాళ్ళు నేరుగా ప్రాసెస్ అవుతాయి.</p>
+                  <p>DafaBet జమ లేదా విత్‌డ్రాల్ ఏ దిశలోనూ ఫీజు వసూలు చేయదు.</p>
+                </div>
+              </details>
+            </div>
+
+            {/* Section 9: బాధ్యతాయుత జూదం */}
+            <div className="card border border-brand-border mb-8">
+              <h2 className="text-brand-gold font-bold text-xl mb-4">బాధ్యతాయుత జూదం — 18+ మాత్రమే</h2>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                DafaBet లో పందెం వినోదం కోసం మాత్రమే ఆడాలి — ఆదాయం సంపాదించే మార్గంగా చూడకూడదు. జూదం వ్యసనానికి దారి తీయవచ్చు. మీకు లేదా మీ అభిమానికి జూదంపై నియంత్రణ కోల్పోయే సమస్య ఉంటే, వెంటనే నిపుణుల సహాయం తీసుకోండి.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                DafaBet 18 ఏళ్ళు నిండిన వ్యక్తులకు మాత్రమే అనుమతి ఇస్తుంది. మీరు పోగొట్టుకోగలిగే దానికంటే ఎక్కువ పందెం వేయకండి. సహాయం కోసం సంప్రదించండి:
+              </p>
+              <div className="bg-brand-card rounded-lg p-4 space-y-2">
+                <p className="text-gray-400 text-sm">
+                  <span className="text-white font-semibold">Vandrevala Foundation హెల్ప్‌లైన్:</span>{' '}
+                  <span className="text-brand-gold font-bold">1860-2662-345</span>{' '}
+                  (24/7, ఉచితం, రహస్యం)
+                </p>
+                <p className="text-gray-400 text-sm">
+                  <span className="text-white font-semibold">iCall (TISS):</span>{' '}
+                  <span className="text-brand-gold font-bold">9152987821</span>
+                </p>
               </div>
             </div>
 
-            {/* Block 3: Summary verdict */}
-            <div className="card mb-6">
-              <h3 className="text-brand-gold font-bold mb-3">దాఫాబెట్ సంక్షిప్త తీర్పు</h3>
-              <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                క్రికెట్ + UPI ప్రాధాన్యం ఉన్న తెలుగు ఆటగాళ్ళకు సిఫార్సు.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                <div className="bg-brand-card rounded-lg px-4 py-3">
-                  <span className="text-gray-400">వెల్‌కం బోనస్: </span>
-                  <span className="text-white font-semibold">200% రూ.20,000 వరకు</span>
-                </div>
-                <div className="bg-brand-card rounded-lg px-4 py-3">
-                  <span className="text-gray-400">కనీస డిపాజిట్: </span>
-                  <span className="text-white font-semibold">రూ.500</span>
-                </div>
-                <div className="bg-brand-card rounded-lg px-4 py-3 sm:col-span-2">
-                  <span className="text-gray-400">UPI: </span>
-                  <span className="text-white font-semibold">PhonePe, Google Pay, Paytm, BHIM</span>
-                </div>
+            {/* Quick Links */}
+            <div className="card">
+              <h3 className="text-brand-gold font-bold mb-4">త్వరిత లింక్‌లు</h3>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/dafabet-review" className="text-brand-gold hover:underline text-sm">DafaBet రివ్యూ</Link>
+                <span className="text-gray-600">·</span>
+                <Link href="/dafabet-bonus" className="text-brand-gold hover:underline text-sm">DafaBet బోనస్</Link>
+                <span className="text-gray-600">·</span>
+                <Link href="/dafabet-registration" className="text-brand-gold hover:underline text-sm">రిజిస్ట్రేషన్</Link>
+                <span className="text-gray-600">·</span>
+                <Link href="/sports-betting" className="text-brand-gold hover:underline text-sm">స్పోర్ట్స్ బెట్టింగ్</Link>
+                <span className="text-gray-600">·</span>
+                <Link href="/online-casino" className="text-brand-gold hover:underline text-sm">ఆన్‌లైన్ కేసినో</Link>
               </div>
             </div>
 
-            {/* Block 4: AP/Telangana legal note */}
-            <div className="card border border-brand-border">
-              <p className="text-gray-500 text-xs leading-relaxed">
-                <span className="text-gray-400 font-semibold">ఆంధ్రప్రదేశ్ + తెలంగాణ చట్ట స్థితి:</span> ఆఫ్‌షోర్ ఆపరేటర్‌లపై స్టేట్ లా నేరుగా అమలవ్వదు. మే 2026 PROG రూల్స్ అమల్లోకి వస్తున్నాయి. మీ సొంత నిర్ణయం, మీ సొంత రిస్క్. 18+ మాత్రమే.
-              </p>
-            </div>
           </section>
         )}
 
+        {/* English sections after te block — only for non-te locales */}
+        {locale !== 'te' && (
+          <>
         {/* Registration */}
         <section className="review-section">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -794,6 +1007,8 @@ function HomePageContent({ locale }: { locale: string }) {
             </div>
           </div>
         </section>
+          </>
+        )}
 
       </div>
     </>

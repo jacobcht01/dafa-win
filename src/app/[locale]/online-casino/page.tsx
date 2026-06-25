@@ -95,6 +95,9 @@ function CasinoContent({ locale }: { locale: string }) {
     <>
       <JsonLd data={schemaData} />
 
+      {/* English content — only for non-te locales */}
+      {locale !== 'te' && (
+        <>
       {/* Hero */}
       <section className="relative h-[350px] md:h-[420px] overflow-hidden">
         <Image
@@ -514,53 +517,239 @@ function CasinoContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+        </>
+      )}
+
       {/* Telugu Section */}
       {locale === 'te' && (
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h2 className="section-title mb-6">ఆన్‌లైన్ క్యాసినో తెలుగు గైడ్</h2>
 
-          {/* Block 1: Card games for Telugu players */}
+          <h2 className="section-title mb-8">ఆన్‌లైన్ కేసినో DafaBet ఇండియా 2026</h2>
+
+          {/* Section 1: Teen Patti */}
           <div className="card mb-6">
-            <h3 className="gold-text font-bold text-lg mb-3">తెలుగు ఆటగాళ్ళకు ఇష్టమైన క్యాసినో గేమ్‌లు</h3>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li><span className="text-brand-gold font-semibold">తీన్ పత్తి (Teen Patti):</span> లైవ్ టేబుల్స్ — హిందీ/తెలుగు డీలర్లతో. 3-కార్డ్ ప్లే, సైడ్-బెట్‌లు.</li>
-              <li><span className="text-brand-gold font-semibold">అందర్ బహర్ (Andar Bahar):</span> గోవా రూమ్ రూల్స్, వేగంగా డీల్. సరళమైన గేమ్.</li>
-              <li><span className="text-brand-gold font-semibold">రమ్మీ:</span> 13-కార్డ్ క్యాష్ టేబుల్స్ మరియు టోర్నమెంట్ ఫార్మాట్‌లు.</li>
-              <li><span className="text-brand-gold font-semibold">పోకర్:</span> Texas Hold&apos;em లైవ్ టేబుల్స్ మరియు వీడియో పోకర్.</li>
+            <h3 className="text-brand-gold font-bold text-lg mb-4">Teen Patti — 7+ వేరియంట్లు</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              Teen Patti ఇండియాలో అత్యంత జనాదరణ పొందిన పేకముక్కల ఆట. DafaBet లో 7 కంటే ఎక్కువ Teen Patti వేరియంట్లు అందుబాటులో ఉన్నాయి — ప్రతి వేరియంట్ విభిన్నమైన ఆసక్తిని అందిస్తుంది.
+            </p>
+            <ul className="text-gray-400 text-sm leading-relaxed space-y-3">
+              <li>
+                <span className="text-brand-gold font-semibold">క్లాసిక్ Teen Patti:</span> సాంప్రదాయ 3-కార్డ్ ఆట. ప్రతి ఆటగాడు 3 కార్డులు పొందుతాడు, అత్యుత్తమ హ్యాండ్ గెలుస్తుంది. Pair, Flush, Straight, Three of a Kind వంటి హ్యాండ్ రేటింగ్‌లు ఇందులో ఉంటాయి. కనీస బెట్ ₹10, గరిష్ట బెట్ ₹10,000.
+              </li>
+              <li>
+                <span className="text-brand-gold font-semibold">Joker Teen Patti:</span> ఒక అదనపు జోకర్ కార్డ్ జోడించబడుతుంది — ఇది ఏ కార్డ్ స్థానంలోనైనా ఉండగలదు. జోకర్ ఉన్న హ్యాండ్‌లు సాధారణ హ్యాండ్‌లను మించిపోతాయి.
+              </li>
+              <li>
+                <span className="text-brand-gold font-semibold">Muflis (తిరగబడిన) Teen Patti:</span> తక్కువ హ్యాండ్ విలువ గల ఆటగాడు గెలుస్తాడు — సాంప్రదాయ నియమాలకు వ్యతిరేకంగా! అత్యంత ఆసక్తికరమైన వేరియంట్.
+              </li>
+              <li>
+                <span className="text-brand-gold font-semibold">AK47 Teen Patti:</span> ఏస్, కింగ్, 4, 7 కార్డులు జోకర్‌లుగా పని చేస్తాయి. నాలుగు వైల్డ్ కార్డులతో ఈ వేరియంట్ చాలా ఉత్తేజకరంగా ఉంటుంది.
+              </li>
+              <li>
+                <span className="text-brand-gold font-semibold">లైవ్ Teen Patti:</span> హిందీ-స్పీకింగ్ డీలర్లతో రియల్ టైమ్‌లో ఆడవచ్చు. Evolution మరియు Ezugi స్టూడియోల నుండి 24/7 లైవ్ స్ట్రీమింగ్. పెయిర్ ప్లస్ మరియు 6-కార్డ్ బోనస్ సైడ్ బెట్లు కూడా అందుబాటులో ఉంటాయి.
+              </li>
             </ul>
           </div>
 
-          {/* Block 2: Online vs Goa */}
+          {/* Section 2: Andar Bahar */}
           <div className="card mb-6">
-            <h3 className="gold-text font-bold text-lg mb-3">గోవా క్యాసినో vs ఆన్‌లైన్ — తేడాలు</h3>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li><span className="text-brand-gold font-semibold">గోవా క్యాసినో:</span> డెల్టిన్ రాయల్, కాసినో ప్రైడ్. అందర్ బహర్, తీన్ పత్తి — అదే నిర్మాణం.</li>
-              <li><span className="text-brand-gold font-semibold">DafaWin ఆన్‌లైన్:</span> అదే టేబుల్ టైప్లు, కానీ UPI విత్‌డ్రా సులభంగా — బోర్డింగ్ నంబర్లు అక్కర్లేదు. హిందీ-స్పీకింగ్ లైవ్ డీలర్‌లు Evolution + Ezugi స్టూడియో నుండి.</li>
-            </ul>
-          </div>
-
-          {/* Block 3: Legal note */}
-          <div className="card mb-6">
-            <h3 className="gold-text font-bold text-lg mb-3">AP, తెలంగాణ క్యాసినో చట్ట స్థితి</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              ఆంధ్రప్రదేశ్, తెలంగాణ లో ఆన్‌లైన్ క్యాసినో మీద ఆంక్షలు ఉన్నాయి. ఆఫ్‌షోర్ ఆపరేటర్‌లను ఎన్‌ఫోర్స్ చేయడం అరుదు, కానీ చట్టం స్పష్టత లేదు. మీ రిస్క్ మీరు అంచనా వేసుకోండి. 18+ మాత్రమే.
+            <h3 className="text-brand-gold font-bold text-lg mb-4">Andar Bahar — సరళమైన, వేగమైన ఆట</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              Andar Bahar కేసినో గేమ్‌లలో అత్యంత సరళమైన ఆట. ఒక కార్డ్ ముఖం పైకి డీల్ చేయబడుతుంది, మీరు అదే విలువ గల కార్డ్ Andar (ఒక వైపు) లో పడుతుందా Bahar (మరో వైపు) లో పడుతుందా అని పందెం వేస్తారు.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              <span className="text-brand-gold font-semibold">RTP (Return to Player):</span> Andar Bahar కి సుమారు 97% RTP ఉంటుంది — ఇది కేసినో గేమ్‌లలో చాలా మంచి రేటు. ప్రతి రౌండ్ 30 సెకన్లలోపు పూర్తవుతుంది — వేగమైన ఆట అనుభవం ఇస్తుంది.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              DafaBet లో లైవ్ Andar Bahar టేబుళ్ళు 24/7 అందుబాటులో ఉంటాయి. Ezugi మరియు Evolution స్టూడియో నుండి వచ్చే హిందీ-స్పీకింగ్ డీలర్లతో నిజమైన కేసినో అనుభవం పొందవచ్చు. సైడ్ బెట్‌లు కూడా అందుబాటులో ఉంటాయి — మొదటి కార్డ్ ఎన్నో కార్డుల తర్వాత పడుతుందో పందెం వేయవచ్చు.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              మీకు కేసినో గేమ్‌లు కొత్తగా ఉంటే Andar Bahar నుండి మొదలు పెట్టండి — నియమాలు 30 సెకన్లలో అర్థమవుతాయి. పాక్షిక డిపాజిట్ బెట్‌లు (₹10 నుండి) అందుబాటులో ఉంటాయి కాబట్టి తక్కువ మొత్తంతో ప్రారంభించవచ్చు.
             </p>
           </div>
 
-          {/* Block 4: Quick links */}
+          {/* Section 3: Rummy */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">Rummy — 13 కార్డ్ రమ్మీ</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              DafaBet లో మూడు రకాల రమ్మీ అందుబాటులో ఉన్నాయి — ఇండియన్ ఆటగాళ్ళు ఎక్కువగా ఇష్టపడే ఫార్మాట్‌లు:
+            </p>
+            <ul className="text-gray-400 text-sm leading-relaxed space-y-3">
+              <li>
+                <span className="text-brand-gold font-semibold">పాయింట్స్ రమ్మీ:</span> వేగమైన సెషన్లకు. ఒక్కో ఆటలో 13 కార్డులు, మెల్డ్ చేసి గెలవండి. సాధారణంగా 10-15 నిమిషాల్లో పూర్తవుతుంది.
+              </li>
+              <li>
+                <span className="text-brand-gold font-semibold">పూల్ రమ్మీ:</span> 101 లేదా 201 పాయింట్ల పూల్. ఎక్కువ పాయింట్లు చేరుకున్న ఆటగాడు ఎలిమినేట్ అవుతాడు. చివరి వరకు మిగిలిన ఆటగాడు గెలుస్తాడు.
+              </li>
+              <li>
+                <span className="text-brand-gold font-semibold">క్యాష్ టేబుళ్ళు:</span> నిజమైన రూపాయలతో 2-6 ఆటగాళ్ళు ఆడవచ్చు. రమ్మీ భారత చట్టం కింద నైపుణ్య ఆటగా గుర్తించబడింది. అభ్యాస మోడ్ కూడా అందుబాటులో ఉంది.
+              </li>
+            </ul>
+          </div>
+
+          {/* Section 4: స్లాట్స్ */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">స్లాట్స్ గేమ్‌లు — 2,000+ టైటిళ్ళు</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              DafaBet లో 2,000 కంటే ఎక్కువ స్లాట్ గేమ్‌లు అందుబాటులో ఉన్నాయి. Pragmatic Play, Microgaming, NetEnt, Playtech వంటి ప్రముఖ సంస్థల నుండి వచ్చిన గేమ్‌లు ఇందులో ఉంటాయి.
+            </p>
+            <ul className="text-gray-400 text-sm leading-relaxed space-y-2">
+              <li><span className="text-brand-gold font-semibold">Mega Moolah:</span> Microgaming యొక్క ప్రగతిశీల జాక్‌పాట్ స్లాట్. జాక్‌పాట్ కోట్లలో పెరుగుతుంది — ఒక స్పిన్‌లో జీవితం మారిపోవచ్చు.</li>
+              <li><span className="text-brand-gold font-semibold">Gates of Olympus:</span> Pragmatic Play. 6×5 గ్రిడ్‌లో Tumble మెకానిజమ్ — ప్రతి గెలుపు కొత్త కాస్కేడ్ ట్రిగ్గర్ చేస్తుంది. ఉచిత స్పిన్‌లలో 500x వరకు గుణించవచ్చు.</li>
+              <li><span className="text-brand-gold font-semibold">Sweet Bonanza:</span> పండ్లు మరియు బాంబుల గేమ్ — ట్రిగ్గర్ అయిన ఫ్రీ స్పిన్స్‌లో Multiplier బాంబులు పేలుతాయి.</li>
+              <li><span className="text-brand-gold font-semibold">Big Bass Bonanza:</span> చేపలు పట్టే థీమ్ — Scatter సింబల్స్ బాంకర్ ఫ్రీ స్పిన్స్ ట్రిగ్గర్ చేస్తాయి.</li>
+            </ul>
+            <p className="text-gray-400 text-sm leading-relaxed mt-4">
+              చాలా స్లాట్ గేమ్‌లకు ఉచిత డెమో మోడ్ అందుబాటులో ఉంది — నిజమైన డబ్బు వేయకుండా మెకానిజమ్‌లు నేర్చుకోవచ్చు.
+            </p>
+          </div>
+
+          {/* Section 5: లైవ్ కేసినో */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">లైవ్ కేసినో — Evolution &amp; Ezugi</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              DafaBet లైవ్ కేసినో Evolution Gaming మరియు Ezugi స్టూడియోల ద్వారా నడుస్తుంది — ఇవి ప్రపంచంలో అత్యుత్తమ లైవ్ కేసినో ప్రొవైడర్లు.
+            </p>
+            <ul className="text-gray-400 text-sm leading-relaxed space-y-3">
+              <li>
+                <span className="text-brand-gold font-semibold">Lightning Roulette:</span> Evolution యొక్క సిగ్నేచర్ గేమ్. ప్రతి రౌండ్‌లో 1-5 సంఖ్యలకు 50x-500x వరకు మల్టిప్లయర్‌లు జోడించబడతాయి. సాధారణ రౌలెట్ కంటే చాలా ఉత్తేజకరంగా ఉంటుంది.
+              </li>
+              <li>
+                <span className="text-brand-gold font-semibold">Crazy Time:</span> Wheel of Fortune స్టైల్ గేమ్ — Pachinko, Cash Hunt, Coin Flip, Crazy Time అనే నాలుగు బోనస్ రౌండ్లు ఉంటాయి. 20,000x వరకు గెలుచుకోవచ్చు.
+              </li>
+              <li>
+                <span className="text-brand-gold font-semibold">హిందీ-స్పీకింగ్ డీలర్లు:</span> Ezugi నుండి హిందీ-స్పీకింగ్ డీలర్లు Teen Patti, Andar Bahar, Roulette టేబుళ్ళకు అందుబాటులో ఉన్నారు. ఇది ఇండియన్ ఆటగాళ్ళకు స్థానిక అనుభవాన్ని అందిస్తుంది.
+              </li>
+              <li>
+                <span className="text-brand-gold font-semibold">Live Blackjack:</span> Multi-player లైవ్ బ్లాక్‌జాక్ టేబుళ్ళు. బేసిక్ స్ట్రాటజీతో 99.5% వరకు RTP పొందవచ్చు.
+              </li>
+            </ul>
+          </div>
+
+          {/* Section 6: బోనస్ వివరణ */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">కేసినో బోనస్ — 200% వరకు ₹20,000</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              DafaBet స్వాగత బోనస్ స్పోర్ట్స్ బెట్టింగ్ మరియు కేసినో రెండింటికీ వర్తిస్తుంది. 200% మ్యాచ్ బోనస్, గరిష్టంగా ₹20,000 వరకు. కనీస జమ ₹500.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              <span className="text-brand-gold font-semibold">వేజరింగ్ అవసరాలు:</span> బోనస్ మొత్తంపై 8x వేజరింగ్ 30 రోజుల వ్యవధిలో పూర్తి చేయాలి. కేసినో గేమ్‌లు వేజరింగ్ లెక్కలోకి వస్తాయి. స్లాట్లు 100% వేజరింగ్ కంట్రిబ్యూషన్ ఇస్తాయి; లైవ్ కేసినో గేమ్‌లు 10-20% ఇస్తాయి (గేమ్ పై ఆధారపడి).
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              DafaBet నిరంతర ప్రమోషన్‌లు కూడా అందిస్తుంది — వీక్లీ 10% కేష్‌బ్యాక్, డైలీ ఫ్రీ స్పిన్స్. Promotions విభాగం నిత్యం తనిఖీ చేయండి.
+            </p>
+          </div>
+
+          {/* Section 7: RTP వివరణ */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">RTP అంటే ఏమిటి?</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              RTP (Return to Player) అనేది ఒక గేమ్ దీర్ఘకాలంలో ఎంత శాతం తిరిగి ఆటగాళ్ళకు చెల్లిస్తుందో చూపించే సూచిక. ఉదాహరణకు 97% RTP అంటే — ఆ గేమ్‌లో ₹10,000 వేజర్ చేస్తే దీర్ఘకాలంలో సగటున ₹9,700 తిరిగి పొందవచ్చు.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              DafaBet లో సాధారణ RTP లు:
+            </p>
+            <ul className="text-gray-400 text-sm leading-relaxed space-y-2">
+              <li><span className="text-brand-gold font-semibold">Andar Bahar:</span> ~97% RTP</li>
+              <li><span className="text-brand-gold font-semibold">Blackjack (బేసిక్ స్ట్రాటజీతో):</span> 99.5% వరకు</li>
+              <li><span className="text-brand-gold font-semibold">Roulette (European):</span> 97.3%</li>
+              <li><span className="text-brand-gold font-semibold">స్లాట్లు (సాధారణంగా):</span> 94-97%</li>
+            </ul>
+            <p className="text-gray-400 text-sm leading-relaxed mt-4">
+              RTP అనేది సగటు సూచిక — ఏ ఒక్క సెషన్‌లో ఇది గ్యారంటీ కాదు. కానీ ఎక్కువ RTP గల గేమ్‌లు ఎంచుకోవడం స్మార్ట్ వ్యూహం.
+            </p>
+          </div>
+
+          {/* Section 8: AP/తెలంగాణ నోట్ */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">AP, తెలంగాణ క్యాసినో చట్ట స్థితి</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              ఆంధ్రప్రదేశ్ మరియు తెలంగాణలో ఆన్‌లైన్ కేసినో గేమింగ్‌పై రాష్ట్ర స్థాయి ఆంక్షలు ఉన్నాయి. ఆంధ్రప్రదేశ్‌లో 2020 సవరణ ఆన్‌లైన్ గేమింగ్‌ను నిషేధించింది. తెలంగాణలో 2017 చట్టం ఆన్‌లైన్ జూదాన్ని నిషేధించింది.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              DafaBet Curaçao eGaming లైసెన్స్ 1668/JAZ కింద ఆఫ్‌షోర్ ఆపరేటర్‌గా పని చేస్తుంది. ఆఫ్‌షోర్ ఆపరేటర్లను ఎన్‌ఫోర్స్ చేయడం అరుదు, కానీ చట్టపరమైన స్పష్టత లేదు. మీ రాష్ట్ర నిబంధనలు తనిఖీ చేసుకుని నిర్ణయించుకోండి. 18+ మాత్రమే.
+            </p>
+          </div>
+
+          {/* Section 9: FAQ Telugu */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">తరచుగా అడిగే ప్రశ్నలు</h3>
+            <div className="space-y-4">
+              <details className="border border-brand-border rounded-lg p-4">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between">
+                  DafaBet కేసినో సురక్షితమేనా?
+                  <span className="text-brand-gold ml-3">+</span>
+                </summary>
+                <p className="text-gray-400 text-sm leading-relaxed mt-3">
+                  అవును. లైవ్ కేసినో Evolution మరియు Ezugi నుండి నడుస్తుంది — ఇవి స్వతంత్ర ఆడిట్‌కు లోబడిన లైసెన్స్ పొందిన స్టూడియోలు. DafaBet Curaçao eGaming లైసెన్స్ 1668/JAZ కింద పని చేస్తుంది, ఇది ఫేర్-ప్లే ప్రమాణాలకు కట్టుబడి ఉండాలని నిర్బంధిస్తుంది.
+                </p>
+              </details>
+              <details className="border border-brand-border rounded-lg p-4">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between">
+                  DafaBet లో Teen Patti ఆడవచ్చా?
+                  <span className="text-brand-gold ml-3">+</span>
+                </summary>
+                <p className="text-gray-400 text-sm leading-relaxed mt-3">
+                  అవును — హిందీ-స్పీకింగ్ డీలర్లతో లైవ్ Teen Patti టేబుళ్ళు 24/7 అందుబాటులో ఉంటాయి. 7+ వేరియంట్లు అందుబాటులో ఉన్నాయి. కనీస బెట్ ₹10.
+                </p>
+              </details>
+              <details className="border border-brand-border rounded-lg p-4">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between">
+                  స్వాగత బోనస్ కేసినోకు వర్తిస్తుందా?
+                  <span className="text-brand-gold ml-3">+</span>
+                </summary>
+                <p className="text-gray-400 text-sm leading-relaxed mt-3">
+                  అవును — 200% స్వాగత బోనస్ (గరిష్టంగా ₹20,000) స్పోర్ట్స్ బెట్టింగ్ మరియు కేసినో రెండింటికీ వర్తిస్తుంది. 8x వేజరింగ్ 30 రోజుల్లో పూర్తి చేయాలి.
+                </p>
+              </details>
+              <details className="border border-brand-border rounded-lg p-4">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between">
+                  మొబైల్‌లో కేసినో ఆడవచ్చా?
+                  <span className="text-brand-gold ml-3">+</span>
+                </summary>
+                <p className="text-gray-400 text-sm leading-relaxed mt-3">
+                  అవును. Android APK మరియు iOS యాప్ రెండూ పూర్తి కేసినో యాక్సెస్ ఇస్తాయి. మొబైల్ బ్రౌజర్ వెర్షన్ కూడా అన్ని పరికరాల్లో పని చేస్తుంది.
+                </p>
+              </details>
+            </div>
+          </div>
+
+          {/* Section 10: బాధ్యతాయుత జూదం */}
+          <div className="card border border-brand-border mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">బాధ్యతాయుత జూదం — 18+ మాత్రమే</h3>
+            <p className="text-gray-400 leading-relaxed mb-3">
+              కేసినో గేమ్‌లు వినోదం కోసం మాత్రమే ఆడాలి — ఆదాయ మార్గంగా కాదు. నష్టాలు వెంబడించకండి. మీ బడ్జెట్ నిర్ణయించుకుని దానికి కట్టుబడి ఉండండి. DafaBet లో డిపాజిట్ లిమిట్లు, సెల్ఫ్-ఎక్స్‌క్లూజన్ ఆప్షన్లు అందుబాటులో ఉంటాయి.
+            </p>
+            <div className="bg-brand-card rounded-lg p-4 space-y-2">
+              <p className="text-gray-400 text-sm">
+                <span className="text-white font-semibold">Vandrevala Foundation హెల్ప్‌లైన్:</span>{' '}
+                <span className="text-brand-gold font-bold">1860-2662-345</span>{' '}
+                (24/7, ఉచితం, రహస్యం)
+              </p>
+              <p className="text-gray-400 text-sm">
+                <span className="text-white font-semibold">iCall (TISS):</span>{' '}
+                <span className="text-brand-gold font-bold">9152987821</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Quick Links */}
           <div className="bg-brand-surface rounded-lg p-4">
-            <p className="text-gray-400 text-sm">
-              సంబంధిత పేజీలు:{' '}
-              <Link href="/dafabet-review" className="text-brand-gold hover:underline">దాఫాబెట్ సమీక్ష</Link>
-              {', '}
-              <Link href="/dafabet-bonus" className="text-brand-gold hover:underline">దాఫాబెట్ బోనస్</Link>
-              {', '}
-              <Link href="/dafabet-registration" className="text-brand-gold hover:underline">రిజిస్ట్రేషన్</Link>
-            </p>
+            <p className="text-gray-400 text-sm mb-3 font-semibold">సంబంధిత పేజీలు:</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/dafabet-review" className="text-brand-gold hover:underline text-sm">DafaBet సమీక్ష</Link>
+              <Link href="/dafabet-bonus" className="text-brand-gold hover:underline text-sm">DafaBet బోనస్</Link>
+              <Link href="/dafabet-registration" className="text-brand-gold hover:underline text-sm">రిజిస్ట్రేషన్</Link>
+              <Link href="/sports-betting" className="text-brand-gold hover:underline text-sm">స్పోర్ట్స్ బెట్టింగ్</Link>
+            </div>
           </div>
+
         </section>
       )}
 
+      {/* FAQ and CTA — English only */}
+      {locale !== 'te' && (
+        <>
       {/* FAQ */}
       <section className="py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -602,6 +791,8 @@ function CasinoContent({ locale }: { locale: string }) {
           </div>
         </div>
       </section>
+        </>
+      )}
     </>
   )
 }

@@ -98,6 +98,9 @@ function RegistrationContent({ locale }: { locale: string }) {
     <>
       <JsonLd data={schemaData} />
 
+      {/* English content — only for non-te locales */}
+      {locale !== 'te' && (
+        <>
       {/* Hero with image */}
       <section className="relative h-[320px] md:h-[400px] flex items-center overflow-hidden">
         <Image
@@ -138,59 +141,278 @@ function RegistrationContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+        </>
+      )}
+
       {locale === 'te' && (
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h2 className="section-title mb-6">నమోదు తెలుగు గైడ్</h2>
 
-          {/* Registration steps card */}
+          <h2 className="section-title mb-8">DafaBet రిజిస్ట్రేషన్ 2026 — తెలుగు గైడ్</h2>
+
+          {/* Section 1: నమోదు దశలు */}
           <div className="card mb-6">
-            <h3 className="text-lg font-semibold text-white mb-3">దాఫాబెట్ అకౌంట్ — 5 నిమిషాల్లో ఇలా చేయండి:</h3>
-            <ol className="space-y-3 text-gray-400 text-sm">
-              <li className="flex gap-3">
-                <span className="text-brand-gold font-bold flex-shrink-0">1.</span>
-                <span>DafaWin లింక్ నుండి దాఫాబెట్ హోమ్‌పేజ్ తెరవండి. &quot;Sign Up&quot; నొక్కండి.</span>
+            <h3 className="text-brand-gold font-bold text-lg mb-4">నమోదు దశలు — 6 అడుగులు</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              DafaBet లో అకౌంట్ తెరవడం చాలా సులభం — 5 నిమిషాల్లో పూర్తవుతుంది. కానీ ప్రతి దశ సరిగ్గా చేయడం ముఖ్యం, ముఖ్యంగా KYC మరియు మొదటి జమ భాగాలు. ఈ 6 దశలు జాగ్రత్తగా అనుసరించండి:
+            </p>
+            <ol className="text-gray-400 text-sm leading-relaxed space-y-4">
+              <li className="flex items-start gap-3">
+                <span className="bg-gold-gradient text-black font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs">1</span>
+                <div>
+                  <span className="text-white font-semibold">అధికారిక సైట్ తెరవండి:</span> DafaBet అధికారిక వెబ్‌సైట్ తెరవండి. DafaWin నుండి బుక్‌మార్క్ చేసిన లింక్ మాత్రమే ఉపయోగించండి — Google లో వెతికి యాదృచ్ఛికంగా క్లిక్ చేయకండి, ఎందుకంటే మిర్రర్ మరియు ఫిషింగ్ సైట్లు ఉంటాయి. హోమ్‌పేజ్‌లో పైన కుడివైపు &quot;Sign Up&quot; బటన్ ఉంటుంది.
+                </div>
               </li>
-              <li className="flex gap-3">
-                <span className="text-brand-gold font-bold flex-shrink-0">2.</span>
-                <span>పేరు (నిజమైన పేరు — KYC తనిఖీ చేస్తుంది), ఈమెయిల్, ఫోన్ (+91), పుట్టిన తేదీ (18+), కరెన్సీ INR నింపండి.</span>
+              <li className="flex items-start gap-3">
+                <span className="bg-gold-gradient text-black font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs">2</span>
+                <div>
+                  <span className="text-white font-semibold">నమోదు ఫారం నింపండి:</span> మీ పూర్తి చట్టపరమైన పేరు (PAN/ఆధార్‌లో ఉన్నట్లే అక్షరాల మార్పు లేకుండా), ఈమెయిల్ చిరునామా, భారతీయ మొబైల్ నంబర్ +91 తో, పుట్టిన తేదీ (18 ఏళ్ళు పైన అయి ఉండాలి), కరెన్సీ INR, దేశం India నమోదు చేయండి. పాస్‌వర్డ్ కనీసం 8 అక్షరాలు ఉండాలి — ఒక పెద్ద అక్షరం, ఒక సంఖ్య, ఒక ప్రత్యేక గుర్తు కలిపి పెట్టండి.
+                </div>
               </li>
-              <li className="flex gap-3">
-                <span className="text-brand-gold font-bold flex-shrink-0">3.</span>
-                <span>ప్రమో కోడ్ ఫీల్డ్ ఉంటే ఖాళీగా వదలండి — 200% బోనస్ ఆటోమేటిగా వస్తుంది.</span>
+              <li className="flex items-start gap-3">
+                <span className="bg-gold-gradient text-black font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs">3</span>
+                <div>
+                  <span className="text-white font-semibold">ప్రమో కోడ్ గురించి:</span> 200% స్వాగత బోనస్ పొందడానికి ఎలాంటి ప్రమో కోడ్ అవసరం లేదు. మీ మొదటి అర్హత గల జమ పూర్తయిన వెంటనే బోనస్ స్వయంచాలకంగా క్రెడిట్ అవుతుంది. DafaBet నుండి నేరుగా వేరే కోడ్ లభించినప్పుడు మాత్రమే దానిని ఉపయోగించండి — అన్యాపూర్వమైన లేదా గడువు తీరిన కోడ్ నమోదు చేస్తే బోనస్ ఆలస్యమవుతుంది.
+                </div>
               </li>
-              <li className="flex gap-3">
-                <span className="text-brand-gold font-bold flex-shrink-0">4.</span>
-                <span>OTP వెరిఫై చేయండి, ఈమెయిల్ లింక్ క్లిక్ చేయండి.</span>
+              <li className="flex items-start gap-3">
+                <span className="bg-gold-gradient text-black font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs">4</span>
+                <div>
+                  <span className="text-white font-semibold">OTP & ఈమెయిల్ వేరిఫై:</span> ఫారం సమర్పించిన తర్వాత DafaBet మీ మొబైల్ నంబర్‌కు OTP మరియు మీ ఈమెయిల్‌కు వేరిఫికేషన్ లింక్ పంపుతుంది. సమయ పరిమితి లోపల OTP నమోదు చేయండి. OTP రాకపోతే 60 సెకన్లు ఆగి &quot;Resend OTP&quot; నొక్కండి. మీ నంబర్ DND (Do Not Disturb) రిజిస్ట్రీలో ఉంటే SMS బ్లాక్ అవుతుంది — అది తనిఖీ చేయండి.
+                </div>
               </li>
-              <li className="flex gap-3">
-                <span className="text-brand-gold font-bold flex-shrink-0">5.</span>
-                <span>వెంటనే KYC అప్‌లోడ్ చేయండి: PAN కార్డ్ + ఆధార్. విత్‌డ్రాకి ముందు కాదు — రోజే.</span>
+              <li className="flex items-start gap-3">
+                <span className="bg-gold-gradient text-black font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs">5</span>
+                <div>
+                  <span className="text-white font-semibold">వెంటనే KYC సమర్పించండి:</span> నమోదు రోజే KYC చేయండి — మొదటి విత్‌డ్రాల్ వరకు ఆగకండి. My Account → KYC / Verification కి వెళ్ళండి. PAN కార్డ్ (ముందు ఫోటో స్పష్టంగా) మరియు ఆధార్ కార్డ్ (ముందు మరియు వెనక) అప్‌లోడ్ చేయండి. UIDAI పోర్టల్ నుండి దింపిన e-Aadhaar PDF ఫోన్ ఫోటో కంటే ఎక్కువ నమ్మకమైనది. DafaBet KYC ఆమోద వ్యవధి 24 గంటలు, కానీ సరైన పత్రాలు ఉంటే చాలా వేగంగా అవుతుంది.
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="bg-gold-gradient text-black font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs">6</span>
+                <div>
+                  <span className="text-white font-semibold">మొదటి జమ చేయండి:</span> Cashier → Deposit కి వెళ్ళి UPI ఎంచుకోండి. PhonePe, Google Pay (GPay), లేదా Paytm ద్వారా కనీసం ₹500 జమ చేయండి. జమ పూర్తయిన వెంటనే 200% బోనస్ (గరిష్టంగా ₹20,000 వరకు) స్వయంచాలకంగా మీ అకౌంట్‌లో క్రెడిట్ అవుతుంది. అప్పుడు Sports, Live Casino, లేదా Slots విభాగానికి నావిగేట్ చేయవచ్చు.
+                </div>
               </li>
             </ol>
           </div>
 
-          {/* KYC tip card */}
+          {/* Section 2: KYC వేరిఫికేషన్ */}
           <div className="card mb-6">
-            <h3 className="text-lg font-semibold text-white mb-3">KYC ఆలస్యమైన కారణాలు (తరచుగా వచ్చే సమస్యలు)</h3>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li className="flex gap-2"><span className="text-brand-gold flex-shrink-0">&#10003;</span><span>PAN ఫోటో అంచు కటైంది — అన్ని 4 మూలలు కనపడాలి.</span></li>
-              <li className="flex gap-2"><span className="text-brand-gold flex-shrink-0">&#10003;</span><span>ఆధార్ పేరు + అకౌంట్ పేరు తేడా ఉంది — పేరు అచ్చం ఒకేలా ఉండాలి.</span></li>
-              <li className="flex gap-2"><span className="text-brand-gold flex-shrink-0">&#10003;</span><span>e-Aadhaar PDF (UIDAI పోర్టల్ నుండి) ఫోన్ ఫోటో కంటే మంచిది.</span></li>
+            <h3 className="text-brand-gold font-bold text-lg mb-4">KYC వేరిఫికేషన్ — పూర్తి వివరణ</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              KYC (Know Your Customer) అనేది DafaBet ప్రతి అకౌంట్ నిజమైన, అర్హత గల వ్యక్తికి చెందినదని నిర్ధారించడానికి ఉపయోగించే గుర్తింపు వేరిఫికేషన్ ప్రక్రియ. ఇది వయస్సు తక్కువ ఆటగాళ్ళను నిరోధించడానికి, ఆటగాళ్ళను గుర్తింపు దొంగతనం నుండి రక్షించడానికి, మరియు DafaBet Curaçao eGaming లైసెన్స్ 1668/JAZ కింద తన బాధ్యతలను నెరవేర్చడానికి ఉపయోగపడుతుంది.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              KYC ఆమోదం పొందకుండా విత్‌డ్రాల్ చేసుకోలేరు. అందువల్ల నమోదు రోజే పత్రాలు సమర్పించడం తద్వారా మీ మొదటి విత్‌డ్రాల్‌లో ఆలస్యం నివారించవచ్చు.
+            </p>
+            <h4 className="text-white font-semibold mb-3">అంగీకరించిన పత్రాలు:</h4>
+            <ul className="text-gray-400 text-sm leading-relaxed space-y-3 mb-4">
+              <li>
+                <span className="text-brand-gold font-semibold">PAN కార్డ్:</span> ముందు ఫోటో స్పష్టంగా ఉండాలి. ఇది ఇండియన్ ఆటగాళ్ళకు ప్రాథమిక గుర్తింపు పత్రం మరియు ఎల్లప్పుడూ అవసరం. అన్ని 4 మూలలు కనపడాలి — అంచులు కత్తిరించిన ఫోటో తిరస్కరించబడుతుంది.
+              </li>
+              <li>
+                <span className="text-brand-gold font-semibold">ఆధార్ కార్డ్:</span> ముందు మరియు వెనక ఫోటోలు. UIDAI పోర్టల్ (uidai.gov.in) నుండి నేరుగా దింపిన e-Aadhaar PDF ఫోన్ ఫోటో కంటే ఎక్కువ నమ్మకమైనది — ఎందుకంటే PDF నాణ్యత ఎక్కువగా ఉంటుంది.
+              </li>
+            </ul>
+            <h4 className="text-white font-semibold mb-3">ఎలా సమర్పించాలి:</h4>
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              లాగిన్ అయి My Account → Verification కి వెళ్ళండి. ప్రతి పత్రం నిర్ణీత స్లాట్‌లో అప్‌లోడ్ చేయండి. మద్దతు ఉన్న ఆకృతులు JPG, PNG, మరియు PDF. ఫైల్ పరిమాణాలు తెర పై చూపించిన అప్‌లోడ్ పరిమితికి లోపల ఉండాలి.
+            </p>
+            <h4 className="text-white font-semibold mb-3">తిరస్కరణ కారణాలు (తరచుగా వచ్చేవి):</h4>
+            <ul className="text-gray-400 text-sm leading-relaxed space-y-2">
+              <li className="flex gap-2"><span className="text-red-400 flex-shrink-0">✗</span><span>PAN ఫోటో అంచు కత్తిరించబడింది — అన్ని 4 మూలలు కనపడాలి</span></li>
+              <li className="flex gap-2"><span className="text-red-400 flex-shrink-0">✗</span><span>ఆధార్‌లో పేరు మరియు అకౌంట్‌లో పేరు మధ్య వ్యత్యాసం ఉంది</span></li>
+              <li className="flex gap-2"><span className="text-red-400 flex-shrink-0">✗</span><span>మసకగా ఉన్న లేదా అస్పష్టంగా ఉన్న పత్ర ఫోటోలు</span></li>
+              <li className="flex gap-2"><span className="text-red-400 flex-shrink-0">✗</span><span>పాత ఆధార్ (12 సంఖ్యలు కనపడకపోతే)</span></li>
+              <li className="flex gap-2"><span className="text-red-400 flex-shrink-0">✗</span><span>మూడవ పక్ష ఫోటో దుకాణాల ద్వారా సంపాదించిన పత్రాలు (ప్రామాణికత సమస్యలు)</span></li>
             </ul>
           </div>
 
-          {/* Quick links */}
+          {/* Section 3: 200% బోనస్ */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">200% స్వాగత బోనస్ ఎలా క్లెయిమ్ చేయాలి</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              DafaBet కొత్త ఆటగాళ్ళకు 200% మ్యాచ్ బోనస్ ఇస్తుంది — గరిష్టంగా ₹20,000 వరకు. ఇది ఇండియన్ మార్కెట్‌లో అత్యంత ఉదారమైన స్వాగత ఆఫర్లలో ఒకటి. ఇది ఎలా పని చేస్తుందో చూద్దాం:
+            </p>
+            <div className="bg-brand-card rounded-lg p-4 mb-4">
+              <p className="text-sm text-gray-300 mb-2">ఉదాహరణ:</p>
+              <ul className="text-gray-400 text-sm space-y-1">
+                <li>మీరు ₹5,000 జమ చేస్తే → DafaBet ₹10,000 బోనస్ ఇస్తుంది → మొత్తం ₹15,000</li>
+                <li>మీరు ₹10,000 జమ చేస్తే → DafaBet ₹20,000 బోనస్ ఇస్తుంది → మొత్తం ₹30,000</li>
+                <li>కనీస జమ: ₹500 (బోనస్ క్లెయిమ్‌కు)</li>
+              </ul>
+            </div>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              ఎలాంటి ప్రమో కోడ్ అవసరం లేదు. UPI, Paytm, PhonePe ద్వారా మీ మొదటి జమ చేస్తే బోనస్ స్వయంచాలకంగా అకౌంట్‌లో క్రెడిట్ అవుతుంది — సాధారణంగా UPI జమలకు కేవలం సెకన్లలో.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              <span className="text-brand-gold font-semibold">వేజరింగ్ అవసరాలు:</span> బోనస్ మొత్తంపై 8x వేజరింగ్ 30 రోజుల వ్యవధిలో పూర్తి చేయాలి. ఉదాహరణకు ₹20,000 బోనస్ పొందితే, ₹1,60,000 (20,000 × 8) పందెం వేయాలి. స్పోర్ట్స్ బెట్టింగ్ మరియు కేసినో గేమ్‌లు రెండూ వేజరింగ్ లెక్కలోకి వస్తాయి. స్పోర్ట్స్ బెట్టింగ్‌లో అర్హత పొందాలంటే ఆడ్స్ కనీసం 1.50 ఉండాలి.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              30 రోజుల కౌంట్‌డౌన్ బోనస్ క్రెడిట్ అయిన క్షణం నుండి మొదలవుతుంది. ఈ వ్యవధిలో వేజరింగ్ పూర్తి చేసిన తర్వాత బోనస్ మొత్తాన్ని నేరుగా విత్‌డ్రా చేసుకోవచ్చు.
+            </p>
+          </div>
+
+          {/* Section 4: లాగిన్ & సెక్యూరిటీ */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">లాగిన్ &amp; సెక్యూరిటీ</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              అకౌంట్ సెక్యూరిటీ DafaBet లో చాలా ముఖ్యమైనది. మీ అకౌంట్‌ను సురక్షితంగా ఉంచడానికి ఈ చర్యలు తీసుకోండి:
+            </p>
+            <ul className="text-gray-400 text-sm leading-relaxed space-y-3">
+              <li>
+                <span className="text-brand-gold font-semibold">Face ID / Fingerprint:</span> DafaBet Android మరియు iOS యాప్‌లలో Face ID మరియు ఫింగర్‌ప్రింట్ లాగిన్ అందుబాటులో ఉంది. యాప్ సెట్టింగ్స్ → Security కి వెళ్ళి ఎనేబుల్ చేయండి.
+              </li>
+              <li>
+                <span className="text-brand-gold font-semibold">OTP విత్‌డ్రాల్:</span> ప్రతి విత్‌డ్రాల్ అభ్యర్థనకు మీ రిజిస్టర్డ్ మొబైల్ నంబర్‌కు OTP పంపబడుతుంది. ఇది మీ అకౌంట్ నుండి అనధికార విత్‌డ్రాల్స్ నిరోధిస్తుంది.
+              </li>
+              <li>
+                <span className="text-brand-gold font-semibold">బలమైన పాస్‌వర్డ్:</span> మీ పుట్టిన తేదీ, పేరు, లేదా సాధారణ శ్రేణులను (12345, abcde) పాస్‌వర్డ్‌గా ఉపయోగించకండి. పాస్‌వర్డ్ మేనేజర్ ఉపయోగించండి.
+              </li>
+              <li>
+                <span className="text-brand-gold font-semibold">ఒకే అకౌంట్:</span> DafaBet ఒక వ్యక్తికి ఒక్కో అకౌంట్ మాత్రమే అనుమతిస్తుంది. డూప్లికేట్ అకౌంట్లు శాశ్వతంగా నిషేధించబడతాయి మరియు ఆ అకౌంట్లలోని గెలుపులు శూన్యమవుతాయి.
+              </li>
+            </ul>
+          </div>
+
+          {/* Section 5: సమస్యలు & పరిష్కారాలు */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">సమస్యలు &amp; పరిష్కారాలు</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              నమోదు సమయంలో సాధారణంగా వచ్చే సమస్యలు మరియు వాటి పరిష్కారాలు:
+            </p>
+            <div className="space-y-4">
+              <div className="bg-brand-card rounded-lg p-4">
+                <h4 className="text-white font-semibold mb-2">&quot;ఈమెయిల్ ఇప్పటికే ఉపయోగంలో ఉంది&quot;</h4>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  మీరు ఇంతకుముందు DafaBet లో రిజిస్టర్ అయి ఉండవచ్చు. &quot;Forgot Password&quot; ఆప్షన్ ఉపయోగించి పాస్‌వర్డ్ రీసెట్ చేయండి. కొత్త అకౌంట్ సృష్టించడం నిషేధం — డూప్లికేట్ అకౌంట్లు శాశ్వతంగా నిషేధించబడతాయి.
+                </p>
+              </div>
+              <div className="bg-brand-card rounded-lg p-4">
+                <h4 className="text-white font-semibold mb-2">OTP రాలేదు</h4>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  60 సెకన్లు ఆగి Resend OTP నొక్కండి. మీ నంబర్ DND రిజిస్ట్రీలో ఉందా తనిఖీ చేయండి (1909 కు కాల్ చేసి తనిఖీ చేయవచ్చు). సమస్య కొనసాగితే DafaBet లైవ్ చాట్ సపోర్ట్ సంప్రదించండి.
+                </p>
+              </div>
+              <div className="bg-brand-card rounded-lg p-4">
+                <h4 className="text-white font-semibold mb-2">KYC తిరస్కరించబడింది</h4>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  తిరస్కరణ ఈమెయిల్‌లో కారణం ఇవ్వబడుతుంది. సాధారణ కారణాలు: అస్పష్టమైన ఫోటో, పేరు తేడా, అంచు కత్తిరించిన పత్రం. సవరించిన పత్రాలు మళ్ళీ అప్‌లోడ్ చేయండి. e-Aadhaar PDF ఉపయోగించడం ఉత్తమం.
+                </p>
+              </div>
+              <div className="bg-brand-card rounded-lg p-4">
+                <h4 className="text-white font-semibold mb-2">బోనస్ అకౌంట్‌లో కనపడలేదు</h4>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  బోనస్ జమ పూర్తయిన వెంటనే క్రెడిట్ అవుతుంది. కొన్ని సార్లు 5-10 నిమిషాలు పట్టవచ్చు. పేజీ రిఫ్రెష్ చేయండి మరియు Promotions/Bonuses విభాగం చూడండి. సమస్య కొనసాగితే లైవ్ చాట్ సపోర్ట్ సంప్రదించండి.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 6: AP/తెలంగాణ నోట్ */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">AP/తెలంగాణ నమోదు నోట్ — ముఖ్యమైన సమాచారం</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              ఆంధ్రప్రదేశ్ మరియు తెలంగాణ రాష్ట్రాల్లో ఆన్‌లైన్ జూదంపై రాష్ట్ర స్థాయి ఆంక్షలు ఉన్నాయి. ఆంధ్రప్రదేశ్‌లో 2020 సవరణతో ఆన్‌లైన్ గేమింగ్ నిషేధించబడింది. తెలంగాణలో 2017 ఆన్‌లైన్ జూదం నిషేధ చట్టం అమలులో ఉంది.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              DafaBet ఒక ఆఫ్‌షోర్ ఆపరేటర్ — Curaçao eGaming లైసెన్స్ 1668/JAZ కింద పని చేస్తుంది. కేంద్ర భారత చట్టం (Public Gambling Act 1867) ఆఫ్‌షోర్ ఆపరేటర్లతో ఆన్‌లైన్ బెట్టింగ్‌ను స్పష్టంగా నిషేధించదు, కానీ రాష్ట్ర చట్టాలు మరింత కఠినంగా ఉండవచ్చు.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              DafaWin మీకు సమాచారం అందించడం మాత్రమే చేస్తుంది — చట్టపరమైన సలహా ఇవ్వదు. మీ రాష్ట్ర ప్రస్తుత నిబంధనలు తనిఖీ చేసుకుని, మీ రిస్క్ మీరు అంచనా వేసుకుని నిర్ణయించుకోండి. 18+ మాత్రమే.
+            </p>
+          </div>
+
+          {/* Section 7: FAQ Telugu */}
+          <div className="card mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">తరచుగా అడిగే ప్రశ్నలు</h3>
+            <div className="space-y-4">
+              <details className="border border-brand-border rounded-lg p-4">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between">
+                  DafaBet నమోదు ఎంత సమయం పడుతుంది?
+                  <span className="text-brand-gold ml-3">+</span>
+                </summary>
+                <p className="text-gray-400 text-sm leading-relaxed mt-3">
+                  నమోదు ఫారం 5 నిమిషాల్లో పూర్తవుతుంది. KYC సాధారణంగా 24 గంటల్లో పూర్తవుతుంది — సరైన పత్రాలు ఉంటే చాలా వేగంగా అవుతుంది. మీరు నమోదు రోజే KYC సమర్పిస్తే, మొదటి విత్‌డ్రాల్ ఆలస్యం నివారించవచ్చు.
+                </p>
+              </details>
+              <details className="border border-brand-border rounded-lg p-4">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between">
+                  స్వాగత బోనస్‌కు ప్రమో కోడ్ అవసరమా?
+                  <span className="text-brand-gold ml-3">+</span>
+                </summary>
+                <p className="text-gray-400 text-sm leading-relaxed mt-3">
+                  లేదు — 200% స్వాగత బోనస్ (గరిష్టంగా ₹20,000 వరకు) మీ మొదటి అర్హత గల జమపై స్వయంచాలకంగా క్రెడిట్ అవుతుంది. ఎలాంటి ప్రమో కోడ్ అవసరం లేదు.
+                </p>
+              </details>
+              <details className="border border-brand-border rounded-lg p-4">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between">
+                  KYC కోసం ఏ పత్రాలు అవసరం?
+                  <span className="text-brand-gold ml-3">+</span>
+                </summary>
+                <p className="text-gray-400 text-sm leading-relaxed mt-3">
+                  PAN కార్డ్ మరియు ఆధార్ కార్డ్ చాలా ఇండియన్ అకౌంట్లకు సరిపోతాయి. నమోదు రోజే సమర్పించండి తద్వారా మీ మొదటి విత్‌డ్రాల్ KYC దశలో ఆగిపోదు.
+                </p>
+              </details>
+              <details className="border border-brand-border rounded-lg p-4">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between">
+                  నమోదు కోసం కనీస వయస్సు ఎంత?
+                  <span className="text-brand-gold ml-3">+</span>
+                </summary>
+                <p className="text-gray-400 text-sm leading-relaxed mt-3">
+                  18 సంవత్సరాలు. వయస్సు వేరిఫికేషన్ తప్పనిసరి — DafaBet నమోదు ఫారంలో పుట్టిన తేదీ అడుగుతుంది మరియు KYC ద్వారా వయస్సు తనిఖీ చేస్తుంది. 18 ఏళ్ళు నిండక ముందు తెరిచిన అకౌంట్ శాశ్వతంగా మూసివేయబడుతుంది మరియు గెలుపులు శూన్యమవుతాయి.
+                </p>
+              </details>
+              <details className="border border-brand-border rounded-lg p-4">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between">
+                  నేను మొబైల్ ద్వారా నమోదు చేసుకోవచ్చా?
+                  <span className="text-brand-gold ml-3">+</span>
+                </summary>
+                <p className="text-gray-400 text-sm leading-relaxed mt-3">
+                  అవును. DafaBet Android APK మరియు iOS-అనుకూల మొబైల్ వెబ్‌సైట్ రెండూ అందుబాటులో ఉన్నాయి. పూర్తి నమోదు ప్రక్రియ ఏ స్మార్ట్‌ఫోన్ బ్రౌజర్‌లోనూ పని చేస్తుంది.
+                </p>
+              </details>
+            </div>
+          </div>
+
+          {/* Section 8: బాధ్యతాయుత జూదం */}
+          <div className="card border border-brand-border mb-6">
+            <h3 className="text-brand-gold font-bold text-lg mb-4">బాధ్యతాయుత జూదం — 18+ మాత్రమే</h3>
+            <p className="text-gray-400 leading-relaxed mb-3">
+              DafaBet లో పందెం వినోదం కోసం మాత్రమే ఆడాలి — ఆదాయం సంపాదించే మార్గంగా చూడకూడదు. జూదం వ్యసనానికి దారి తీయవచ్చు. మీకు లేదా మీ అభిమానికి జూదంపై నియంత్రణ కోల్పోయే సమస్య ఉంటే, వెంటనే నిపుణుల సహాయం తీసుకోండి.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-3">
+              DafaBet 18 ఏళ్ళు నిండిన వ్యక్తులకు మాత్రమే అనుమతి ఇస్తుంది. మీరు పోగొట్టుకోగలిగే దానికంటే ఎక్కువ పందెం వేయకండి. సహాయం కోసం సంప్రదించండి:
+            </p>
+            <div className="bg-brand-card rounded-lg p-4 space-y-2">
+              <p className="text-gray-400 text-sm">
+                <span className="text-white font-semibold">Vandrevala Foundation హెల్ప్‌లైన్:</span>{' '}
+                <span className="text-brand-gold font-bold">1860-2662-345</span>{' '}
+                (24/7, ఉచితం, రహస్యం)
+              </p>
+              <p className="text-gray-400 text-sm">
+                <span className="text-white font-semibold">iCall (TISS):</span>{' '}
+                <span className="text-brand-gold font-bold">9152987821</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Quick Links */}
           <div className="card bg-brand-surface">
             <p className="text-gray-400 text-sm mb-3 font-semibold">సంబంధిత పేజీలు:</p>
             <div className="flex flex-wrap gap-3">
               <Link href="/dafabet-payment" className="text-brand-gold hover:underline text-sm">జమ-విత్‌డ్రా గైడ్</Link>
-              <Link href="/dafabet-bonus" className="text-brand-gold hover:underline text-sm">దాఫాబెట్ బోనస్</Link>
-              <Link href="/dafabet-app-download" className="text-brand-gold hover:underline text-sm">దాఫాబెట్ యాప్</Link>
+              <Link href="/dafabet-bonus" className="text-brand-gold hover:underline text-sm">DafaBet బోనస్</Link>
+              <Link href="/dafabet-app-download" className="text-brand-gold hover:underline text-sm">DafaBet యాప్</Link>
+              <Link href="/sports-betting" className="text-brand-gold hover:underline text-sm">స్పోర్ట్స్ బెట్టింగ్</Link>
             </div>
           </div>
+
         </section>
       )}
 
+      {/* English sections after te block — only for non-te locales */}
+      {locale !== 'te' && (
+        <>
       {/* Section A: KYC Verification Deep Dive */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <h2 className="section-title text-center mb-8">DafaBet KYC Verification — What You Need</h2>
@@ -390,6 +612,8 @@ function RegistrationContent({ locale }: { locale: string }) {
           <p className="text-gray-500 text-xs mt-4">18+ only. Gamble responsibly.</p>
         </div>
       </section>
+        </>
+      )}
     </>
   )
 }
