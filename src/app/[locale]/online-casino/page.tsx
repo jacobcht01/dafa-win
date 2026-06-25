@@ -33,6 +33,9 @@ function CasinoContent({ locale }: { locale: string }) {
     { question: 'Can I play Teen Patti at DafaBet?', answer: 'Yes, live Teen Patti tables with Hindi-speaking dealers are available 24/7.' },
     { question: 'What welcome bonus is available?', answer: '200% match up to ₹20,000 on first deposit (minimum deposit ₹500).' },
     { question: 'How do I deposit to play casino games?', answer: 'UPI, Paytm, PhonePe, or net banking — minimum ₹500. Funds are credited instantly.' },
+    { question: 'What is the RTP of DafaBet casino games?', answer: 'Slots average 94–97% RTP; live casino games like Blackjack can reach 99.5% with optimal strategy. Exact RTPs vary by provider and game; Evolution and Ezugi publish game RTPs on their sites.' },
+    { question: 'Can I play DafaBet casino on my mobile phone?', answer: 'Yes. The Android app (APK download) and iOS app (App Store) both offer full casino access. The mobile browser version also works on all devices.' },
+    { question: 'Are the casino games at DafaBet fair?', answer: 'Yes. DafaBet\'s casino games are supplied by licensed providers (Evolution, Ezugi, Pragmatic Play, Microgaming, NetEnt) that undergo independent RNG audits. The Curaçao eGaming licence 1668/JAZ requires compliance with fair-play standards.' },
   ]
 
   const pageUrl = `${SITE_URL}/online-casino/`
@@ -72,19 +75,19 @@ function CasinoContent({ locale }: { locale: string }) {
   const cardGames = [
     {
       name: 'Teen Patti',
-      desc: 'Live tables with Hindi-speaking dealers. Classic 3-card play with pair-plus and 6-card bonus side bets.',
+      desc: 'India\'s most-loved card game, and DafaBet has 7+ variants to choose from — Classic, Joker, Hilo, One-Day, and Speed among them. Stakes run from ₹10 to ₹10,000 per hand, so both casual players and high-rollers are catered for. Live Teen Patti tables with Hindi-speaking dealers are available around the clock, complete with pair-plus and 6-card bonus side bets.',
     },
     {
       name: 'Andar Bahar',
-      desc: 'Goa-room rules, dealt fast. The simplest game in the room — and the hardest to grind.',
+      desc: 'The purest 50/50 game in the room. A single card is dealt face-up, and you bet whether the matching card appears on the Andar (inside) or Bahar (outside) side. Rounds complete in under 30 seconds, making it the fastest game in the casino. Live RTP sits at approximately 97%, and multiple live tables run simultaneously so you\'re never waiting.',
     },
     {
       name: 'Rummy',
-      desc: '13-card cash tables and tournament formats alongside the live casino.',
+      desc: 'DafaBet covers the three main formats Indians love: Points Rummy for quick sessions, Pool Rummy for a longer grind, and 13-card cash tables for real-money play. Rummy is recognised as a game of skill under Indian law, and a practice mode is available so newcomers can learn the melds and sequences before committing money.',
     },
     {
       name: 'Poker',
-      desc: 'Texas Hold\'em at live tables and as video poker. Rewards math, position, and patience.',
+      desc: 'Texas Hold\'em at live tables and as video poker — plus 3-Card Poker for players who want faster action. Beginner tables carry lower buy-ins so you can learn position, pot odds, and hand reading without over-exposure. Weekend tournaments run regularly with guaranteed prize pools.',
     },
   ]
 
@@ -200,11 +203,36 @@ function CasinoContent({ locale }: { locale: string }) {
             <h2 className="text-white text-xl font-bold mb-4">
               Evolution &amp; Ezugi — Audited, Licensed, Hindi-Ready
             </h2>
-            <p className="text-gray-400 text-sm mb-6">
-              DafaBet&apos;s live casino runs on Evolution (European-style tables: roulette, baccarat, blackjack, game shows)
-              and Ezugi (Hindi-language Teen Patti, Andar Bahar, Hindi Roulette). Both stream from licensed studios
-              with published game logs and independent auditing.
-            </p>
+            <div className="space-y-4 text-gray-400 text-sm mb-6">
+              <div>
+                <p className="text-white font-semibold mb-1">Evolution Gaming</p>
+                <p className="leading-relaxed">
+                  Evolution is the world&apos;s largest live casino studio, and DafaBet carries 50+ live tables from their
+                  catalogue. The headline titles are Lightning Roulette — where random multipliers can reach 500x on
+                  straight-up number bets — and Crazy Time, a game-show wheel with four separate bonus rounds (Cash Hunt,
+                  Pachinko, Coin Flip, and Crazy Time itself). MONOPOLY Live and Dream Catcher round out the game-show
+                  offering. Classic tables cover Blackjack, Baccarat, and Speed Baccarat.
+                </p>
+              </div>
+              <div>
+                <p className="text-white font-semibold mb-1">Ezugi</p>
+                <p className="leading-relaxed">
+                  Ezugi is an India-focused live studio built around Hindi-speaking dealers and Indian game formats.
+                  Their lobby at DafaBet includes live Teen Patti, Andar Bahar, Baccarat, and Hindi Roulette. If you
+                  want a dealer who can explain the game in Hindi or switch to the Indian-style variants, Ezugi is where
+                  you go.
+                </p>
+              </div>
+              <div>
+                <p className="text-white font-semibold mb-1">Why &ldquo;Audited&rdquo; Matters</p>
+                <p className="leading-relaxed">
+                  Both studios undergo independent RNG and outcome audits by third-party testing labs. Published
+                  return-to-player percentages and game logs are available, so you can verify that outcomes are random
+                  rather than taking the operator&apos;s word for it. Streams run in HD 24/7, and every DafaBet live
+                  casino session is playable from mobile without any loss of quality.
+                </p>
+              </div>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {liveStats.map((stat) => (
                 <div key={stat.label} className="stat-box">
@@ -213,6 +241,275 @@ function CasinoContent({ locale }: { locale: string }) {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section A: Slots Deep Dive */}
+      <section className="py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+          <h2 className="section-title mb-4">Best Online Slots at DafaBet India</h2>
+          <p className="text-gray-400 mb-6 leading-relaxed">
+            DafaBet carries 2,000+ slot titles from the biggest names in the industry. Whether you prefer
+            high-volatility bomb drops or steady low-variance spins, there is a slot built for your style.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+            <div className="card">
+              <h3 className="text-brand-gold font-bold mb-2">Pragmatic Play</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Gates of Olympus, Sweet Bonanza, and Wolf Gold are the standout titles. Gates of Olympus is a
+                tumble-mechanic slot where multipliers stack during free spins — wins exceeding 5,000x the stake have
+                been recorded. All three are high-volatility games designed for players chasing large single wins rather
+                than frequent small payouts.
+              </p>
+            </div>
+            <div className="card">
+              <h3 className="text-brand-gold font-bold mb-2">NetEnt</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Starburst, Gonzo&apos;s Quest, and Divine Fortune are the classics. NetEnt slots run at lower variance,
+                meaning more frequent hits and a steadier session. Starburst&apos;s expanding wilds and re-spins make it
+                a favourite for bonus wagering because wins come consistently rather than in one giant burst.
+              </p>
+            </div>
+            <div className="card">
+              <h3 className="text-brand-gold font-bold mb-2">Microgaming</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Mega Moolah is Microgaming&apos;s flagship — a progressive jackpot slot where prizes have historically
+                exceeded ₹1 crore (and significantly more in global terms). Book of Oz is a medium-variance alternative
+                from the same stable. Microgaming is one of the oldest slot providers, with a track record dating back
+                to the mid-1990s.
+              </p>
+            </div>
+            <div className="card">
+              <h3 className="text-brand-gold font-bold mb-2">BGaming</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                BGaming produces India-themed content including Book of Cats and several crash-adjacent titles popular
+                with Indian players. Their games tend to be mobile-first with clean interfaces — a good starting point
+                if you are new to slots and want straightforward mechanics before moving to more complex titles.
+              </p>
+            </div>
+          </div>
+          <div className="card border-l-4 border-brand-gold">
+            <p className="text-white font-semibold mb-2">How Slots Work — a Plain-English Summary</p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Reels spin and stop on symbol combinations. Paylines (or &ldquo;ways&rdquo; in modern slots) determine which
+              combinations pay. RTP (return to player) is the percentage of all money wagered that the game pays back
+              over millions of spins — a 96% RTP slot returns ₹96 per ₹100 wagered on average. Variance describes how
+              that return is distributed: high-variance slots pay rarely but big; low-variance slots pay often but small.
+            </p>
+            <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+              <span className="text-white font-medium">Practical tips:</span> try demo mode before playing for money —
+              most slots at DafaBet have a free-play version. Set a session budget before you start. Check the RTP in
+              the game info panel; anything above 96% is considered good for a slot.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section B: RTP and House Edge Education */}
+      <section className="bg-brand-surface py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+          <h2 className="section-title mb-4">Understanding RTP and House Edge</h2>
+          <p className="text-gray-400 mb-6 leading-relaxed">
+            Two numbers appear on almost every casino game. Understanding them helps you choose games wisely and manage
+            your bankroll with realistic expectations.
+          </p>
+          <div className="card mb-4">
+            <p className="text-white font-semibold mb-2">Return to Player (RTP)</p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              RTP is the percentage of all money wagered on a game that is returned to players as winnings over a very
+              large number of rounds. A slot with 96% RTP returns ₹96 for every ₹100 wagered — on average, across
+              millions of spins. It is a long-term statistical average, not a guarantee per session. In any single session
+              you might win significantly more or lose everything, depending on variance and luck.
+            </p>
+          </div>
+          <div className="card mb-4">
+            <p className="text-white font-semibold mb-2">House Edge</p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              House edge is the casino&apos;s statistical advantage, expressed as a percentage. It is simply 100% minus the
+              RTP. A 96% RTP slot has a 4% house edge. The lower the house edge, the better the theoretical value for
+              the player.
+            </p>
+          </div>
+          <div className="card">
+            <p className="text-white font-semibold mb-3">RTP by Game Type — a Quick Reference</p>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><span className="text-brand-gold font-medium">Blackjack (basic strategy):</span> ~99.5% RTP — one of the lowest house edges in the casino.</li>
+              <li><span className="text-brand-gold font-medium">European Roulette:</span> ~97.3% RTP (2.7% house edge). Avoid American Roulette — the double zero raises the house edge to 5.26%.</li>
+              <li><span className="text-brand-gold font-medium">Teen Patti:</span> approximately 95–97% RTP depending on variant and side bets.</li>
+              <li><span className="text-brand-gold font-medium">Slots:</span> typically 94–97% RTP at DafaBet. Check individual game info for the exact figure.</li>
+              <li><span className="text-brand-gold font-medium">Progressive jackpot slots:</span> RTP is often lower (88–92%) because a portion of each stake feeds the jackpot pool.</li>
+            </ul>
+            <p className="text-gray-400 text-sm mt-3">
+              Evolution and Ezugi publish their RTPs directly on their studio sites. DafaBet&apos;s live casino games
+              inherit those published figures.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section C: Bonus and Wagering Worked Example */}
+      <section className="py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+          <h2 className="section-title mb-4">DafaBet Casino Welcome Bonus — How It Works</h2>
+          <p className="text-gray-400 mb-6 leading-relaxed">
+            The 200% welcome bonus up to ₹20,000 is the most common reason new players choose DafaBet over other
+            operators. Here is exactly how it works, with a real numbers example.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            <div className="card text-center">
+              <p className="text-brand-gold text-2xl font-bold mb-1">200%</p>
+              <p className="text-gray-400 text-sm">Match bonus on first deposit</p>
+            </div>
+            <div className="card text-center">
+              <p className="text-brand-gold text-2xl font-bold mb-1">₹20,000</p>
+              <p className="text-gray-400 text-sm">Maximum bonus amount</p>
+            </div>
+            <div className="card text-center">
+              <p className="text-brand-gold text-2xl font-bold mb-1">8x</p>
+              <p className="text-gray-400 text-sm">Wagering requirement on bonus</p>
+            </div>
+          </div>
+          <div className="card mb-4">
+            <p className="text-white font-semibold mb-3">Worked Example</p>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><span className="text-white">Step 1 —</span> Deposit ₹5,000 via UPI (minimum ₹500).</li>
+              <li><span className="text-white">Step 2 —</span> Bonus credits automatically: 200% of ₹5,000 = ₹10,000 bonus.</li>
+              <li><span className="text-white">Step 3 —</span> Total balance to play with: ₹5,000 + ₹10,000 = ₹15,000.</li>
+              <li><span className="text-white">Step 4 —</span> Wagering requirement: 8x the bonus = ₹10,000 × 8 = ₹80,000 to wager before withdrawal.</li>
+              <li><span className="text-white">Step 5 —</span> Complete ₹80,000 in eligible wagers within 30 days to unlock the bonus for withdrawal.</li>
+            </ul>
+          </div>
+          <div className="card border-l-4 border-brand-gold">
+            <p className="text-white font-semibold mb-2">Key Points on Wagering</p>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li>No promo code required — the bonus credits automatically on your first deposit.</li>
+              <li>Slot wagers count 100% towards the wagering requirement.</li>
+              <li>Live casino game contribution rates vary — check the terms and conditions for the exact percentage per game type.</li>
+              <li>Time limit is 30 days from when the bonus is activated.</li>
+              <li>For fastest wagering clearance, play high-RTP slots (96%+) rather than progressive jackpot titles, which tend to carry lower RTPs and eat through your balance more quickly.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Section D: How to Start Playing */}
+      <section className="bg-brand-surface py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+          <h2 className="section-title mb-4">How to Start Playing at DafaBet Casino — Beginners Guide</h2>
+          <p className="text-gray-400 mb-6 leading-relaxed">
+            Getting started takes about five minutes. Here is the complete walkthrough from registration to your first
+            real-money game.
+          </p>
+          <ol className="space-y-4">
+            <li className="card flex gap-4">
+              <span className="text-brand-gold font-bold text-xl min-w-[2rem]">1.</span>
+              <div>
+                <p className="text-white font-semibold mb-1">Register your account</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Click the registration link, enter your mobile number and email address, and choose a password.
+                  The process takes under five minutes. You will receive an OTP on your mobile to verify your number.
+                </p>
+              </div>
+            </li>
+            <li className="card flex gap-4">
+              <span className="text-brand-gold font-bold text-xl min-w-[2rem]">2.</span>
+              <div>
+                <p className="text-white font-semibold mb-1">Complete age verification (18+)</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  KYC requires a PAN card and Aadhaar. Age verification is mandatory before withdrawals are processed.
+                  Upload clear photographs of both documents via the account settings panel.
+                </p>
+              </div>
+            </li>
+            <li className="card flex gap-4">
+              <span className="text-brand-gold font-bold text-xl min-w-[2rem]">3.</span>
+              <div>
+                <p className="text-white font-semibold mb-1">Deposit via UPI</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Minimum deposit is ₹500. UPI transfers are credited instantly. PhonePe, Google Pay, and Paytm are
+                  all accepted. Net banking is available for larger deposits.
+                </p>
+              </div>
+            </li>
+            <li className="card flex gap-4">
+              <span className="text-brand-gold font-bold text-xl min-w-[2rem]">4.</span>
+              <div>
+                <p className="text-white font-semibold mb-1">Claim your 200% welcome bonus</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  The bonus credits automatically on your first deposit — no promo code needed. The bonus is applied
+                  to your account within minutes of the deposit clearing.
+                </p>
+              </div>
+            </li>
+            <li className="card flex gap-4">
+              <span className="text-brand-gold font-bold text-xl min-w-[2rem]">5.</span>
+              <div>
+                <p className="text-white font-semibold mb-1">Browse the casino lobby</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Use the filters to narrow by game type (slots, live casino, table games), provider (Pragmatic Play,
+                  Evolution, Ezugi, NetEnt), or by RTP if you want to compare expected returns before choosing.
+                </p>
+              </div>
+            </li>
+            <li className="card flex gap-4">
+              <span className="text-brand-gold font-bold text-xl min-w-[2rem]">6.</span>
+              <div>
+                <p className="text-white font-semibold mb-1">Try demo mode first</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Most slots and many table games offer a free-play version with virtual chips. Use demo mode to
+                  understand a game&apos;s mechanics, bonus triggers, and volatility before risking real money.
+                </p>
+              </div>
+            </li>
+            <li className="card flex gap-4">
+              <span className="text-brand-gold font-bold text-xl min-w-[2rem]">7.</span>
+              <div>
+                <p className="text-white font-semibold mb-1">Set deposit and session limits</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Before your first real-money session, visit account settings and configure a daily or weekly deposit
+                  limit and a session time reminder. This takes two minutes and helps you stay in control of your play.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      {/* Section E: Legal and Responsible Gambling */}
+      <section className="py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+          <h2 className="section-title mb-4">Online Casino in India — Legal Status and Responsible Play</h2>
+          <div className="card mb-4">
+            <p className="text-white font-semibold mb-2">Legal Status</p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Online casino gaming in India exists in a legal grey area at the national level. There is no central
+              Indian law that explicitly prohibits individual players from accessing offshore-licensed casino operators.
+              DafaBet holds a Curaçao eGaming licence (1668/JAZ) and operates outside Indian jurisdiction. However,
+              Andhra Pradesh and Telangana both have state-level restrictions on online gambling activities —
+              if you are in either state, check your local laws before playing. This content does not constitute
+              legal advice; if in doubt, consult a legal professional.
+            </p>
+          </div>
+          <div className="card mb-4">
+            <p className="text-white font-semibold mb-2">Responsible Gambling Tools at DafaBet</p>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><span className="text-white">18+ only</span> — age is verified at KYC before withdrawals are processed.</li>
+              <li><span className="text-white">Self-exclusion</span> — you can request account suspension for a set period via customer support.</li>
+              <li><span className="text-white">Deposit limits</span> — daily, weekly, and monthly limits configurable in account settings.</li>
+              <li><span className="text-white">Session reminders</span> — timed alerts remind you how long you have been playing.</li>
+            </ul>
+          </div>
+          <div className="card border-l-4 border-red-500">
+            <p className="text-white font-semibold mb-2">If Gambling Has Become a Problem</p>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><span className="text-white">Vandrevala Foundation Helpline:</span> 1860-2662-345 — available 24/7, free, and confidential.</li>
+              <li><span className="text-white">iCall (TISS):</span> 9152987821 — professional counselling service.</li>
+            </ul>
+            <p className="text-gray-400 text-sm mt-3">
+              Gambling should be entertainment, not a source of income. Never chase losses, never gamble with money you
+              cannot afford to lose, and use the limits tools proactively — not reactively.
+            </p>
           </div>
         </div>
       </section>
@@ -238,7 +535,7 @@ function CasinoContent({ locale }: { locale: string }) {
             <h3 className="gold-text font-bold text-lg mb-3">గోవా క్యాసినో vs ఆన్‌లైన్ — తేడాలు</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li><span className="text-brand-gold font-semibold">గోవా క్యాసినో:</span> డెల్టిన్ రాయల్, కాసినో ప్రైడ్. అందర్ బహర్, తీన్ పత్తి — అదే నిర్మాణం.</li>
-              <li><span className="text-brand-gold font-semibold">DafaWin ఆన్‌లైన్:</span> అదే టేబుల్ టైప్లు, కానీ UPI విత్‌డ్రా పడవ గ్యాంగ్‌ప్లాంక్ లేకుండా. హిందీ-స్పీకింగ్ లైవ్ డీలర్‌లు Evolution + Ezugi స్టూడియో నుండి.</li>
+              <li><span className="text-brand-gold font-semibold">DafaWin ఆన్‌లైన్:</span> అదే టేబుల్ టైప్లు, కానీ UPI విత్‌డ్రా సులభంగా — బోర్డింగ్ నంబర్లు అక్కర్లేదు. హిందీ-స్పీకింగ్ లైవ్ డీలర్‌లు Evolution + Ezugi స్టూడియో నుండి.</li>
             </ul>
           </div>
 
