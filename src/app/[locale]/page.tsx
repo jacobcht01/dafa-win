@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { JsonLd } from '@/components/JsonLd'
-import { organizationSchema, websiteSchema, breadcrumbSchema } from '@/lib/schema'
+import { organizationSchema, websiteSchema, breadcrumbSchema, faqSchema } from '@/lib/schema'
 import { pageAlternates, pageOGMeta, SITE_URL } from '@/lib/seo'
 
 type Props = {
@@ -64,10 +64,42 @@ function CrossIcon() {
 function HomePageContent({ locale }: { locale: string }) {
   const t = useTranslations('home')
 
+  const faqs = [
+    {
+      question: 'Is DafaBet legal in India?',
+      answer: 'No central Indian law explicitly bans individuals from betting with offshore-licensed operators. DafaBet operates under a Curaçao eGaming licence (1668/JAZ) and serves Indian players from offshore. The Public Gambling Act 1867 governs physical gambling houses and does not cover online betting with foreign-licensed operators. That said, some states — notably Andhra Pradesh and Telangana — have stricter local rules. Check the regulations in your state before placing bets.',
+    },
+    {
+      question: 'What is DafaBet\'s welcome bonus?',
+      answer: 'DafaBet offers a 200% first-deposit match bonus up to ₹20,000. Minimum deposit is ₹500 via UPI. The bonus is subject to 8x wagering within 30 days. No promo code is needed — the bonus is auto-credited on your first qualifying deposit.',
+    },
+    {
+      question: 'How do I deposit money at DafaBet?',
+      answer: 'DafaBet supports UPI (PhonePe, GPay, Paytm, BHIM), Net Banking (NEFT/IMPS), and crypto (Bitcoin, USDT). The minimum deposit is ₹500. UPI deposits are credited instantly to your account.',
+    },
+    {
+      question: 'Can I bet on IPL at DafaBet?',
+      answer: 'Yes. DafaBet covers all Indian Premier League matches with 30+ markets per game, including match winner, top batsman, top bowler, ball-by-ball live betting, and player performance props.',
+    },
+    {
+      question: 'Is DafaBet available on mobile?',
+      answer: 'Yes. DafaBet has a native Android app (APK direct download from their site) and an iOS app available on the App Store. You can also use the full-featured mobile web browser version.',
+    },
+    {
+      question: 'How long do DafaBet withdrawals take?',
+      answer: 'UPI withdrawals typically settle within 1–4 hours. Bank transfers take 1–3 business days. KYC verification (PAN + Aadhaar) is required before your first withdrawal.',
+    },
+    {
+      question: 'What is the minimum deposit at DafaBet?',
+      answer: 'The minimum deposit at DafaBet India is ₹500 via UPI. There are no deposit fees.',
+    },
+  ]
+
   const schemaData = [
     organizationSchema(),
     websiteSchema(),
     breadcrumbSchema([{ name: 'Home', url: SITE_URL + '/' }]),
+    faqSchema(faqs),
   ]
 
   const pros = [
@@ -231,10 +263,13 @@ function HomePageContent({ locale }: { locale: string }) {
             <div>
               <h2 className="section-title mb-4">What is Dafabet India?</h2>
               <p className="text-gray-400 leading-relaxed mb-4">
-                Dafabet is one of Asia&apos;s largest and most trusted online betting platforms, fully licensed and operating in India since 2004. It offers sports betting, casino games, and live dealer experiences — all on one platform.
+                Founded in 2004, DafaBet is one of Asia&apos;s most established online betting operators. The platform entered the Indian market early and has grown to serve over 5 million players globally, with India being one of its primary markets. It operates under a Curaçao eGaming licence (1668/JAZ), which is widely accepted by offshore operators serving Indian customers. While Indian federal law does not explicitly prohibit individuals from using offshore-licensed platforms, players should verify regulations in their own state.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-4">
+                DafaBet offers a comprehensive platform covering sports betting, a live casino, slots, and Indian card games. Cricket and IPL take centre stage, with 500+ cricket markets available across all formats — Test, ODI, T20, and the IPL. Beyond cricket, DafaBet covers over 30 sports including football, kabaddi, tennis, and esports such as BGMI and Valorant.
               </p>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Indian players get access to over 3,000 casino games, cricket and IPL betting with competitive odds, and fast UPI payments. The welcome bonus of ₹20,000 is among the highest available in India.
+                Indian players benefit from seamless payment options — UPI (PhonePe, GPay, Paytm, BHIM), Net Banking, and cryptocurrency are all supported with no fees on deposits. The platform is available on desktop, Android APK, and the iOS App Store. Customer support is available 24/7 in both Hindi and English via live chat and email. With over 20 years in business and a 9.2/10 editorial rating, DafaBet remains the top recommendation for Indian bettors in 2026.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {[
@@ -265,7 +300,22 @@ function HomePageContent({ locale }: { locale: string }) {
         {/* Welcome Bonuses */}
         <section className="review-section">
           <h2 className="section-title mb-2">Welcome Bonus &amp; Promotions</h2>
-          <p className="section-subtitle mb-8">Dafabet offers some of the best bonuses for Indian players in 2026.</p>
+          <p className="section-subtitle mb-4">Dafabet offers some of the best bonuses for Indian players in 2026.</p>
+          <div className="card mb-8">
+            <h3 className="font-bold text-white mb-3">How the 200% Welcome Bonus Works</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-3">
+              DafaBet&apos;s welcome offer is a 200% first-deposit match bonus up to ₹20,000. That means if you deposit ₹10,000, you receive ₹20,000 in bonus funds — giving you a total of ₹30,000 to bet with from the start. The minimum qualifying deposit is ₹500 via UPI or any other supported payment method.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed mb-3">
+              No promo code is required. The bonus is automatically credited to your account as soon as your first deposit is confirmed — typically within seconds for UPI payments.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed mb-3">
+              The bonus is subject to an <strong className="text-white">8x wagering requirement</strong> within a 30-day window. Here is how to calculate it: if you receive ₹20,000 in bonus funds, you need to wager a total of ₹1,60,000 (₹20,000 × 8) before the bonus converts to withdrawable cash. Both sports bets and casino wagers count towards meeting the requirement. Sports bets must be placed at odds of 1.50 or above to qualify.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              The 30-day clock starts from the moment the bonus is credited. Bets placed in the casino and on sports both count toward the wagering total, giving you flexibility in how you clear the requirement.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {bonuses.map((bonus) => (
               <div key={bonus.title} className="card-hover overflow-hidden">
@@ -334,7 +384,8 @@ function HomePageContent({ locale }: { locale: string }) {
         {/* Sports Covered */}
         <section className="review-section">
           <h2 className="section-title mb-2">Sports Covered at DafaBet</h2>
-          <p className="section-subtitle mb-8">DafaBet covers all major sports popular with Indian players, led by deep cricket and IPL markets.</p>
+          <p className="section-subtitle mb-4">DafaBet covers all major sports popular with Indian players, led by deep cricket and IPL markets.</p>
+          <p className="text-gray-400 text-sm leading-relaxed mb-8">DafaBet offers betting on 30+ sports. Indian players gravitate toward cricket, kabaddi, and football, while the esports and tennis sections attract a younger demographic. Virtual sports (virtual cricket, football simulations) are also available for non-stop action between live fixtures.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { icon: '🏏', sport: 'Cricket', detail: 'IPL, Tests, ICC events — 30+ markets per match, ball-by-ball live betting' },
@@ -479,7 +530,19 @@ function HomePageContent({ locale }: { locale: string }) {
                 <span className="red-badge text-xs">LIVE ODDS</span>
               </div>
               <p className="text-gray-400 mb-4">
-                Dafabet is the top pick for Indian sports bettors — dedicated cricket, IPL, kabaddi, and football sections with best-in-market odds and live in-play betting.
+                Dafabet is the top pick for Indian sports bettors — dedicated cricket, IPL, kabaddi, and football sections with best-in-market odds and live in-play betting that updates in under 2 seconds.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <strong className="text-white">Cricket:</strong> DafaBet covers IPL (all 10 teams, every match), Test series, T20 World Cup, Asia Cup, and domestic T20 leagues. Each match carries 30+ betting markets — from match winner and toss winner to top batter, top bowler, method of dismissal, and ball-by-ball live wagering. With 500+ cricket markets running simultaneously across all active formats, it is the deepest cricket book available to Indian players.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <strong className="text-white">Football:</strong> ISL, English Premier League, UEFA Champions League, and La Liga are covered with 1X2, Asian handicap, both teams to score, and correct-score markets. <strong className="text-white">Pro Kabaddi (PKL):</strong> All PKL seasons, with raid success, match winner, and live in-play markets available throughout. <strong className="text-white">Tennis, Badminton &amp; Esports:</strong> ATP, WTA, Grand Slams, BWF Tour, and esports tournaments including BGMI and Valorant are fully covered.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                DafaBet&apos;s <strong className="text-white">cash-out feature</strong> lets you lock in profits or cut losses before an event finishes — available on most live cricket and football markets. Live odds refresh in under 2 seconds, making it one of the fastest in-play books available in India.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <strong className="text-white">Betting types available:</strong> Single bets, accumulators (multi-leg parlays), system bets, and live in-play wagering are all supported. Indian players particularly favour single match-winner bets on cricket and accumulator bets spanning multiple IPL fixtures. The minimum stake per bet is ₹50, allowing casual bettors to get started without committing large amounts. Odds are displayed in decimal format, and DafaBet&apos;s cricket markets consistently offer margins of 3–5% — competitive by global standards.
               </p>
               <div className="grid grid-cols-2 gap-3 mb-6">
                 {[
@@ -523,7 +586,19 @@ function HomePageContent({ locale }: { locale: string }) {
                 <span className="red-badge text-xs">🔥 HOT</span>
               </div>
               <p className="text-gray-400 mb-4">
-                3,000+ games from Playtech, Evolution, and Pragmatic Play. Enjoy slots, roulette, blackjack, baccarat, and live dealer tables with real-time streaming.
+                3,000+ games from Playtech, Evolution Gaming, Ezugi, and Pragmatic Play. Enjoy slots, roulette, blackjack, baccarat, and live dealer tables with real-time streaming from professional studio setups.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <strong className="text-white">Indian card games:</strong> DafaBet offers multiple variants of Teen Patti and Andar Bahar — both in RNG (digital) format and as live dealer tables hosted by Hindi-speaking croupiers. These are among the most popular tables on the platform for Indian players.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <strong className="text-white">Live casino:</strong> Evolution Gaming and Ezugi studios power the live dealer section. Highlights include Lightning Roulette, Crazy Time, Mega Ball, and live Teen Patti with real rupee tables. Hindi-speaking dealers are available on select tables. The live casino operates around the clock, streaming high-definition games to desktop and mobile.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <strong className="text-white">Slots:</strong> Over 2,000 slot titles including Mega Moolah (progressive jackpot), Gates of Olympus, Sweet Bonanza, and Big Bass Bonanza. The same 200% welcome bonus applies to casino play, with the 8x wagering requirement covering both sports and casino bets.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <strong className="text-white">Table games</strong> such as blackjack, roulette, and baccarat are available in both standard RNG versions and as live dealer tables. For players new to casino games, DafaBet provides free-play demo modes on most slot titles — useful for learning the mechanics before wagering real money.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/online-casino" className="btn-primary inline-block">
@@ -571,8 +646,14 @@ function HomePageContent({ locale }: { locale: string }) {
             </div>
             <div>
               <h2 className="section-title mb-4">Payment Methods</h2>
-              <p className="text-gray-400 mb-6">
-                All major Indian payment methods supported. UPI deposits are instant — withdraw directly to your bank account with no fees.
+              <p className="text-gray-400 mb-4">
+                All major Indian payment methods are supported. UPI deposits are instant — withdraw directly to your bank account with no fees charged by DafaBet.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <strong className="text-white">UPI (PhonePe, GPay, Paytm, BHIM):</strong> Instant deposits, ₹100 to ₹1,00,000 per transaction. This is the fastest and most popular method for Indian players. <strong className="text-white">Net Banking (NEFT/IMPS):</strong> Deposits settle in 1–5 minutes. Available for all major Indian banks. <strong className="text-white">Cryptocurrency:</strong> Bitcoin and USDT are accepted for international players who prefer privacy; processing takes 1–4 hours.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                <strong className="text-white">Withdrawals:</strong> UPI withdrawals settle in 1–4 hours. Bank transfers take 1–3 business days. There are no fees on deposits or withdrawals. Before your first withdrawal, you must complete KYC verification by submitting a PAN card and Aadhaar. This is a one-time process and typically takes under 24 hours to approve.
               </p>
               <div className="grid grid-cols-2 gap-3 mb-6">
                 {payments.map((p) => (
@@ -598,7 +679,10 @@ function HomePageContent({ locale }: { locale: string }) {
             <div>
               <h2 className="section-title mb-4">Dafabet Mobile App</h2>
               <p className="text-gray-400 mb-4">
-                Bet on cricket and play casino games anywhere. Available free for Android (APK direct download) and iOS.
+                Bet on cricket and play casino games anywhere. The DafaBet app is available free for Android (APK direct download from the DafaBet site) and iOS (App Store). You can also access the full site on any mobile browser without installing an app.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                The Android APK is not listed on the Google Play Store due to Play Store policies on real-money gambling apps — but it is safe to download directly from the official DafaBet website. The iOS app is fully available on the Apple App Store for Indian users. Both apps offer the complete DafaBet experience: sports betting, live casino, slots, UPI payments, and customer support, all in a compact mobile interface. The app is optimised for low-bandwidth connections common in tier-2 and tier-3 Indian cities.
               </p>
               <div className="space-y-3 mb-6">
                 {[
@@ -626,6 +710,51 @@ function HomePageContent({ locale }: { locale: string }) {
                 className="w-full h-auto"
               />
             </div>
+          </div>
+        </section>
+
+        {/* Is DafaBet Safe and Legal in India? */}
+        <section className="review-section">
+          <h2 className="section-title mb-4">Is DafaBet Safe and Legal in India?</h2>
+          <p className="text-gray-400 leading-relaxed mb-4">
+            DafaBet operates under a Curaçao eGaming licence (licence number 1668/JAZ), which is issued by a recognised offshore regulatory authority. This licence requires the operator to maintain segregated player funds, use SSL encryption for all data transmission, and submit to periodic audits of its RNG systems. DafaBet has been in continuous operation since 2004 — over 20 years — which is a strong indicator of financial stability and compliance.
+          </p>
+          <p className="text-gray-400 leading-relaxed mb-4">
+            From a legal standpoint, there is no central Indian law that explicitly prohibits individual players from betting with offshore-licensed operators. The Public Gambling Act 1867 — India&apos;s primary gambling legislation — was written to govern physical gambling houses and does not contemplate online betting with foreign entities. The Information Technology Act 2000 similarly does not criminalise the act of placing a bet with an offshore-licensed site.
+          </p>
+          <p className="text-gray-400 leading-relaxed mb-4">
+            However, India has significant state-level variation. Andhra Pradesh and Telangana have enacted stricter rules on online games of skill and chance; players from those states should review the current legal position before registering. Other states such as Maharashtra and Karnataka have periodically amended gambling rules as well. The legal landscape is evolving — check your state&apos;s current regulations before placing bets.
+          </p>
+          <p className="text-gray-400 leading-relaxed">
+            On the technical side, DafaBet uses 128-bit SSL encryption across its website and app, stores player funds in segregated accounts separate from operating capital, and offers responsible-gambling tools including deposit limits and self-exclusion. The platform is 18+ only. For a detailed legal discussion, see the FAQ section below.
+          </p>
+        </section>
+
+        {/* DafaBet India FAQ */}
+        <section className="review-section">
+          <h2 className="section-title mb-8">DafaBet India FAQ</h2>
+          <div className="space-y-3">
+            {faqs.map((faq) => (
+              <details key={faq.question} className="card group">
+                <summary className="text-white font-semibold cursor-pointer list-none flex justify-between items-center gap-4">
+                  <span>{faq.question}</span>
+                  <span className="text-brand-gold text-xl shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
+                </summary>
+                <p className="text-gray-400 text-sm leading-relaxed mt-4 pt-4 border-t border-brand-border">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        {/* Responsible Gambling */}
+        <section className="review-section">
+          <div className="card border border-brand-border">
+            <h2 className="font-bold text-white mb-3">Responsible Gambling</h2>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              DafaBet is committed to responsible gambling. Deposit limits, session time reminders, and self-exclusion options are available directly in your account settings — no need to contact support. Gambling should be entertainment, not a way to make money or solve financial problems. Never bet more than you can afford to lose. If you or someone you know needs help, contact the <strong className="text-white">Vandrevala Foundation helpline: 1860-2662-345</strong> (24/7, free, and confidential). 18+ only.
+            </p>
           </div>
         </section>
 
