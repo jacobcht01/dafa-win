@@ -25,7 +25,7 @@ const STEPS = [
     step: '1',
     name: 'Open DafaBet',
     title: 'Open DafaBet',
-    desc: 'Go to DafaBet&apos;s official website or download the Android APK from the official page — never search &quot;DafaBet&quot; on Google and click random links, as mirror and phishing sites exist. Bookmark the real URL from DafaWin so you always land on the genuine platform. On desktop the Sign Up button is top-right; on mobile tap the hamburger menu first.',
+    desc: 'Go to DafaBet\'s official website or download the Android APK from the official page — never search "DafaBet" on Google and click random links, as mirror and phishing sites exist. Bookmark the real URL from DafaWin so you always land on the genuine platform. On desktop the Sign Up button is top-right; on mobile tap the hamburger menu first.',
     text: 'Open DafaBet\'s homepage in any browser or open the DafaBet Android app. On the homepage, tap Sign Up (top right on desktop, hamburger menu on mobile).',
   },
   {
@@ -53,14 +53,14 @@ const STEPS = [
     step: '5',
     name: 'Submit KYC Immediately',
     title: 'Submit KYC Immediately',
-    desc: 'Do not wait until your first withdrawal to complete KYC — do it the same day you register. Go to My Account &rarr; KYC / Verification. Upload your PAN card (clear front photo) and Aadhaar card (front and back). An e-Aadhaar PDF downloaded from the UIDAI portal is preferred over a phone photo. DafaBet&apos;s published approval window is within 24 hours, though straightforward documents are often approved faster.',
+    desc: 'Do not wait until your first withdrawal to complete KYC — do it the same day you register. Go to My Account → KYC / Verification. Upload your PAN card (clear front photo) and Aadhaar card (front and back). An e-Aadhaar PDF downloaded from the UIDAI portal is preferred over a phone photo. DafaBet\'s published approval window is within 24 hours, though straightforward documents are often approved faster.',
     text: 'Go to My Account → KYC / Verification. Upload your PAN card (front photo) and Aadhaar (front and back, or e-Aadhaar PDF preferred). DafaBet\'s published KYC approval window is within 24 hours.',
   },
   {
     step: '6',
     name: 'Make First Deposit',
     title: 'Make First Deposit',
-    desc: 'Head to Cashier &rarr; Deposit and select UPI as your payment method. DafaBet accepts PhonePe, Google Pay (GPay), and Paytm. Enter a minimum of ₹500 to qualify for the welcome bonus. Once the deposit clears — typically within a few minutes — the 200% bonus up to ₹20,000 is credited to your account automatically. You can then navigate to Sports, Live Casino, or Slots from the main menu.',
+    desc: 'Head to Cashier → Deposit and select UPI as your payment method. DafaBet accepts PhonePe, Google Pay (GPay), and Paytm. Enter a minimum of ₹500 to qualify for the welcome bonus. Once the deposit clears — typically within a few minutes — the 200% bonus up to ₹20,000 is credited to your account automatically. You can then navigate to Sports, Live Casino, or Slots from the main menu.',
     text: 'Go to Cashier → Deposit, select UPI (PhonePe, GPay, or Paytm), and enter at least ₹500. The 200% welcome bonus up to ₹20,000 credits automatically once the deposit clears.',
   },
 ]
@@ -77,7 +77,7 @@ function RegistrationContent({ locale }: { locale: string }) {
     { question: 'What is the minimum age to register?', answer: '18 years old. Age verification is mandatory and DafaBet requires date of birth on the registration form.' },
     { question: 'Can I register via mobile?', answer: 'Yes. DafaBet has an Android APK and an iOS-compatible mobile-optimised site. The full registration flow works on any smartphone browser.' },
     { question: 'How many accounts can I create?', answer: 'One account per person, household, and device. DafaBet enforces this strictly — duplicate accounts result in a permanent ban and any winnings in those accounts are voided. If you have forgotten your password, use the Forgot Password option rather than creating a new account.' },
-    { question: 'Can I register from any Indian state?', answer: 'DafaBet accepts players from all Indian states. However, Andhra Pradesh and Telangana have state-level restrictions on online gaming. If you are in either state, check your local laws before registering, as DafaBet&apos;s terms require you to comply with your jurisdiction&apos;s regulations.' },
+    { question: 'Can I register from any Indian state?', answer: 'DafaBet accepts players from all Indian states. However, Andhra Pradesh and Telangana have state-level restrictions on online gaming. If you are in either state, check your local laws before registering, as DafaBet\'s terms require you to comply with your jurisdiction\'s regulations.' },
     { question: 'What is the age requirement to register?', answer: 'You must be 18 years or older. DafaBet collects your date of birth during registration and verifies your age through KYC. Any account found to have been opened by a person under 18 is permanently closed and all winnings are voided.' },
   ]
 
@@ -131,7 +131,7 @@ function RegistrationContent({ locale }: { locale: string }) {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-white mb-1">{item.title}</h3>
-                <p className="text-gray-400" dangerouslySetInnerHTML={{ __html: item.desc }} />
+                <p className="text-gray-400">{item.desc}</p>
               </div>
             </div>
           ))}
@@ -375,7 +375,7 @@ function RegistrationContent({ locale }: { locale: string }) {
                 <span className="font-semibold text-white">{faq.question}</span>
                 <span className="text-brand-gold text-xl flex-shrink-0 ml-4">+</span>
               </summary>
-              <p className="text-gray-400 text-sm mt-3 leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">{faq.answer}</p>
             </details>
           ))}
         </div>
