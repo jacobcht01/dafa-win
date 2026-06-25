@@ -259,7 +259,7 @@ function ReviewContent({ locale }: { locale: string }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <p className="text-gray-300 leading-relaxed mb-6">
-              New Indian players get a 100% deposit match bonus up to ₹20,000 on their first deposit. Minimum deposit is ₹500 via UPI. Wagering requirement is 8x the bonus amount within 30 days. This is one of the most generous welcome offers available in India.
+              New Indian players get a 200% deposit match bonus up to ₹20,000 on their first deposit. Minimum deposit is ₹500 via UPI. Wagering requirement is 8x the bonus amount within 30 days. This is one of the most generous welcome offers available in India.
             </p>
             <div className="bg-brand-surface border border-brand-border rounded-xl overflow-hidden">
               <table className="w-full text-sm">
@@ -298,7 +298,7 @@ function ReviewContent({ locale }: { locale: string }) {
             <p className="text-white font-bold text-lg mb-1">Bonus Rating: 3/5</p>
             <p className="text-brand-gold font-semibold text-xl">Overall: Excellent</p>
             <p className="text-gray-400 text-sm mt-3 leading-relaxed">
-              Low 8x wagering and a high ₹20,000 cap make this one of the best-value welcome offers for Indian players in 2025.
+              Low 8x wagering and a high ₹20,000 cap make this one of the best-value welcome offers for Indian players in 2026.
             </p>
           </div>
         </div>
@@ -500,7 +500,7 @@ function ReviewContent({ locale }: { locale: string }) {
             Claim Your <span className="gold-text">₹20,000 Welcome Bonus</span>
           </h2>
           <p className="text-gray-400 mb-6 text-sm">
-            Join millions of Indian players. 100% deposit match on your first deposit. Min deposit ₹500.
+            Join millions of Indian players. 200% deposit match on your first deposit. Min deposit ₹500.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/dafabet-registration" className="btn-primary text-lg px-8 py-4">

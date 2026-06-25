@@ -71,7 +71,7 @@ function RegistrationContent({ locale }: { locale: string }) {
   const pageUrl = locale === 'te' ? `${SITE_URL}/te/dafabet-registration/` : `${SITE_URL}/dafabet-registration/`
 
   const faqs = [
-    { question: 'How long does DafaBet registration take?', answer: 'Under 5 minutes for the form. KYC verification takes up to 24 hours, though our June 2026 test was approved in about 10 minutes.' },
+    { question: 'How long does DafaBet registration take?', answer: 'Under 5 minutes for the form. KYC typically completes within 24 hours, often much faster for straightforward documents.' },
     { question: 'Is there a promo code needed for the welcome bonus?', answer: 'No — the 200% welcome bonus up to ₹20,000 credits automatically on your first qualifying deposit. No promo code required.' },
     { question: 'What documents are needed for KYC?', answer: 'PAN card and Aadhaar cover most Indian accounts. Submit them the same day as registration so your first withdrawal is not held at the KYC stage.' },
     { question: 'What is the minimum age to register?', answer: '18 years old. Age verification is mandatory and DafaBet requires date of birth on the registration form.' },
@@ -209,7 +209,7 @@ function RegistrationContent({ locale }: { locale: string }) {
         <div className="bg-brand-surface rounded-xl p-8 text-center border border-brand-border">
           <h2 className="text-2xl font-bold text-white mb-3">Ready to Start Betting?</h2>
           <p className="text-gray-400 mb-6">Join millions of Indian players. Register in under 5 minutes.</p>
-          <a href="/dafabet-registration" className="btn-primary text-lg px-8 py-4">Create Free Account</a>
+          <Link href="/dafabet-registration" className="btn-primary text-lg px-8 py-4">Create Free Account</Link>
           <p className="text-gray-500 text-xs mt-4">18+ only. Gamble responsibly.</p>
         </div>
       </section>

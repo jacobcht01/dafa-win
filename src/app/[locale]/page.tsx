@@ -126,7 +126,7 @@ function HomePageContent({ locale }: { locale: string }) {
               <div className="max-w-xl">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="red-badge text-xs font-bold animate-pulse">🔴 LIVE</span>
-                  <span className="gold-badge text-xs font-bold">India&apos;s #1 Betting Site 2025</span>
+                  <span className="gold-badge text-xs font-bold">India&apos;s #1 Betting Site 2026</span>
                 </div>
                 <h1 className="text-3xl md:text-5xl font-bold text-white mb-3 leading-tight">
                   Dafabet India <span className="gold-text">Review</span>
@@ -182,7 +182,7 @@ function HomePageContent({ locale }: { locale: string }) {
                 </div>
               </div>
               <p className="text-gray-400 text-sm mb-4">
-                Our experts rated Dafabet as India&apos;s top betting site for 2025, especially for cricket and IPL.
+                Our experts rated Dafabet as India&apos;s top betting site for 2026, especially for cricket and IPL.
               </p>
               <Link href="/dafabet-registration" className="btn-primary w-full text-center block">
                 Register &amp; Claim Bonus
@@ -265,7 +265,7 @@ function HomePageContent({ locale }: { locale: string }) {
         {/* Welcome Bonuses */}
         <section className="review-section">
           <h2 className="section-title mb-2">Welcome Bonus &amp; Promotions</h2>
-          <p className="section-subtitle mb-8">Dafabet offers some of the best bonuses for Indian players in 2025.</p>
+          <p className="section-subtitle mb-8">Dafabet offers some of the best bonuses for Indian players in 2026.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {bonuses.map((bonus) => (
               <div key={bonus.title} className="card-hover overflow-hidden">
@@ -310,7 +310,7 @@ function HomePageContent({ locale }: { locale: string }) {
                   { rank: '🥇 #1', site: 'DafaBet', bonus: '200% up to ₹20,000', minDeposit: '₹500', sports: '30+', upi: '✅', highlight: true },
                   { rank: '#2', site: 'Betway', bonus: '100% up to ₹2,500', minDeposit: '₹1,000', sports: '35+', upi: '✅', highlight: false },
                   { rank: '#3', site: '10Cric', bonus: '150% up to ₹10,000', minDeposit: '₹1,000', sports: '25+', upi: '✅', highlight: false },
-                  { rank: '#4', site: 'Parimatch', bonus: '100% up to ₹12,000', minDeposit: '₹300', sports: '40+', upi: '✅', highlight: false },
+                  { rank: '#4', site: 'Parimatch', bonus: '100% up to ₹12,000', minDeposit: '₹300', sports: '25+', upi: '✅', highlight: false },
                 ].map((row) => (
                   <tr key={row.site} className={row.highlight ? 'bg-brand-card/50' : 'hover:bg-brand-card/30 transition-colors'}>
                     <td className={`px-4 py-3 font-semibold ${row.highlight ? 'text-brand-gold' : 'text-gray-400'}`}>{row.rank}</td>
@@ -450,7 +450,7 @@ function HomePageContent({ locale }: { locale: string }) {
                   { step: '1', title: 'Click Register', desc: 'Visit Dafabet and click the Register button' },
                   { step: '2', title: 'Fill Your Details', desc: 'Enter your name, email, and mobile number' },
                   { step: '3', title: 'Verify Account', desc: 'Confirm via OTP sent to your mobile' },
-                  { step: '4', title: 'Make First Deposit', desc: 'Deposit via UPI and claim your 100% bonus' },
+                  { step: '4', title: 'Make First Deposit', desc: 'Deposit via UPI and claim your 200% bonus' },
                 ].map((item) => (
                   <div key={item.step} className="flex items-start gap-4">
                     <div className="w-8 h-8 bg-gold-gradient rounded-full flex items-center justify-center flex-shrink-0 text-black font-bold text-sm">
@@ -483,7 +483,7 @@ function HomePageContent({ locale }: { locale: string }) {
               </p>
               <div className="grid grid-cols-2 gap-3 mb-6">
                 {[
-                  { icon: '🏏', sport: 'Cricket', markets: '500+ markets' },
+                  { icon: '🏏', sport: 'Cricket', markets: '500+ cricket markets across all formats' },
                   { icon: '🏆', sport: 'IPL', markets: 'Live betting' },
                   { icon: '⚽', sport: 'Football', markets: 'ISL & EPL' },
                   { icon: '🤼', sport: 'Kabaddi', markets: 'PKL covered' },
